@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#eaf6fb">
+<meta name="theme-color" content="#f6f1e7">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -26,13 +26,13 @@
 </script>
 <style>
 :root{
-  --bg:#f2f6f5; --bar:rgba(242,246,245,.86); --card:#ffffff; --card2:#f8fbfa;
-  --line:#e2e9e7; --line2:#eef3f1;
-  --ink:#152521; --ink2:#42544e; --ink3:#7a8c86;
-  --acc:#0f7a6a; --accsoft:#e6f4f0;
+  --bg:#f6f1e7; --bar:rgba(246,241,231,.88); --card:#fffdf8; --card2:#faf4e9;
+  --line:#eae0cc; --line2:#f1e9d7;
+  --ink:#2c2115; --ink2:#5b4b39; --ink3:#9a8a76;
+  --acc:#e14e24; --accsoft:#fdeee3;
   --d1:#2f6fd0; --d1s:#e9f1fd; --d2:#cf7415; --d2s:#fdf2e4; --d3:#2b9159; --d3s:#e8f6ed;
-  --warn:#b8480d; --warnbg:#fdf1e5; --ok:#12784a; --okbg:#e7f6ec;
-  --sh:0 1px 2px rgba(14,40,34,.05),0 6px 18px rgba(14,40,34,.05);
+  --warn:#c24a0e; --warnbg:#fdeee1; --ok:#1c7a4b; --okbg:#e8f4ea;
+  --sh:0 1px 2px rgba(60,40,20,.05),0 8px 22px rgba(60,40,20,.06);
   --sky1:#a9dcf1; --sky2:#eaf7fc;
   --sun:#ffd166; --sunglow:#ffe6a8; --moon:#f4f7ff; --star:#ffffff;
   --cloud:#ffffff; --cloudln:#d3e5ee;
@@ -43,18 +43,18 @@
   --house:#fdfaf3; --roof:#8a6247; --win:#cbb98f; --tower:#f3ece0; --roof2:#7d8f97;
   --treeA:#3f8f6d; --treeB:#63ab86; --treeC:#2f7a5c; --trunk:#7a6248;
   --path:#e6dcc6; --plane:#4a6b7a; --trail:#9dbccb;
-  --mapbg:#f3f8f6; --mapgrid:#e4edea; --mapland:#e8f2ec; --mapwater:#cfe8f3;
-  --mapink:#5b7069;
-  --route:#c0584e; --valley:#dff0e3;
+  --mapbg:#f5efe1; --mapgrid:#e7dcc4; --mapland:#eee4cd; --mapwater:#cfe8f3;
+  --mapink:#7d6c54;
+  --route:#c0584e; --valley:#dfe9d0;
 }
 html[data-theme="dark"]{
-  --bg:#0d1614; --bar:rgba(13,22,20,.86); --card:#16211f; --card2:#1b2725;
-  --line:#26332f; --line2:#22302c;
-  --ink:#e8f1ee; --ink2:#b3c5c0; --ink3:#8b9d98;
-  --acc:#4fc4ab; --accsoft:#16302b;
-  --d1:#6fa8f5; --d1s:#152233; --d2:#f0a951; --d2s:#2c2115; --d3:#5cc98c; --d3s:#14261c;
-  --warn:#f0a06a; --warnbg:#2b1d13; --ok:#5cc98c; --okbg:#14261c;
-  --sh:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3);
+  --bg:#17120d; --bar:rgba(23,18,13,.88); --card:#231a11; --card2:#2b2115;
+  --line:#3b2e1e; --line2:#33281a;
+  --ink:#f2e8d7; --ink2:#ccbca2; --ink3:#9c8b71;
+  --acc:#ff7a4d; --accsoft:#3e2414;
+  --d1:#6fa8f5; --d1s:#1b2536; --d2:#f0a951; --d2s:#34251a; --d3:#5cc98c; --d3s:#152719;
+  --warn:#ff9a5c; --warnbg:#3a2413; --ok:#5cc98c; --okbg:#152719;
+  --sh:0 1px 2px rgba(0,0,0,.4),0 8px 22px rgba(0,0,0,.35);
   --sky1:#0b1a2b; --sky2:#16304a;
   --sun:#ffd98a; --sunglow:#5c5330; --moon:#eef3ff; --star:#cfe2f5;
   --cloud:#3d5468; --cloudln:#4d6a80;
@@ -65,9 +65,9 @@ html[data-theme="dark"]{
   --house:#2c3a38; --roof:#543f31; --win:#ffd98a; --tower:#2f3b3c; --roof2:#4a5c66;
   --treeA:#1c4436; --treeB:#255843; --treeC:#153327; --trunk:#4a3c2c;
   --path:#3a4a45; --plane:#9fbccb; --trail:#41607a;
-  --mapbg:#121d1b; --mapgrid:#1e2b28; --mapland:#182521; --mapwater:#16303c;
-  --mapink:#9db1ab;
-  --route:#e08a72; --valley:#17281f;
+  --mapbg:#1e1810; --mapgrid:#2f2618; --mapland:#292017; --mapwater:#16303c;
+  --mapink:#ab9a7d;
+  --route:#e08a72; --valley:#242e1c;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -97,7 +97,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* ---------- 插画头图 ---------- */
 .hero{position:relative;margin-top:14px;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--sh);background:var(--card)}
 .hero>svg{display:block;width:100%;height:auto}
-.herocap{padding:13px 14px 15px;background:var(--card);border-top:1px solid var(--line)}
+.herocap{padding:10px 14px 12px;background:var(--card);border-top:1px solid var(--line)}
 .herocap h1{margin:0;font-size:19px;line-height:1.32;letter-spacing:.01em}
 .herocap p{margin:5px 0 0;font-size:12.5px;color:var(--ink3)}
 .herocap .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
@@ -147,6 +147,43 @@ html[data-theme="dark"] .onlyDay{display:none}
 .mp-compass{fill:none;stroke:var(--route);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .mp-compassT{fill:var(--route);font-size:10px;font-weight:800}
 .mp-legbox{fill:var(--card2);stroke:var(--line)}
+
+/* ---------- 行程头（标题 + 状态胶囊） ---------- */
+.tourhead{margin:16px 0 0}
+.tourhead h1{margin:0;font-size:22px;line-height:1.32;letter-spacing:.01em;display:flex;align-items:center;gap:9px}
+.tourhead h1 .te{font-size:23px;flex:0 0 auto}
+.tourhead .tmeta{margin:6px 0 0;font-size:12.5px;color:var(--ink3);line-height:1.7}
+.statchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.schip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink2);box-shadow:var(--sh)}
+a.schip{text-decoration:none;color:inherit}
+.schip.ok{background:var(--okbg);border-color:transparent;color:var(--ok)}
+.schip.warn{background:var(--warnbg);border-color:transparent;color:var(--warn)}
+
+/* ---------- NOW 卡 ---------- */
+.cd.now{background:linear-gradient(135deg,var(--accsoft) 0%,var(--card) 62%)}
+.cd.now::before{width:5px}
+.nowlab{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--acc)}
+.nowlab em{margin-left:auto;font-style:normal;font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.02em}
+.nowev{margin-top:7px;font-size:19px;font-weight:800;line-height:1.4}
+.cd.now .cdg{margin-top:10px}
+.cd.now .cdbox{background:rgba(255,255,255,.6);border-color:transparent}
+html[data-theme="dark"] .cd.now .cdbox{background:rgba(255,255,255,.05)}
+.cd.now .cdnum{color:var(--acc);font-size:30px}
+
+/* ---------- 当前待办 ---------- */
+.nownext{display:flex;align-items:center;gap:9px;margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:10px 12px}
+.nwbadge{flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--acc);border-radius:7px;padding:3px 8px}
+.nwtxt{flex:1;min-width:0;font-size:12.5px;color:var(--ink2);line-height:1.6}
+.nwtxt b{color:var(--ink)}
+.nwgo{flex:0 0 auto;font-size:12px;font-weight:800;color:var(--acc)}
+
+/* ---------- 分段导航 ---------- */
+.snav{position:sticky;top:58px;z-index:35;display:flex;gap:5px;margin:16px 0 0;padding:5px;background:var(--bar);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);overflow-x:auto;scrollbar-width:none}
+.snav::-webkit-scrollbar{display:none}
+.snav a{flex:1 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:5px;height:33px;padding:0 11px;border-radius:10px;font-size:12.5px;font-weight:700;color:var(--ink2);white-space:nowrap}
+.snav a.on{background:var(--acc);color:#fff}
+.sec{scroll-margin-top:116px}
+.stitle .se{font-size:16px}
 
 /* ---------- 通用 ---------- */
 .sec{margin:22px 0 0}
@@ -373,6 +410,18 @@ footer p{margin:0 0 4px}
 
 <main class="wrap">
 
+  <!-- ========== 0. 行程头 ========== -->
+  <header class="tourhead">
+    <h1><span class="te" aria-hidden="true">🏔️</span>宁波 → 绵阳 → 九寨沟</h1>
+    <p class="tmeta">2026 年 10 月 16 – 18 日 · 3 天 2 夜 · 2 人</p>
+    <div class="statchips">
+      <a class="schip warn" href="#orders">✈️ 往返机票 · 待出票</a>
+      <a class="schip ok" href="#stay">🏨 酒店 2 晚 · 已订</a>
+      <a class="schip warn" href="#orders">🚗 包车 2 段 · 待定</a>
+      <a class="schip warn" href="#orders">🎫 门票 · 10/02 开抢</a>
+    </div>
+  </header>
+
   <!-- ========== 1. 插画头图 ========== -->
   <section class="hero">
     <svg viewBox="0 0 400 600" role="img" aria-label="手绘九寨沟景区游览图：Y 字形路线，中线树正沟从景区入口上行至诺日朗中心站，左线则查洼沟至长海，右线日则沟至原始森林，标注各海子、观光车站、上下车点与路段距离">
@@ -542,17 +591,15 @@ footer p{margin:0 0 4px}
       <text class="mp-note" x="18" y="590">未标「上/下」的站点均可上下车</text>
     </svg>
     <div class="herocap">
-      <h1>宁波 → 绵阳 → 九寨沟</h1>
-      <p>2026 年 10 月 16 – 18 日 · 3 天 2 夜 · 2 人</p>
       <div class="chips"><span>10/16 周五 出发</span><span>10/17 周六 全天九寨沟</span><span>10/18 周日 返程</span></div>
     </div>
   </section>
 
-  <!-- ========== 2. 倒计时 + 时钟 ========== -->
-  <section class="sec">
-    <h2 class="stitle">此刻关注 <em>每秒刷新</em></h2>
-    <div class="cd">
-      <div class="cdhead"><b>距离</b><span class="ev" id="cdEvent">行程尚未开始</span></div>
+  <!-- ========== 2. NOW 卡：倒计时 + 时钟 ========== -->
+  <section class="sec" id="now">
+    <div class="cd now">
+      <div class="nowlab">此刻关注 · NOW<em>每秒刷新</em></div>
+      <div class="nowev"><span id="cdEvent">行程尚未开始</span></div>
       <div class="cdg">
         <div class="cdbox"><div class="cdnum" id="cdD">--</div><div class="cdlab">天</div></div>
         <div class="cdbox"><div class="cdnum" id="cdH">--</div><div class="cdlab">时</div></div>
@@ -573,11 +620,26 @@ footer p{margin:0 0 4px}
       </div>
       <div class="sametz" id="tzNote"></div>
     </div>
+    <div class="nownext">
+      <span class="nwbadge">当前待办</span>
+      <span class="nwtxt"><b>抢 10-17 场门票</b> · 10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span>
+      <a class="nwgo" href="#todos">去清单 →</a>
+    </div>
   </section>
 
+  <!-- ========== 分段导航 ========== -->
+  <nav class="snav" aria-label="板块导航">
+    <a href="#map" data-spy="map">🗺️ 总览</a>
+    <a href="#orders" data-spy="orders">✈️ 票据</a>
+    <a href="#stay" data-spy="stay">🏨 住宿</a>
+    <a href="#days" data-spy="days">📅 行程</a>
+    <a href="#todos" data-spy="todos">✅ 待办</a>
+    <a href="#tips" data-spy="tips">💡 贴士</a>
+  </nav>
+
   <!-- ========== 3. 行程总览地图 ========== -->
-  <section class="sec">
-    <h2 class="stitle">行程总览 <em>示意图 · 非实际比例</em></h2>
+  <section class="sec" id="map">
+    <h2 class="stitle"><span class="se">🗺️</span>行程总览 <em>示意图 · 非实际比例</em></h2>
     <div class="mapbtns" role="group" aria-label="切换地图视图">
       <button class="mbtn" type="button" data-view="all" aria-pressed="true">全图</button>
       <button class="mbtn" type="button" data-view="d1" aria-pressed="false">D1 10/16</button>
@@ -716,15 +778,15 @@ footer p{margin:0 0 4px}
   </section>
 
   <!-- ========== 4. 逐日行程 ========== -->
-  <section class="sec">
-    <h2 class="stitle">逐日行程 <em id="progAll">0 / 0</em></h2>
+  <section class="sec" id="days">
+    <h2 class="stitle"><span class="se">📅</span>逐日行程 <em id="progAll">0 / 0</em></h2>
     <div id="timeline"></div>
     <p class="note">打卡结果只保存在这台设备的浏览器里，换设备或清缓存会重置；页面内容本身对所有人一致。</p>
   </section>
 
   <!-- ========== 5. 交通票据 ========== -->
-  <section class="sec">
-    <h2 class="stitle">交通票据 <em>2 张机票 · 包车 2 段</em></h2>
+  <section class="sec" id="orders">
+    <h2 class="stitle"><span class="se">✈️</span>交通票据 <em>2 张机票 · 包车 2 段</em></h2>
     <div class="rows">
       <article class="row">
         <div class="rt">
@@ -797,8 +859,8 @@ footer p{margin:0 0 4px}
   </section>
 
   <!-- ========== 6. 住宿 ========== -->
-  <section class="sec">
-    <h2 class="stitle">住宿 <em>2 晚 · 均已下单</em></h2>
+  <section class="sec" id="stay">
+    <h2 class="stitle"><span class="se">🏨</span>住宿 <em>2 晚 · 均已下单</em></h2>
     <div class="rows">
       <article class="row">
         <div class="rt">
@@ -842,8 +904,8 @@ footer p{margin:0 0 4px}
   </section>
 
   <!-- ========== 7. 待办清单 ========== -->
-  <section class="sec">
-    <h2 class="stitle">待办清单 <em>共 10 项 · 办完告诉我，我改页面</em></h2>
+  <section class="sec" id="todos">
+    <h2 class="stitle"><span class="se">✅</span>待办清单 <em>共 10 项 · 办完告诉我，我改页面</em></h2>
     <div class="card">
       <ul class="todo">
         <li class="now"><span class="z">1</span><div class="x"><b>抢 10-17 场门票</b><span>10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span></div></li>
@@ -861,8 +923,8 @@ footer p{margin:0 0 4px}
   </section>
 
   <!-- ========== 8. 旅行贴士 ========== -->
-  <section class="sec">
-    <h2 class="stitle">旅行贴士 <em>共 10 条</em></h2>
+  <section class="sec" id="tips">
+    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 10 条</em></h2>
     <div class="tips">
       <article class="tip"><span class="e">⏰</span><div class="x"><b>14:00 停止入园</b><p>九寨沟入园 08:00–14:00，18:00 闭园。务必 07:30 前到沟口排队，赶第一批观光车，人最少。</p></div></article>
       <article class="tip"><span class="e">🎫</span><div class="x"><b>旺季限流 41000 人</b><p>实名制分时预约、售罄即止。10-17 是周六正旺季，越早订越稳，别拖到出行前一周。</p></div></article>
@@ -1180,7 +1242,7 @@ function syncTheme(){
   var t = document.documentElement.getAttribute('data-theme');
   themeTxt.textContent = (t === 'dark') ? '深色' : '浅色';
   var m = document.querySelector('meta[name="theme-color"]');
-  if(m) m.setAttribute('content', t === 'dark' ? '#0d1614' : '#eaf6fb');
+  if(m) m.setAttribute('content', t === 'dark' ? '#17120d' : '#f6f1e7');
   var l = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
   if(l) l.setAttribute('content', t === 'dark' ? 'black-translucent' : 'default');
 }
@@ -1459,6 +1521,25 @@ mPlace.addEventListener('click', function(){
 $('#mClose').addEventListener('click', closePoi);
 modal.addEventListener('click', function(e){ if(e.target === modal) closePoi(); });
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('on')) closePoi(); });
+
+/* ============ 分段导航高亮 ============ */
+(function(){
+  var links = $$('.snav a');
+  if(!links.length) return;
+  var spyMap = {};
+  links.forEach(function(a){ spyMap[a.getAttribute('data-spy')] = a; });
+  var ids = Object.keys(spyMap);
+  function spy(){
+    var y = window.scrollY + 140, cur = null;
+    ids.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= y) cur = id;
+    });
+    links.forEach(function(a){ a.classList.toggle('on', cur !== null && a === spyMap[cur]); });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+})();
 
 /* 键盘可达性：让地图节点可聚焦 */
 $$('.mnode').forEach(function(n){
