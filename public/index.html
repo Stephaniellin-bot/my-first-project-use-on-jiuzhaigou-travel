@@ -75,6 +75,9 @@
   .mapbox{background:var(--paper);border:1px solid var(--line);border-radius:18px;
     box-shadow:var(--shadow);padding:10px 8px 6px;overflow:hidden}
   .mapbox svg{display:block;width:100%;height:auto}
+  .mapscroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  .mapscroll svg{width:660px;max-width:none}
+  @media (min-width:700px){.mapscroll svg{width:100%}}
   .legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 10px 12px;font-size:12px;color:var(--ink2)}
   .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
   .mapnote{font-size:12px;color:var(--ink3);padding:0 10px 12px}
@@ -188,6 +191,7 @@
   <section id="overview">
     <div class="sec-title"><h2>行程总览</h2><span class="n">ROUTE</span></div>
     <div class="mapbox">
+      <div class="mapscroll">
       <svg viewBox="0 0 680 400" role="img" aria-label="行程总览路线示意图">
         <defs>
           <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
@@ -215,44 +219,45 @@
         <g>
           <circle class="paper-fill s-d1" cx="588" cy="304" r="9" stroke-width="3.4"/>
           <circle class="t-d1" cx="588" cy="304" r="3"/>
-          <text class="t-ink" x="588" y="332" text-anchor="middle" font-size="15" font-weight="700">宁波</text>
-          <text class="t-ink3" x="588" y="350" text-anchor="middle" font-size="12">栎社机场 T2 · 起终点</text>
+          <text class="t-ink" x="588" y="332" text-anchor="middle" font-size="24" font-weight="700">宁波</text>
+          <text class="t-ink3" x="588" y="350" text-anchor="middle" font-size="18">栎社机场 T2 · 起终点</text>
         </g>
         <g>
           <circle class="paper-fill s-d1" cx="300" cy="252" r="9" stroke-width="3.4"/>
           <circle class="t-d1" cx="300" cy="252" r="3"/>
-          <text class="t-ink" x="300" y="228" text-anchor="middle" font-size="15" font-weight="700">绵阳</text>
-          <text class="t-ink3" x="300" y="284" text-anchor="middle" font-size="12">南郊机场 T1</text>
+          <text class="t-ink" x="300" y="228" text-anchor="middle" font-size="24" font-weight="700">绵阳</text>
+          <text class="t-ink3" x="300" y="284" text-anchor="middle" font-size="18">南郊机场 T1</text>
           <g fill="none" class="s-d2" stroke-width="2" stroke-linecap="round" transform="translate(330,236)">
             <path d="M0 12 V3 h14 v9 M0 8 h14"/>
             <circle class="t-d2" cx="4.5" cy="4.5" r="1.8" stroke="none"/>
           </g>
-          <text class="t-ink2" x="352" y="244" font-size="11">10/17 宿</text>
+          <text class="t-ink2" x="352" y="244" font-size="17">10/17 宿</text>
         </g>
         <g>
           <circle class="paper-fill s-d1" cx="132" cy="136" r="9" stroke-width="3.4"/>
           <circle class="t-d1" cx="132" cy="136" r="3"/>
-          <text class="t-ink" x="132" y="112" text-anchor="middle" font-size="15" font-weight="700">九寨沟</text>
-          <text class="t-ink3" x="132" y="164" text-anchor="middle" font-size="12">漳扎镇 · 沟口</text>
+          <text class="t-ink" x="132" y="112" text-anchor="middle" font-size="24" font-weight="700">九寨沟</text>
+          <text class="t-ink3" x="132" y="164" text-anchor="middle" font-size="18">漳扎镇 · 沟口</text>
           <g fill="none" class="s-d2" stroke-width="2" stroke-linecap="round" transform="translate(96,176)">
             <path d="M0 12 V3 h14 v9 M0 8 h14"/>
             <circle class="t-d2" cx="4.5" cy="4.5" r="1.8" stroke="none"/>
           </g>
-          <text class="t-ink2" x="118" y="184" font-size="11">10/16 宿</text>
+          <text class="t-ink2" x="118" y="184" font-size="17">10/16 宿</text>
         </g>
 
-        <text class="t-d1" x="452" y="176" text-anchor="middle" font-size="12">10/16 飞机</text>
-        <text class="t-d1" x="206" y="196" text-anchor="middle" font-size="12">10/16 包车 · 4.5–5h</text>
-        <text class="t-d2" x="188" y="290" text-anchor="middle" font-size="12">10/17 夜车 · 4.5–5h</text>
-        <text class="t-d3" x="438" y="338" text-anchor="middle" font-size="12">10/18 飞机</text>
+        <text class="t-d1" x="452" y="176" text-anchor="middle" font-size="18">10/16 飞机</text>
+        <text class="t-d1" x="206" y="196" text-anchor="middle" font-size="18">10/16 包车 · 4.5–5h</text>
+        <text class="t-d2" x="168" y="304" text-anchor="middle" font-size="18">10/17 夜车 · 4.5–5h</text>
+        <text class="t-d3" x="438" y="338" text-anchor="middle" font-size="18">10/18 飞机</text>
       </svg>
+      </div>
       <div class="legend">
         <span><i style="background:var(--d1)"></i>D1 10/16 进沟</span>
         <span><i style="background:var(--d2)"></i>D2 10/17 夜返</span>
         <span><i style="background:var(--d3)"></i>D3 10/18 回程</span>
         <span>床形标记 = 当晚住宿</span>
       </div>
-      <div class="mapnote">示意图，非实际比例。点击各地点的导航按钮可直接唤起地图 App。</div>
+      <div class="mapnote">示意图，非实际比例。手机可左右滑动查看完整路线，点击各地点的导航按钮直接唤起地图 App。</div>
     </div>
   </section>
 
@@ -367,24 +372,26 @@
       <details>
         <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
         <div class="daymap">
+          <div class="mapscroll">
           <svg viewBox="0 0 660 132" role="img" aria-label="第一天路线示意图">
             <g fill="none" class="s-d1" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
               <path d="M62 84 C140 24 300 24 392 84"/>
             </g>
             <circle class="paper-fill s-d1" cx="62" cy="84" r="7" stroke-width="3"/>
             <circle class="paper-fill s-d1" cx="392" cy="84" r="7" stroke-width="3"/>
-            <text class="t-ink" x="62" y="112" text-anchor="middle" font-size="14" font-weight="700">宁波栎社 T2</text>
-            <text class="t-ink3" x="62" y="128" text-anchor="middle" font-size="11">08:05 起飞</text>
-            <text class="t-ink" x="392" y="112" text-anchor="middle" font-size="14" font-weight="700">绵阳南郊 T1</text>
-            <text class="t-ink3" x="392" y="128" text-anchor="middle" font-size="11">11:05 落地</text>
+            <text class="t-ink" x="62" y="112" text-anchor="middle" font-size="22" font-weight="700">宁波栎社 T2</text>
+            <text class="t-ink3" x="62" y="128" text-anchor="middle" font-size="17">08:05 起飞</text>
+            <text class="t-ink" x="392" y="112" text-anchor="middle" font-size="22" font-weight="700">绵阳南郊 T1</text>
+            <text class="t-ink3" x="392" y="128" text-anchor="middle" font-size="17">11:05 落地</text>
             <g fill="none" class="s-d1" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
               <path d="M420 84 C480 84 530 78 596 62"/>
             </g>
             <circle class="paper-fill s-d1" cx="606" cy="60" r="7" stroke-width="3"/>
-            <text class="t-ink" x="600" y="36" text-anchor="middle" font-size="14" font-weight="700">九寨沟漳扎镇</text>
-            <text class="t-ink3" x="600" y="52" text-anchor="middle" font-size="11">约 17:30 抵达</text>
-            <text class="t-d1" x="510" y="106" text-anchor="middle" font-size="11">包车 4.5–5h</text>
+            <text class="t-ink" x="590" y="36" text-anchor="middle" font-size="22" font-weight="700">九寨沟漳扎镇</text>
+            <text class="t-ink3" x="590" y="52" text-anchor="middle" font-size="17">约 17:30 抵达</text>
+            <text class="t-d1" x="510" y="106" text-anchor="middle" font-size="17">包车 4.5–5h</text>
           </svg>
+          </div>
         </div>
         <div class="stops">
           <a class="btn amap" href="https://uri.amap.com/navigation?to=104.750067,31.425362,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1%E8%88%AA%E7%AB%99%E6%A5%BC&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 绵阳机场 T1</a>
@@ -419,6 +426,7 @@
       <details>
         <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
         <div class="daymap">
+          <div class="mapscroll">
           <svg viewBox="0 0 660 132" role="img" aria-label="第二天路线示意图">
             <g fill="none" class="s-d2" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
               <path d="M62 76 C130 30 190 30 244 76"/>
@@ -427,15 +435,16 @@
             <circle class="paper-fill s-d2" cx="62" cy="76" r="7" stroke-width="3"/>
             <circle class="paper-fill s-d2" cx="256" cy="60" r="7" stroke-width="3"/>
             <circle class="paper-fill s-d2" cx="600" cy="94" r="7" stroke-width="3"/>
-            <text class="t-ink" x="56" y="104" text-anchor="middle" font-size="14" font-weight="700">漳扎镇民宿</text>
-            <text class="t-ink3" x="56" y="120" text-anchor="middle" font-size="11">07:00 出发</text>
-            <text class="t-ink" x="256" y="36" text-anchor="middle" font-size="14" font-weight="700">九寨沟景区</text>
-            <text class="t-ink3" x="256" y="52" text-anchor="middle" font-size="11">08:00–18:00</text>
-            <text class="t-ink" x="596" y="72" text-anchor="middle" font-size="14" font-weight="700">绵阳亚朵酒店</text>
-            <text class="t-ink3" x="596" y="88" text-anchor="middle" font-size="11">约 23:30 抵达</text>
-            <text class="t-d2" x="180" y="98" text-anchor="middle" font-size="11">步行 20 分钟</text>
-            <text class="t-d2" x="440" y="126" text-anchor="middle" font-size="11">夜车 4.5–5h</text>
+            <text class="t-ink" x="56" y="104" text-anchor="middle" font-size="22" font-weight="700">漳扎镇民宿</text>
+            <text class="t-ink3" x="56" y="120" text-anchor="middle" font-size="17">07:00 出发</text>
+            <text class="t-ink" x="256" y="36" text-anchor="middle" font-size="22" font-weight="700">九寨沟景区</text>
+            <text class="t-ink3" x="256" y="52" text-anchor="middle" font-size="17">08:00–18:00</text>
+            <text class="t-ink" x="580" y="72" text-anchor="middle" font-size="22" font-weight="700">绵阳亚朵酒店</text>
+            <text class="t-ink3" x="580" y="88" text-anchor="middle" font-size="17">约 23:30 抵达</text>
+            <text class="t-d2" x="180" y="98" text-anchor="middle" font-size="17">步行 20 分钟</text>
+            <text class="t-d2" x="440" y="126" text-anchor="middle" font-size="17">夜车 4.5–5h</text>
           </svg>
+          </div>
         </div>
         <div class="stops">
           <a class="btn amap" href="https://uri.amap.com/navigation?to=103.919341,33.266832,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 景区游客中心</a>
@@ -471,6 +480,7 @@
       <details>
         <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
         <div class="daymap">
+          <div class="mapscroll">
           <svg viewBox="0 0 660 132" role="img" aria-label="第三天路线示意图">
             <g fill="none" class="s-d3" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
               <path d="M62 84 C124 40 176 40 236 76"/>
@@ -479,15 +489,16 @@
             <circle class="paper-fill s-d3" cx="62" cy="84" r="7" stroke-width="3"/>
             <circle class="paper-fill s-d3" cx="248" cy="78" r="7" stroke-width="3"/>
             <circle class="paper-fill s-d3" cx="606" cy="94" r="7" stroke-width="3"/>
-            <text class="t-ink" x="56" y="112" text-anchor="middle" font-size="14" font-weight="700">亚朵酒店</text>
-            <text class="t-ink3" x="56" y="128" text-anchor="middle" font-size="11">09:45 出发</text>
-            <text class="t-ink" x="248" y="54" text-anchor="middle" font-size="14" font-weight="700">绵阳南郊 T1</text>
-            <text class="t-ink3" x="248" y="70" text-anchor="middle" font-size="11">10:15 到达</text>
-            <text class="t-d3" x="152" y="104" text-anchor="middle" font-size="11">免费班车 6.3 km / 15 分钟</text>
-            <text class="t-ink" x="600" y="70" text-anchor="middle" font-size="14" font-weight="700">宁波栎社 T2</text>
-            <text class="t-ink3" x="600" y="86" text-anchor="middle" font-size="11">15:00 抵达</text>
-            <text class="t-d3" x="440" y="126" text-anchor="middle" font-size="11">9C6416 · 11:50 起飞</text>
+            <text class="t-ink" x="56" y="112" text-anchor="middle" font-size="22" font-weight="700">亚朵酒店</text>
+            <text class="t-ink3" x="56" y="128" text-anchor="middle" font-size="17">09:45 出发</text>
+            <text class="t-ink" x="248" y="54" text-anchor="middle" font-size="22" font-weight="700">绵阳南郊 T1</text>
+            <text class="t-ink3" x="248" y="70" text-anchor="middle" font-size="17">10:15 到达</text>
+            <text class="t-d3" x="152" y="104" text-anchor="middle" font-size="17">免费班车约 15 分钟</text>
+            <text class="t-ink" x="588" y="70" text-anchor="middle" font-size="22" font-weight="700">宁波栎社 T2</text>
+            <text class="t-ink3" x="588" y="86" text-anchor="middle" font-size="17">15:00 抵达</text>
+            <text class="t-d3" x="440" y="126" text-anchor="middle" font-size="17">9C6416 · 11:50 起飞</text>
           </svg>
+          </div>
         </div>
         <div class="stops">
           <a class="btn amap" href="https://uri.amap.com/navigation?to=104.750067,31.425362,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1%E8%88%AA%E7%AB%99%E6%A5%BC&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 绵阳机场 T1</a>
