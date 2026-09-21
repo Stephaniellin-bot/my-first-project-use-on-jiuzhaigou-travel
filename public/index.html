@@ -45,6 +45,7 @@
   --path:#e6dcc6; --plane:#4a6b7a; --trail:#9dbccb;
   --mapbg:#f3f8f6; --mapgrid:#e4edea; --mapland:#e8f2ec; --mapwater:#cfe8f3;
   --mapink:#5b7069;
+  --route:#c0584e; --valley:#dff0e3;
 }
 html[data-theme="dark"]{
   --bg:#0d1614; --bar:rgba(13,22,20,.86); --card:#16211f; --card2:#1b2725;
@@ -66,6 +67,7 @@ html[data-theme="dark"]{
   --path:#3a4a45; --plane:#9fbccb; --trail:#41607a;
   --mapbg:#121d1b; --mapgrid:#1e2b28; --mapland:#182521; --mapwater:#16303c;
   --mapink:#9db1ab;
+  --route:#e08a72; --valley:#17281f;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -122,6 +124,29 @@ html[data-theme="dark"] .onlyDay{display:none}
 .h-trunk{fill:var(--trunk)}
 .h-path{stroke:var(--path);stroke-width:2.4;stroke-dasharray:7 9;fill:none;stroke-linecap:round}
 .h-flag{fill:var(--roof2)}
+/* 头图：沟内手绘地图 */
+.mp-bg{fill:var(--mapbg)}
+.mp-valley{fill:none;stroke:var(--valley);stroke-width:58;stroke-linecap:round}
+.mp-valleyF{fill:var(--valley)}
+.mp-contour{fill:none;stroke:var(--mapgrid);stroke-width:1.2;stroke-dasharray:3 5}
+.mp-route{fill:none;stroke:var(--route);stroke-width:3;stroke-linecap:round}
+.mp-walk{fill:none;stroke:var(--ok);stroke-width:2;stroke-linecap:round;stroke-dasharray:.5 6;opacity:.85}
+.mp-dot{fill:var(--card);stroke:var(--route);stroke-width:2.2}
+.mp-dotL{fill:var(--lakeB);stroke:var(--route);stroke-width:2.2}
+.mp-hub{fill:var(--card);stroke:var(--acc);stroke-width:3}
+.mp-hubIn{fill:var(--acc)}
+.mp-name{fill:var(--ink2);font-size:12px;font-weight:700}
+.mp-hubT{fill:var(--ink);font-size:13px;font-weight:800}
+.mp-dist{fill:var(--ink3);font-size:9.5px}
+.mp-note{fill:var(--ink3);font-size:9px}
+.mp-tag{fill:var(--mapink);font-size:10px;font-weight:700;letter-spacing:.05em}
+.mp-badge{fill:var(--okbg);stroke:var(--ok);stroke-width:.8}
+.mp-badgeT{fill:var(--ok);font-size:8.5px;font-weight:700}
+.mp-lake{fill:var(--lakeB);opacity:.9}
+.mp-lake2{fill:var(--lakeC);opacity:.9}
+.mp-compass{fill:none;stroke:var(--route);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mp-compassT{fill:var(--route);font-size:10px;font-weight:800}
+.mp-legbox{fill:var(--card2);stroke:var(--line)}
 
 /* ---------- 通用 ---------- */
 .sec{margin:22px 0 0}
@@ -323,6 +348,7 @@ footer p{margin:0 0 4px}
 .sheetin .adv{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:13px;line-height:1.7;color:var(--ink2)}
 .mclose{display:flex;gap:6px;align-items:center;justify-content:center;width:100%;height:34px;border:1px solid var(--line);background:var(--card2);border-radius:10px;font-size:13px;font-weight:650;color:var(--ink2);margin-top:4px}
 
+@media(min-width:560px){.hero>svg{max-width:440px;margin-inline:auto}}
 @media(min-width:720px){
   .cdnum{font-size:30px}
   .herocap h1{font-size:22px}
@@ -349,106 +375,171 @@ footer p{margin:0 0 4px}
 
   <!-- ========== 1. 插画头图 ========== -->
   <section class="hero">
-    <svg viewBox="0 0 360 200" role="img" aria-label="旅行插画：左侧为九寨沟的雪山、钙化池瀑布与藏式村寨，中间为绵阳楼阁，右侧为宁波天一阁与帆船，天空中有飞机与云朵">
-      <defs>
-        <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" class="skyTop"/><stop offset="100%" class="skyBot"/>
-        </linearGradient>
-        <linearGradient id="lakeG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" class="lakeA"/><stop offset="100%" class="lakeB"/>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="0" width="360" height="200" fill="url(#skyG)"/>
+    <svg viewBox="0 0 400 600" role="img" aria-label="手绘九寨沟景区游览图：Y 字形路线，中线树正沟从景区入口上行至诺日朗中心站，左线则查洼沟至长海，右线日则沟至原始森林，标注各海子、观光车站、上下车点与路段距离">
+      <!-- 背景与等高线 -->
+      <rect class="mp-bg" x="0" y="0" width="400" height="600"/>
+      <path class="mp-contour" d="M-8 130 C 50 108, 88 158, 30 206"/>
+      <path class="mp-contour" d="M404 190 C 372 230, 392 300, 370 352"/>
+      <path class="mp-contour" d="M30 520 C 80 540, 56 578, 116 592"/>
+      <path class="mp-contour" d="M300 556 C 340 542, 380 556, 402 538"/>
 
+      <!-- 白天：太阳与云 / 夜晚：月亮与星 -->
+      <circle cx="200" cy="34" r="21" class="h-sunGlow onlyDay"/>
+      <circle cx="200" cy="34" r="12.5" class="h-sun onlyDay"/>
+      <g class="h-cloud onlyDay"><ellipse cx="132" cy="40" rx="15" ry="6.5"/><ellipse cx="143" cy="36.5" rx="9.5" ry="5"/></g>
+      <g class="h-cloud onlyDay"><ellipse cx="266" cy="30" rx="13" ry="5.5"/><ellipse cx="275" cy="27" rx="8" ry="4.2"/></g>
+      <path class="h-moon onlyNight" d="M205 20a13 13 0 1 0 8 22.5 10.5 10.5 0 1 1-8-22.5z"/>
       <g class="onlyNight">
-        <circle cx="38" cy="28" r="1.3" class="h-star"/><circle cx="86" cy="17" r="1" class="h-star"/>
-        <circle cx="128" cy="36" r="1.2" class="h-star"/><circle cx="176" cy="15" r=".9" class="h-star"/>
-        <circle cx="238" cy="31" r="1.1" class="h-star"/><circle cx="322" cy="18" r="1.2" class="h-star"/>
-        <circle cx="60" cy="60" r=".9" class="h-star"/><circle cx="272" cy="70" r=".9" class="h-star"/>
-        <circle cx="12" cy="46" r=".9" class="h-star"/><circle cx="348" cy="44" r=".9" class="h-star"/>
+        <circle cx="150" cy="16" r="1.2" class="h-star"/><circle cx="210" cy="12" r="1" class="h-star"/>
+        <circle cx="255" cy="20" r="1.1" class="h-star"/><circle cx="180" cy="48" r=".9" class="h-star"/>
+        <circle cx="228" cy="42" r=".9" class="h-star"/><circle cx="296" cy="30" r="1" class="h-star"/>
+        <circle cx="120" cy="58" r=".9" class="h-star"/><circle cx="330" cy="20" r=".9" class="h-star"/>
       </g>
 
-      <circle cx="298" cy="40" r="25" class="h-sunGlow onlyDay"/>
-      <circle cx="298" cy="40" r="15" class="h-sun onlyDay"/>
-      <path class="h-moon onlyNight" d="M303 25a15 15 0 1 0 9 26 12 12 0 1 1-9-26z"/>
+      <!-- 指南针 -->
+      <text class="mp-compassT" x="26" y="12" text-anchor="middle">N</text>
+      <path class="mp-compass" d="M26 42 V18 M26 18 L21 27 M26 18 L31 27"/>
 
-      <g class="h-cloud"><ellipse cx="62" cy="46" rx="20" ry="9"/><ellipse cx="79" cy="42" rx="13" ry="7.5"/></g>
-      <g class="h-cloud"><ellipse cx="150" cy="29" rx="16" ry="7"/><ellipse cx="163" cy="26" rx="10" ry="5.5"/></g>
-      <g class="h-cloud"><ellipse cx="230" cy="60" rx="15" ry="6.5"/><ellipse cx="243" cy="57" rx="9.5" ry="5"/></g>
+      <!-- 山谷底色（三沟 + 诺日朗枢纽） -->
+      <path class="mp-valley" d="M200 292 C 168 264, 146 238, 126 204 C 104 168, 86 126, 62 72"/>
+      <path class="mp-valley" d="M200 292 C 226 268, 248 244, 266 212 C 288 174, 312 130, 334 96 C 344 80, 350 68, 356 54"/>
+      <path class="mp-valley" d="M200 292 C 196 340, 204 400, 199 450 C 195 500, 203 545, 200 592"/>
+      <ellipse class="mp-valleyF" cx="200" cy="290" rx="64" ry="42"/>
 
-      <path class="h-trail" d="M96 52Q146 32 188 27"/>
-      <g class="h-plane" transform="translate(188 20) rotate(-9)">
-        <path d="M0 6l16-2.6-5.4 3.2 8.6 3.6-2.8 1.4-7.6-2.4-4.6 4.4-2.2-.6 2.8-4.6z"/>
-      </g>
+      <!-- 湖泊点缀 -->
+      <ellipse class="mp-lake" cx="46" cy="60" rx="14" ry="5" transform="rotate(-52 46 60)"/>
+      <ellipse class="mp-lake2" cx="94" cy="113" rx="6" ry="3.2" transform="rotate(-48 94 113)"/>
+      <ellipse class="mp-lake2" cx="279" cy="170" rx="6.5" ry="3.4" transform="rotate(-45 279 170)"/>
 
-      <path class="h-rock" d="M-6 152 34 103 58 133 92 83 128 152Z"/>
-      <path class="h-snow" d="M92 83 104 100 92 111 80 100Z"/>
-      <path class="h-rock" d="M98 152 140 105 174 152Z"/>
-      <path class="h-snow" d="M140 105 149 118 140 127 131 118Z"/>
-      <path class="h-rock2" d="M176 152 214 115 254 152Z"/>
-      <path class="h-snow" d="M214 115 221 126 214 133 207 126Z"/>
+      <!-- 观光车路线（红线） -->
+      <path class="mp-route" d="M200 592 C 203 545, 195 500, 199 450 C 204 400, 196 340, 200 292"/>
+      <path class="mp-route" d="M200 292 C 168 264, 146 238, 126 204 C 104 168, 86 126, 62 72"/>
+      <path class="mp-route" d="M200 292 C 226 268, 248 244, 266 212 C 288 174, 312 130, 334 96 C 344 80, 350 68, 356 54"/>
 
-      <path class="h-hill" d="M-6 150c34-8 62 6 98 0 44-8 84 6 124-2 40-8 80 6 144-2v54H-6z"/>
-      <path class="h-hill2" d="M-6 180c44-9 96 5 156-3s120 6 214-3v26H-6z"/>
+      <!-- 徒步栈道（绿虚线）：犀牛海 → 盆景滩 精华段 -->
+      <path class="mp-walk" d="M207 338 C 210 400, 204 470, 207 538"/>
 
-      <ellipse class="h-lakeD" cx="66" cy="168" rx="44" ry="11"/>
-      <ellipse class="h-lakeM" cx="62" cy="160" rx="30" ry="8" fill="url(#lakeG)"/>
-      <ellipse class="h-lakeL" cx="58" cy="152" rx="17" ry="5.5"/>
-      <rect class="h-fall" x="46" y="147" width="4" height="14" rx="2"/>
-      <rect class="h-fall" x="54" y="149" width="3.5" height="12" rx="1.7"/>
-      <rect class="h-fall" x="61" y="148" width="3" height="13" rx="1.5"/>
-      <ellipse class="h-foam" cx="66" cy="165" rx="15" ry="3"/>
+      <!-- ============ 左线 · 则查洼沟 ============ -->
+      <circle class="mp-dot" cx="154" cy="236" r="4.5"/>
+      <text class="mp-name" x="140" y="240" text-anchor="end">下季节海</text>
+      <circle class="mp-dot" cx="112" cy="179" r="4.5"/>
+      <text class="mp-name" x="98" y="183" text-anchor="end">上季节海</text>
+      <circle class="mp-dotL" cx="85" cy="123" r="4.5"/>
+      <text class="mp-name" x="71" y="127" text-anchor="end">五彩池</text>
+      <rect class="mp-badge" x="14" y="115" width="13" height="12" rx="3"/>
+      <text class="mp-badgeT" x="20.5" y="124" text-anchor="middle">上</text>
+      <circle class="mp-dotL" cx="62" cy="72" r="5"/>
+      <text class="mp-name" x="78" y="66">长海</text>
+      <text class="mp-dist" x="78" y="79">海拔3101m</text>
+      <rect class="mp-badge" x="107" y="58" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="117" y="67" text-anchor="middle">上下</text>
+      <text class="mp-dist" x="163" y="266" text-anchor="end">5.2km</text>
+      <text class="mp-dist" x="119" y="209" text-anchor="end">10km</text>
+      <text class="mp-note" x="119" y="220" text-anchor="end">不建议徒步</text>
+      <text class="mp-dist" x="84" y="152" text-anchor="end">400m</text>
+      <text class="mp-dist" x="59" y="98" text-anchor="end">1200m</text>
+      <text class="mp-tag" x="108" y="298" text-anchor="middle">左线 · 则查洼沟 18km</text>
 
-      <rect class="h-house" x="120" y="146" width="16" height="16" rx="1.6"/>
-      <path class="h-roof" d="M117 146 128 138 139 146Z"/>
-      <rect class="h-win" x="125" y="152" width="4" height="5" rx="1"/>
-      <rect class="h-house" x="141" y="150" width="13" height="12" rx="1.6"/>
-      <path class="h-roof" d="M138 150 147.5 143 157 150Z"/>
-      <rect class="h-win" x="145" y="155" width="3.4" height="4" rx="1"/>
-      <path class="h-flag" opacity=".7" d="M128 138 126 133 131 135 133 130 137 133 140 129 143 134 146 132 147 143Z"/>
+      <!-- ============ 右线 · 日则沟 ============ -->
+      <circle class="mp-dotL" cx="239" cy="251" r="4.5"/>
+      <text class="mp-name" x="253" y="255">镜海</text>
+      <rect class="mp-badge" x="281" y="247" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="291" y="256" text-anchor="middle">上下</text>
+      <circle class="mp-dot" cx="262" cy="219" r="4.5"/>
+      <text class="mp-name" x="276" y="223">珍珠滩</text>
+      <rect class="mp-badge" x="318" y="215" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="328" y="224" text-anchor="middle">上下</text>
+      <text class="mp-note" x="276" y="236">《西游记》取景地</text>
+      <circle class="mp-dotL" cx="285" cy="179" r="4.5"/>
+      <text class="mp-name" x="299" y="183">五花海</text>
+      <rect class="mp-badge" x="341" y="175" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="351" y="184" text-anchor="middle">上下</text>
+      <circle class="mp-dotL" cx="303" cy="146" r="4.5"/>
+      <text class="mp-name" x="317" y="150">熊猫海</text>
+      <rect class="mp-badge" x="359" y="142" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="369" y="151" text-anchor="middle">上下</text>
+      <circle class="mp-dotL" cx="324" cy="112" r="4.5"/>
+      <text class="mp-name" x="310" y="116" text-anchor="end">箭竹海</text>
+      <rect class="mp-badge" x="253" y="104" width="13" height="12" rx="3"/>
+      <text class="mp-badgeT" x="259.5" y="113" text-anchor="middle">上</text>
+      <circle class="mp-dotL" cx="344" cy="79" r="4.5"/>
+      <text class="mp-name" x="356" y="83">天鹅海</text>
+      <rect class="mp-badge" x="318" y="71" width="13" height="12" rx="3"/>
+      <text class="mp-badgeT" x="324.5" y="80" text-anchor="middle">上</text>
+      <g class="h-tree"><path d="M350 42 356 26 362 42Z"/><path d="M368 40 374 24 380 40Z"/></g>
+      <circle class="mp-dot" cx="356" cy="54" r="4.5"/>
+      <text class="mp-name" x="342" y="50" text-anchor="end">原始森林</text>
+      <text class="mp-dist" x="342" y="62" text-anchor="end">海拔2930m</text>
+      <text class="mp-dist" x="230" y="273">900m</text>
+      <text class="mp-dist" x="306" y="164">2.5km</text>
+      <text class="mp-dist" x="326" y="130">1.8km</text>
+      <text class="mp-dist" x="320" y="96" text-anchor="end">5.5km</text>
+      <text class="mp-dist" x="364" y="70">2.7km</text>
+      <text class="mp-tag" x="292" y="298" text-anchor="middle">右线 · 日则沟 17km</text>
 
-      <rect class="h-tower" x="200" y="138" width="12" height="18" rx="1.6"/>
-      <path class="h-roof2" d="M194.5 138 206 131 217.5 138Z"/>
-      <path class="h-roof2" d="M196 128 206 121.5 216 128Z"/>
-      <path class="h-roof2" d="M198.5 118.5 206 113.5 213.5 118.5Z"/>
-      <rect class="h-roof2" x="205" y="107" width="2" height="7" rx="1"/>
-      <rect class="h-win" x="203" y="144" width="3" height="4" rx="1"/>
-      <rect class="h-win" x="207.5" y="144" width="3" height="4" rx="1"/>
-      <rect class="h-win" x="203" y="133" width="3" height="3.4" rx="1"/>
+      <!-- ============ 中线 · 树正沟 ============ -->
+      <circle class="mp-dot" cx="200" cy="314" r="4.5"/>
+      <text class="mp-name" x="186" y="318" text-anchor="end">诺日朗瀑布</text>
+      <rect class="mp-badge" x="104" y="310" width="13" height="12" rx="3"/>
+      <text class="mp-badgeT" x="110.5" y="319" text-anchor="middle">上</text>
+      <circle class="mp-dotL" cx="200" cy="340" r="4.5"/>
+      <text class="mp-name" x="216" y="344">犀牛海</text>
+      <rect class="mp-badge" x="256" y="336" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="266" y="345" text-anchor="middle">上下</text>
+      <circle class="mp-dotL" cx="200" cy="366" r="4.5"/>
+      <text class="mp-name" x="186" y="370" text-anchor="end">老虎海</text>
+      <rect class="mp-badge" x="130" y="362" width="13" height="12" rx="3"/>
+      <text class="mp-badgeT" x="136.5" y="371" text-anchor="middle">下</text>
+      <circle class="mp-dot" cx="200" cy="392" r="4.5"/>
+      <text class="mp-name" x="216" y="396">树正瀑布</text>
+      <circle class="mp-dotL" cx="200" cy="418" r="4.5"/>
+      <text class="mp-name" x="186" y="422" text-anchor="end">树正群海</text>
+      <rect class="mp-badge" x="108" y="414" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="118" y="423" text-anchor="middle">上下</text>
+      <circle class="mp-dotL" cx="200" cy="448" r="4.5"/>
+      <text class="mp-name" x="216" y="452">火花海</text>
+      <rect class="mp-badge" x="254" y="444" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="264" y="453" text-anchor="middle">上下</text>
+      <circle class="mp-dotL" cx="200" cy="478" r="4.5"/>
+      <text class="mp-name" x="186" y="482" text-anchor="end">双龙海</text>
+      <text class="mp-dist" x="210" y="497">1500m</text>
+      <circle class="mp-dotL" cx="200" cy="508" r="4.5"/>
+      <text class="mp-name" x="216" y="512">芦苇海</text>
+      <text class="mp-dist" x="190" y="528" text-anchor="end">680m</text>
+      <circle class="mp-dot" cx="200" cy="540" r="4.5"/>
+      <text class="mp-name" x="186" y="544" text-anchor="end">盆景滩</text>
+      <rect class="mp-badge" x="210" y="534" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="220" y="543" text-anchor="middle">上下</text>
+      <text class="mp-dist" x="210" y="561">5.8km</text>
+      <circle class="mp-dot" cx="200" cy="572" r="5"/>
+      <text class="mp-name" x="216" y="576">景区入口</text>
+      <rect class="mp-badge" x="270" y="568" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="280" y="577" text-anchor="middle">上下</text>
 
-      <rect class="h-tower" x="291" y="141" width="15" height="17" rx="2"/>
-      <path class="h-roof2" d="M286 141 298.5 134 311 141Z"/>
-      <path class="h-roof2" d="M288 130 298.5 124 309 130Z"/>
-      <rect class="h-roof2" x="297.5" y="118" width="2" height="6.5" rx="1"/>
-      <rect class="h-win" x="294.5" y="146" width="3.2" height="4.4" rx="1"/>
-      <rect class="h-win" x="299.8" y="146" width="3.2" height="4.4" rx="1"/>
-      <rect class="h-win" x="294.5" y="136" width="3.2" height="3.6" rx="1"/>
+      <!-- 诺日朗中心站（枢纽） -->
+      <circle class="mp-hub" cx="200" cy="290" r="8"/>
+      <circle class="mp-hubIn" cx="200" cy="290" r="2.6"/>
+      <text class="mp-hubT" x="216" y="285">诺日朗中心站</text>
+      <rect class="mp-badge" x="300" y="277" width="20" height="12" rx="3"/>
+      <text class="mp-badgeT" x="310" y="286" text-anchor="middle">上下</text>
+      <text class="mp-note" x="186" y="282" text-anchor="end">换乘 · 餐饮</text>
 
-      <ellipse class="mwater" cx="332" cy="170" rx="28" ry="9"/>
-      <path class="h-boat" d="M316 166q16 8 32 0-16 5-32 0z"/>
-      <path class="h-sail" d="M331 149 331 164 342 164Z"/>
-      <path class="h-wave" d="M310 175q6-3.5 12 0t12 0 12 0"/>
+      <!-- 中线标签与署名 -->
+      <text class="mp-tag" x="394" y="566" text-anchor="end">中线 · 树正沟 14km</text>
+      <text class="mp-note" x="394" y="581" text-anchor="end">手绘示意 · 站点与距离仅供参考</text>
 
-      <path class="h-path" d="M0 192c60-7 120 6 180-2s120 6 180-2"/>
-
-      <g class="h-tree">
-        <path d="M18 176 25 152 32 176Z"/><path d="M18 166 25 146 32 166Z"/><rect class="h-trunk" x="24" y="176" width="2.4" height="7" rx="1"/>
-        <path d="M44 180 50 162 56 180Z"/><rect class="h-trunk" x="49" y="180" width="2" height="6" rx="1"/>
-        <path d="M104 176 111 154 118 176Z"/><path d="M104 167 111 149 118 167Z"/><rect class="h-trunk" x="110" y="176" width="2.4" height="7" rx="1"/>
-        <path d="M162 178 168 160 174 178Z"/><rect class="h-trunk" x="167" y="178" width="2" height="6" rx="1"/>
-        <path d="M232 176 239 155 246 176Z"/><path d="M232 168 239 150 246 168Z"/><rect class="h-trunk" x="238" y="176" width="2.4" height="7" rx="1"/>
-        <path d="M262 179 267 164 272 179Z"/><rect class="h-trunk" x="266" y="179" width="2" height="5" rx="1"/>
-        <path d="M344 176 351 153 358 176Z"/><rect class="h-trunk" x="350" y="176" width="2.4" height="7" rx="1"/>
-      </g>
-      <g class="h-tree2">
-        <circle cx="76" cy="181" r="7"/><rect class="h-trunk" x="75" y="181" width="2" height="6" rx="1"/>
-        <circle cx="192" cy="184" r="6"/><rect class="h-trunk" x="191" y="184" width="2" height="5" rx="1"/>
-        <circle cx="296" cy="183" r="6.5"/><rect class="h-trunk" x="295" y="183" width="2" height="6" rx="1"/>
-      </g>
-      <g class="h-tree3">
-        <path d="M136 183 141 170 146 183Z"/>
-        <path d="M212 185 217 172 222 185Z"/>
-      </g>
+      <!-- 图例 -->
+      <rect class="mp-legbox" x="8" y="542" width="156" height="54" rx="9"/>
+      <path class="mp-route" d="M18 559 H40"/>
+      <text class="mp-note" x="46" y="562">观光车路线</text>
+      <circle class="mp-dotL" cx="106" cy="559" r="4"/>
+      <text class="mp-note" x="114" y="562">海子</text>
+      <path class="mp-walk" d="M18 574 H40"/>
+      <text class="mp-note" x="46" y="577">徒步栈道</text>
+      <rect class="mp-badge" x="100" y="569" width="18" height="11" rx="3"/>
+      <text class="mp-badgeT" x="109" y="577.5" text-anchor="middle">上下</text>
+      <text class="mp-note" x="122" y="577">上下车点</text>
+      <text class="mp-note" x="18" y="590">未标「上/下」的站点均可上下车</text>
     </svg>
     <div class="herocap">
       <h1>宁波 → 绵阳 → 九寨沟</h1>
