@@ -1,652 +1,1382 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="day">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#f7f5f0">
-<title>九寨沟 3 天 · 旅行手册</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#eaf6fb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="九寨沟手册">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f7a6a'/%3E%3Cpath d='M6 22h20M9 22l7-11 7 11M16 11V7' stroke='%23fff' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>九寨沟旅行手册 · 3 天 2 人</title>
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('jzg.theme');
+    if(t !== 'light' && t !== 'dark'){
+      var h = Number(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
+      t = (h >= 7 && h < 19) ? 'light' : 'dark';
+    }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
 <style>
-  :root{
-    --bg:#f7f5f0; --paper:#fffefb; --ink:#1e2a26; --ink2:#55635e; --ink3:#8b968f;
-    --line:#e4e0d6; --line2:#f0ece3;
-    --d1:#2a6f97; --d2:#c05b2a; --d3:#2f7d5f;
-    --warn:#b4451f; --warnbg:#fdf2ec; --warnline:#f0d9cc;
-    --chip:#f2efe7;
-    --shadow:0 1px 2px rgba(30,42,38,.05),0 6px 18px rgba(30,42,38,.05);
-    color-scheme:light;
-  }
-  html[data-theme="night"]{
-    --bg:#111719; --paper:#1a2224; --ink:#e9efec; --ink2:#a7b4b0; --ink3:#7c8985;
-    --line:#2b3634; --line2:#222c2e;
-    --d1:#6fb3d6; --d2:#e09159; --d3:#68b992;
-    --warn:#e8836a; --warnbg:#241a16; --warnline:#3a2a22;
-    --chip:#212a2c;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.3);
-    color-scheme:dark;
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
-    font-size:15px;line-height:1.65;padding:0 0 56px;
-    transition:background .5s ease,color .5s ease;
-  }
-  .wrap{max-width:720px;margin:0 auto;padding:0 16px}
-  a{color:var(--d1);text-decoration:none}
-  h1,h2{margin:0;font-weight:700;letter-spacing:.01em}
+:root{
+  --bg:#f2f6f5; --bar:rgba(242,246,245,.86); --card:#ffffff; --card2:#f8fbfa;
+  --line:#e2e9e7; --line2:#eef3f1;
+  --ink:#152521; --ink2:#42544e; --ink3:#7a8c86;
+  --acc:#0f7a6a; --accsoft:#e6f4f0;
+  --d1:#2f6fd0; --d1s:#e9f1fd; --d2:#cf7415; --d2s:#fdf2e4; --d3:#2b9159; --d3s:#e8f6ed;
+  --warn:#b8480d; --warnbg:#fdf1e5; --ok:#12784a; --okbg:#e7f6ec;
+  --sh:0 1px 2px rgba(14,40,34,.05),0 6px 18px rgba(14,40,34,.05);
+  --sky1:#a9dcf1; --sky2:#eaf7fc;
+  --sun:#ffd166; --sunglow:#ffe6a8; --moon:#f4f7ff; --star:#ffffff;
+  --cloud:#ffffff; --cloudln:#d3e5ee;
+  --rock:#9fb6c4; --rock2:#b6c8d3; --snow:#ffffff;
+  --hill:#8fcbb3; --hill2:#6bb294;
+  --lakeA:#2fa9c6; --lakeB:#7ad3cd; --lakeC:#bdecea;
+  --fall:#ffffff; --foam:#e9fbff;
+  --house:#fdfaf3; --roof:#8a6247; --win:#cbb98f; --tower:#f3ece0; --roof2:#7d8f97;
+  --treeA:#3f8f6d; --treeB:#63ab86; --treeC:#2f7a5c; --trunk:#7a6248;
+  --path:#e6dcc6; --plane:#4a6b7a; --trail:#9dbccb;
+  --mapbg:#f3f8f6; --mapgrid:#e4edea; --mapland:#e8f2ec; --mapwater:#cfe8f3;
+  --mapink:#5b7069;
+}
+html[data-theme="dark"]{
+  --bg:#0d1614; --bar:rgba(13,22,20,.86); --card:#16211f; --card2:#1b2725;
+  --line:#26332f; --line2:#22302c;
+  --ink:#e8f1ee; --ink2:#b3c5c0; --ink3:#8b9d98;
+  --acc:#4fc4ab; --accsoft:#16302b;
+  --d1:#6fa8f5; --d1s:#152233; --d2:#f0a951; --d2s:#2c2115; --d3:#5cc98c; --d3s:#14261c;
+  --warn:#f0a06a; --warnbg:#2b1d13; --ok:#5cc98c; --okbg:#14261c;
+  --sh:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.3);
+  --sky1:#0b1a2b; --sky2:#16304a;
+  --sun:#ffd98a; --sunglow:#5c5330; --moon:#eef3ff; --star:#cfe2f5;
+  --cloud:#3d5468; --cloudln:#4d6a80;
+  --rock:#3c5265; --rock2:#334757; --snow:#b9cfe0;
+  --hill:#1e3a33; --hill2:#162c26;
+  --lakeA:#1d5b73; --lakeB:#2b8a8a; --lakeC:#4fb3b0;
+  --fall:#bcd7e4; --foam:#6fa8bb;
+  --house:#2c3a38; --roof:#543f31; --win:#ffd98a; --tower:#2f3b3c; --roof2:#4a5c66;
+  --treeA:#1c4436; --treeB:#255843; --treeC:#153327; --trunk:#4a3c2c;
+  --path:#3a4a45; --plane:#9fbccb; --trail:#41607a;
+  --mapbg:#121d1b; --mapgrid:#1e2b28; --mapland:#182521; --mapwater:#16303c;
+  --mapink:#9db1ab;
+}
+*,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+svg{max-width:100%}
+a{color:var(--acc);text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
 
-  /* SVG 配色（通过类名，避免在 presentation attribute 里用 var()） */
-  .t-ink{fill:var(--ink)} .t-ink2{fill:var(--ink2)} .t-ink3{fill:var(--ink3)}
-  .t-d1{fill:var(--d1)} .t-d2{fill:var(--d2)} .t-d3{fill:var(--d3)}
-  .paper-fill{fill:var(--paper)}
-  .s-line{stroke:var(--line)} .s-d1{stroke:var(--d1)} .s-d2{stroke:var(--d2)} .s-d3{stroke:var(--d3)}
-  .s-ink{stroke:var(--ink)} .s-paper{stroke:var(--paper)}
+/* ---------- 顶栏 ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:var(--bar);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.tbin{display:flex;align-items:center;gap:10px;height:52px}
+.tbmark{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;letter-spacing:.02em}
+.tbmark i{width:22px;height:22px;border-radius:7px;background:var(--acc);display:inline-block;position:relative;flex:0 0 auto}
+.tbmark i::before{content:"";position:absolute;inset:5px 4px;border:1.9px solid #fff;border-top:0;border-radius:2px}
+.tbmark i::after{content:"";position:absolute;left:50%;top:4px;width:1.9px;height:5px;background:#fff;transform:translateX(-50%)}
+.tbmark small{font-weight:600;font-size:12px;color:var(--ink3)}
+.tbact{margin-left:auto;display:flex;gap:8px;align-items:center}
+.tbtn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 11px;border:1px solid var(--line);background:var(--card);border-radius:10px;font-size:13px;font-weight:600;box-shadow:var(--sh)}
+.tbtn svg{width:15px;height:15px;flex:0 0 auto}
+.tbtn:active{transform:scale(.97)}
 
-  header{padding:26px 0 6px}
-  .kicker{font-size:12px;letter-spacing:.18em;color:var(--ink3);text-transform:uppercase}
-  header h1{font-size:27px;line-height:1.25;margin:6px 0 10px}
-  header h1 .thin{font-weight:400;color:var(--ink2)}
-  .hmeta{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:13px;color:var(--ink2);align-items:center}
-  .hmeta .sep{color:var(--line)}
-  .clock{font-variant-numeric:tabular-nums;color:var(--ink3)}
+/* ---------- 插画头图 ---------- */
+.hero{position:relative;margin-top:14px;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--sh);background:var(--card)}
+.hero>svg{display:block;width:100%;height:auto}
+.herocap{padding:13px 14px 15px;background:var(--card);border-top:1px solid var(--line)}
+.herocap h1{margin:0;font-size:19px;line-height:1.32;letter-spacing:.01em}
+.herocap p{margin:5px 0 0;font-size:12.5px;color:var(--ink3)}
+.herocap .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.herocap .chips span{font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--card2);border:1px solid var(--line);color:var(--ink2)}
+.onlyNight{display:none}
+html[data-theme="dark"] .onlyNight{display:block}
+html[data-theme="dark"] .onlyDay{display:none}
+.skyTop{stop-color:var(--sky1)} .skyBot{stop-color:var(--sky2)}
+.lakeA{stop-color:var(--lakeA)} .lakeB{stop-color:var(--lakeB)}
+.h-sun{fill:var(--sun)} .h-sunGlow{fill:var(--sunglow);opacity:.5}
+.h-moon{fill:var(--moon)} .h-star{fill:var(--star);opacity:.9}
+.h-cloud ellipse{fill:var(--cloud);stroke:var(--cloudln);stroke-width:1.2}
+.h-trail{stroke:var(--trail);stroke-width:1.6;stroke-dasharray:5 5;stroke-linecap:round;fill:none}
+.h-plane{fill:var(--plane)}
+.h-rock{fill:var(--rock)} .h-rock2{fill:var(--rock2)} .h-snow{fill:var(--snow)}
+.h-hill{fill:var(--hill)} .h-hill2{fill:var(--hill2)}
+.h-lakeD{fill:var(--lakeA)} .h-lakeM{fill:var(--lakeB)} .h-lakeL{fill:var(--lakeC)}
+.h-fall{fill:var(--fall);opacity:.92} .h-foam{fill:var(--foam);opacity:.85}
+.h-house{fill:var(--house)} .h-roof{fill:var(--roof)} .h-win{fill:var(--win)}
+.h-tower{fill:var(--tower)} .h-roof2{fill:var(--roof2)}
+.h-boat,.h-sail{fill:var(--roof2)}
+.h-wave{stroke:var(--mapwater);stroke-width:1.4;fill:none;opacity:.8}
+.h-tree{fill:var(--treeA)} .h-tree2{fill:var(--treeB)} .h-tree3{fill:var(--treeC)}
+.h-trunk{fill:var(--trunk)}
+.h-path{stroke:var(--path);stroke-width:2.4;stroke-dasharray:7 9;fill:none;stroke-linecap:round}
+.h-flag{fill:var(--roof2)}
 
-  section{margin-top:26px}
-  .sec-title{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}
-  .sec-title h2{font-size:16px}
-  .sec-title .n{font-size:11px;letter-spacing:.16em;color:var(--ink3)}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+/* ---------- 通用 ---------- */
+.sec{margin:22px 0 0}
+.stitle{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:15px;font-weight:700;letter-spacing:.01em}
+.stitle::before{content:"";width:3px;height:15px;border-radius:2px;background:var(--acc);flex:0 0 auto}
+.stitle em{margin-left:auto;font-style:normal;font-size:12px;font-weight:600;color:var(--ink3)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);padding:14px}
+.note{font-size:12.5px;color:var(--ink3);line-height:1.65;margin:10px 0 0}
 
-  .focus{position:relative;overflow:hidden;background:var(--paper);border:1px solid var(--line);
-    border-radius:20px;box-shadow:var(--shadow);padding:20px 18px 18px}
-  .focus::after{content:"";position:absolute;right:-34px;bottom:-64px;width:190px;height:190px;
-    border-radius:50%;background:var(--warnbg);opacity:.8;z-index:0}
-  .focus>*{position:relative;z-index:1}
-  .focus .lab{font-size:12px;letter-spacing:.16em;color:var(--ink3)}
-  .focus .what{font-size:19px;font-weight:700;margin:6px 0 2px}
-  .focus .when{font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
-  .count{display:flex;gap:8px;margin-top:16px}
-  .unit{flex:1;background:var(--chip);border-radius:12px;padding:10px 4px 9px;text-align:center;min-width:0}
-  .unit b{display:block;font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums}
-  .unit span{font-size:11px;color:var(--ink3)}
-  .focus .done{font-size:13px;color:var(--ink2);margin-top:12px}
+/* ---------- 倒计时 ---------- */
+.cd{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:14px;position:relative;overflow:hidden}
+.cd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc);opacity:.85}
+.cdhead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.cdhead b{font-size:12px;font-weight:700;color:var(--acc);letter-spacing:.06em}
+.cdhead .ev{font-size:15px;font-weight:700}
+.cdg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.cdbox{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:9px 4px;text-align:center}
+.cdnum{font-size:26px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cdlab{font-size:11.5px;color:var(--ink3);margin-top:2px}
+.clocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.clock{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:10px 11px}
+.clock .cn{font-size:11.5px;font-weight:700;color:var(--ink3);display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.clock .cn u{text-decoration:none;font-size:10.5px;padding:0 5px;border-radius:5px;background:var(--accsoft);color:var(--acc)}
+.clock .ct{font-size:21px;font-weight:750;font-variant-numeric:tabular-nums;margin-top:3px}
+.clock .cd2{font-size:11.5px;color:var(--ink3);margin-top:1px}
+.sametz{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.65}
+.sametz b{color:var(--ink2)}
 
-  .mapbox{background:var(--paper);border:1px solid var(--line);border-radius:18px;
-    box-shadow:var(--shadow);padding:10px 8px 6px;overflow:hidden}
-  .mapbox svg{display:block;width:100%;height:auto}
-  .mapscroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
-  .mapscroll svg{width:660px;max-width:none}
-  @media (min-width:700px){.mapscroll svg{width:100%}}
-  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 10px 12px;font-size:12px;color:var(--ink2)}
-  .legend i{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
-  .mapnote{font-size:12px;color:var(--ink3);padding:0 10px 12px}
+/* ---------- 地图 ---------- */
+.mapbtns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.mbtn{height:34px;padding:0 13px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:13px;font-weight:650;color:var(--ink2);box-shadow:var(--sh);display:inline-flex;align-items:center;gap:6px}
+.mbtn[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.mbtn.ghost{margin-left:auto;color:var(--acc);border-style:dashed}
+.mstage{background:var(--mapbg);border:1px solid var(--line);border-radius:16px;padding:6px 4px 2px;box-shadow:var(--sh)}
+.mview{display:none;width:100%;height:auto;max-width:540px;margin:0 auto}
+.mview.on{display:block;transform-origin:50% 45%;animation:zin .34s cubic-bezier(.2,.8,.3,1)}
+@keyframes zin{from{transform:scale(.9);opacity:.25}to{transform:scale(1);opacity:1}}
+.mvtitle{font-size:12.5px;font-weight:700;fill:var(--mapink)}
+.mvsub{font-size:10.5px;fill:var(--mapink);opacity:.88}
+.mvlabel{font-size:11px;font-weight:700;fill:var(--mapink)}
+.mvchip text{font-size:10px;font-weight:700}
+.mnode{cursor:pointer}
+.mnode .hit{fill:transparent}
+.mnode circle.dot{stroke:#fff;stroke-width:1.6}
+html[data-theme="dark"] .mnode circle.dot{stroke:#0d1614}
+.mline{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mland{fill:var(--mapland)}
+.mgrid path{stroke:var(--mapgrid);stroke-width:.8;stroke-dasharray:2 4;fill:none}
+.mwater{fill:var(--mapwater)}
+.mr1{stroke:var(--d1);stroke-width:2.6}
+.mr2{stroke:var(--d2);stroke-width:2.6}
+.mr3{stroke:var(--d3);stroke-width:2.6}
+.mwalk{stroke-width:2.4}
+.mbus{stroke-width:2.4;stroke-dasharray:6 5}
+.mplane{stroke-width:2.2;stroke-dasharray:9 6}
+.maplist{margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);padding:12px 13px}
+.mlh{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:.04em;margin-bottom:6px}
+.mlnote{font-size:12.5px;color:var(--ink3);line-height:1.65;margin:0 0 8px}
+.mli{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-top:1px dashed var(--line2)}
+.mli.first{border-top:0}
+.mli .n{flex:0 0 auto;width:19px;height:19px;border-radius:50%;background:var(--accsoft);color:var(--acc);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.mli.d1 .n{background:var(--d1s);color:var(--d1)}
+.mli.d2 .n{background:var(--d2s);color:var(--d2)}
+.mli.d3 .n{background:var(--d3s);color:var(--d3)}
+.mli .b{min-width:0;flex:1}
+.mli .nm{font-size:14px;font-weight:650;background:none;border:0;padding:0;text-align:left}
+.mli .nm:hover{color:var(--acc)}
+.mli .ds{font-size:12px;color:var(--ink3);line-height:1.55}
+.mli .tv{font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums;flex:0 0 auto;margin-top:3px}
+.maplegend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12px;color:var(--ink3)}
+.maplegend i{display:inline-block;width:16px;height:3px;border-radius:2px;vertical-align:middle;margin-right:5px}
 
-  .order{border-top:1px solid var(--line2);padding:14px 16px}
-  .order:first-child{border-top:0}
-  .order .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-  .order .cat{font-size:11px;letter-spacing:.14em;color:var(--ink3)}
-  .order .name{font-size:15px;font-weight:700;margin-top:2px}
-  .order .when{font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums;margin-top:6px;white-space:pre-line}
-  .order .place{font-size:13px;color:var(--ink2);margin-top:6px;white-space:pre-line}
-  .price{font-size:14px;font-weight:700;white-space:nowrap}
-  .price small{font-weight:400;color:var(--ink3);font-size:11px}
-  .navrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .btn{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;
-    padding:7px 12px;border-radius:999px;background:var(--chip);color:var(--ink);
-    border:1px solid var(--line);text-decoration:none}
-  .btn.amap{background:var(--d1);border-color:transparent;color:#fff}
-  html[data-theme="night"] .btn.amap{color:#0e1416}
-  .btn.g{color:var(--ink2)}
+/* ---------- 时间轴 ---------- */
+.day{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);margin-bottom:12px;overflow:hidden}
+.dsum{display:flex;align-items:center;gap:10px;width:100%;padding:13px 14px;background:none;border:0;text-align:left}
+.dsum .dl{flex:0 0 auto;width:46px;text-align:center;border-radius:11px;padding:4px 0;background:var(--d1s)}
+.day.d2 .dsum .dl{background:var(--d2s)}
+.day.d3 .dsum .dl{background:var(--d3s)}
+.dsum .dl b{display:block;font-size:15px;font-weight:800;line-height:1.2;color:var(--d1)}
+.day.d2 .dsum .dl b{color:var(--d2)}
+.day.d3 .dsum .dl b{color:var(--d3)}
+.dsum .dl span{display:block;font-size:10.5px;font-weight:700;color:var(--ink3)}
+.dsum .dt{flex:1;min-width:0}
+.dsum .dt .t1{font-size:14.5px;font-weight:700}
+.dsum .dt .t2{font-size:12px;color:var(--ink3);margin-top:2px}
+.dsum .prog{flex:0 0 auto;font-size:12.5px;font-weight:750;color:var(--ink3);font-variant-numeric:tabular-nums}
+.dsum .prog.full{color:var(--ok)}
+.dsum .cv{flex:0 0 auto;color:var(--ink3);transition:transform .2s;font-size:12px}
+.dsum[aria-expanded="true"] .cv{transform:rotate(90deg)}
+.dprog{height:3px;background:var(--line2)}
+.dprog i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.dbody{display:none;padding:2px 14px 14px}
+.dbody.on{display:block}
+.leg{font-size:11.5px;font-weight:700;color:var(--ink3);letter-spacing:.05em;padding:10px 0 2px}
 
-  .day{background:var(--paper);border:1px solid var(--line);border-radius:18px;
-    box-shadow:var(--shadow);overflow:hidden;margin-top:14px}
-  .dayhead{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line2)}
-  .daydot{width:34px;height:34px;flex:0 0 34px;border-radius:10px;display:grid;place-items:center;
-    font-size:13px;font-weight:700;color:#fff}
-  html[data-theme="night"] .daydot{color:#0e1416}
-  .d1 .daydot{background:var(--d1)} .d2 .daydot{background:var(--d2)} .d3 .daydot{background:var(--d3)}
-  .dayhead .t{font-size:15px;font-weight:700}
-  .dayhead .s{font-size:12px;color:var(--ink3);margin-top:1px}
-  details{border-bottom:1px solid var(--line2)}
-  details summary{cursor:pointer;list-style:none;padding:11px 16px;font-size:13px;font-weight:600;
-    color:var(--d1);display:flex;align-items:center;gap:7px}
-  details summary::-webkit-details-marker{display:none}
-  details summary .arrow{transition:transform .25s ease;font-size:10px;color:var(--ink3)}
-  details[open] summary .arrow{transform:rotate(90deg)}
-  .daymap{padding:0 12px 6px}
-  .daymap svg{display:block;width:100%;height:auto;border-radius:12px;background:var(--line2)}
-  .stops{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:10px 16px 0}
-  .stops .arw{color:var(--ink3);font-size:12px}
-  .stops.last{padding-bottom:14px}
-  .timeline{padding:6px 16px 16px}
-  .row{display:flex;gap:14px;padding:9px 0;border-top:1px dashed var(--line)}
-  .row:first-child{border-top:0}
-  .row .time{flex:0 0 58px;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;padding-top:1px}
-  .row .body{flex:1;min-width:0}
-  .row .body .txt{font-size:14px}
-  .row .body .sub{font-size:12px;color:var(--ink3);margin-top:3px}
-  .tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:6px;margin-left:6px;
-    background:var(--warnbg);color:var(--warn);border:1px solid var(--warnline);vertical-align:1px;white-space:nowrap}
+/* 行程项 */
+.item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line2)}
+.dbody .item:first-of-type{border-top:0}
+.item .tl{flex:0 0 50px;text-align:right;padding-top:2px}
+.item .tl b{font-size:14px;font-weight:750;font-variant-numeric:tabular-nums}
+.item .tl span{display:block;font-size:10px;color:var(--ink3);font-weight:600;margin-top:1px}
+.item .ix{flex:0 0 auto;width:9px;position:relative}
+.item .ix::before{content:"";position:absolute;left:3px;top:10px;width:4px;height:4px;border-radius:50%;background:var(--acc)}
+.item .ix::after{content:"";position:absolute;left:4.5px;top:16px;bottom:-10px;width:1px;background:var(--line)}
+.item:last-child .ix::after{display:none}
+.item .ic{flex:1;min-width:0}
+.item .it{font-size:14.5px;font-weight:650;line-height:1.45}
+.item .im{font-size:12.5px;color:var(--ink2);line-height:1.62;margin-top:3px}
+.item .im b{color:var(--ink);font-weight:650}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tag{font-size:11px;font-weight:650;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);background:var(--card2)}
+.tag.pre,.tag.warn{background:var(--warnbg);color:var(--warn);border-color:transparent}
+.tag.flight{background:var(--d1s);color:var(--d1);border-color:transparent}
+.tag.intro{background:var(--accsoft);color:var(--acc);border-color:transparent;cursor:pointer}
+.tag.nav{text-decoration:none;display:inline-flex;align-items:center;gap:3px}
+.tag.nav:hover{border-color:var(--acc);color:var(--acc)}
+.ck{flex:0 0 auto;align-self:flex-start;margin-top:1px;display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:650;border:1px solid var(--line);background:var(--card2);border-radius:999px;padding:4px 10px 4px 7px;color:var(--ink3)}
+.ck i{width:13px;height:13px;border-radius:50%;border:1.6px solid var(--ink3);display:inline-block;position:relative;flex:0 0 auto}
+.ck[aria-pressed="true"]{background:var(--okbg);border-color:transparent;color:var(--ok)}
+.ck[aria-pressed="true"] i{border-color:var(--ok);background:var(--ok)}
+.ck[aria-pressed="true"] i::after{content:"";position:absolute;left:3px;top:1px;width:4px;height:7px;border:1.6px solid #fff;border-top:0;border-left:0;transform:rotate(42deg)}
+.item.done{opacity:.48}
+.item.done .it{text-decoration:line-through;text-decoration-color:var(--ink3)}
+.gap{display:flex;align-items:center;gap:8px;margin:1px 0 1px 59px;font-size:11.5px;color:var(--ink3)}
+.gap i{font-style:normal;padding:2px 9px;border-radius:999px;background:var(--card2);border:1px dashed var(--line);font-weight:650;color:var(--ink2)}
+.gap s{flex:1;height:0;border-top:1px dashed var(--line);text-decoration:none}
+.stay{margin:6px 0 2px 59px;border:1px solid var(--line);border-radius:13px;background:var(--card2);padding:10px 11px}
+.stay .sh{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;flex-wrap:wrap}
+.stay .sh em{font-style:normal;font-size:10.5px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--accsoft);color:var(--acc)}
+.stay dl{margin:7px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
+.stay dl div{display:flex;gap:7px}
+.stay dl dt{flex:0 0 46px;color:var(--ink3);font-weight:650}
+.stay dl dd{margin:0;min-width:0;flex:1}
+.daymap{margin:12px 0 2px;background:var(--mapbg);border:1px solid var(--line);border-radius:13px;padding:4px}
+.daymap svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
 
-  .todo{background:var(--paper);border:1px solid var(--line);border-radius:18px;
-    box-shadow:var(--shadow);padding:6px 16px}
-  .todo ul{margin:0;padding:0}
-  .todo li{list-style:none;display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line);font-size:14px}
-  .todo li:first-child{border-top:0}
-  .todo .num{flex:0 0 22px;height:22px;border-radius:50%;background:var(--chip);color:var(--ink2);
-    font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:1px}
-  .todo .fix{font-size:12px;color:var(--ink3);margin-top:3px}
-  .todofoot{font-size:12px;color:var(--ink3);padding:10px 0 14px}
+/* ---------- 票据 / 住宿 ---------- */
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:12px 13px}
+.row .rt{display:flex;align-items:flex-start;gap:9px}
+.row .rt .k{flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 7px;border-radius:7px;background:var(--accsoft);color:var(--acc);margin-top:1px}
+.row .rt .k.f{background:var(--d1s);color:var(--d1)}
+.row .rt .k.c{background:var(--d2s);color:var(--d2)}
+.row .rt .k.t{background:var(--warnbg);color:var(--warn)}
+.row .rt .h{flex:1;min-width:0}
+.row .rt .h b{font-size:14.5px;font-weight:700;display:block;line-height:1.4}
+.row .rt .h span{font-size:12.5px;color:var(--ink3);display:block;margin-top:2px}
+.row .rt .p{flex:0 0 auto;font-size:14.5px;font-weight:750;font-variant-numeric:tabular-nums}
+.row .meta{margin:9px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.7}
+.row .meta dl{margin:0;display:flex;flex-direction:column;gap:3px}
+.row .meta div{display:flex;gap:8px}
+.row .meta dt{flex:0 0 56px;color:var(--ink3);font-weight:650}
+.row .meta dd{margin:0;flex:1;min-width:0}
+.row .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.btn{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 11px;border-radius:9px;border:1px solid var(--line);background:var(--card2);font-size:12.5px;font-weight:650;color:var(--ink2)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:active{transform:scale(.97)}
+.pubnote{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink3);line-height:1.7;background:var(--card2);border:1px dashed var(--line);border-radius:13px;padding:11px 12px;margin-top:10px}
+.pubnote svg{flex:0 0 auto;width:15px;height:15px;margin-top:3px}
 
-  .tips{background:var(--paper);border:1px solid var(--line);border-radius:18px;
-    box-shadow:var(--shadow);padding:4px 16px}
-  .tip{padding:13px 0;border-top:1px dashed var(--line);display:flex;gap:12px}
-  .tip:first-child{border-top:0}
-  .tip .k{flex:0 0 76px;font-size:13px;font-weight:700}
-  .tip .v{flex:1;font-size:13px;color:var(--ink2);min-width:0}
-  .tip .v b{color:var(--ink)}
+/* ---------- 待办 ---------- */
+.todo{list-style:none;margin:0;padding:0}
+.todo li{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line2);font-size:14px;line-height:1.6;align-items:flex-start}
+.todo li:first-child{border-top:0}
+.todo li .z{flex:0 0 auto;width:20px;height:20px;border-radius:6px;background:var(--card2);border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--ink3);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.todo li .x{min-width:0}
+.todo li .x b{font-weight:700}
+.todo li .x span{display:block;font-size:12.5px;color:var(--ink3);margin-top:1px}
+.todo li.now .z{background:var(--warnbg);border-color:transparent;color:var(--warn)}
+.todo li.done .x b{text-decoration:line-through;color:var(--ink3)}
 
-  footer{margin-top:30px;font-size:12px;color:var(--ink3);text-align:center;line-height:1.9}
-  footer .bar{width:36px;height:3px;border-radius:2px;background:var(--line);margin:0 auto 12px}
+/* ---------- 贴士 ---------- */
+.tips{display:flex;flex-direction:column;gap:9px}
+.tip{display:flex;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:13px;box-shadow:var(--sh);padding:11px 12px}
+.tip .e{flex:0 0 auto;font-size:15px;line-height:1.45}
+.tip .x{min-width:0}
+.tip .x b{font-size:13.5px;font-weight:700;display:block}
+.tip .x p{margin:3px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
 
-  @media (max-width:400px){
-    .unit b{font-size:22px}
-    .tip{flex-direction:column;gap:3px}
-    .tip .k{flex:none}
-  }
+/* ---------- 底栏 ---------- */
+footer{margin:26px 0 34px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.75}
+footer p{margin:0 0 4px}
+
+/* ---------- 弹层 ---------- */
+.modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-end;justify-content:center;background:rgba(8,20,18,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.modal.on{display:flex}
+@media(min-width:640px){.modal{align-items:center;padding:20px}}
+.sheet{width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:18px 18px 0 0;box-shadow:0 -8px 40px rgba(0,0,0,.3);animation:up .26s cubic-bezier(.2,.8,.3,1)}
+@media(min-width:640px){.sheet{border-radius:18px}}
+@keyframes up{from{transform:translateY(18px);opacity:.4}to{transform:none;opacity:1}}
+.mplace{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:var(--card2);border:0;border-bottom:1px solid var(--line);padding:13px 15px;font-size:15.5px;font-weight:750;position:sticky;top:0;z-index:2;border-radius:18px 18px 0 0}
+.mplace .go{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--acc);background:var(--accsoft);border-radius:999px;padding:4px 10px}
+.mplace .go svg{width:13px;height:13px}
+.sheetin{padding:14px 15px 18px}
+.sheetin h4{margin:0 0 5px;font-size:12px;font-weight:800;color:var(--ink3);letter-spacing:.06em}
+.sheetin p{margin:0 0 14px;font-size:14px;line-height:1.7}
+.sheetin ul{margin:0 0 14px;padding-left:19px;font-size:13.5px;line-height:1.75;color:var(--ink2)}
+.sheetin ul li::marker{color:var(--acc)}
+.sheetin .adv{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:13px;line-height:1.7;color:var(--ink2)}
+.mclose{display:flex;gap:6px;align-items:center;justify-content:center;width:100%;height:34px;border:1px solid var(--line);background:var(--card2);border-radius:10px;font-size:13px;font-weight:650;color:var(--ink2);margin-top:4px}
+
+@media(min-width:720px){
+  .cdnum{font-size:30px}
+  .herocap h1{font-size:22px}
+  .herocap{padding:16px 18px 18px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <div class="kicker">Jiuzhaigou · 3 Days</div>
-    <h1>九寨沟 <span class="thin">3 天 · 2 人</span></h1>
-    <div class="hmeta">
-      <span>2026.10.16（五）— 10.18（日）</span>
-      <span class="sep">/</span>
-      <span>宁波 ↔ 绵阳 ↔ 九寨沟</span>
-      <span class="sep">/</span>
-      <span class="clock">北京时间 <b id="clock">--:--:--</b></span>
+<div class="topbar">
+  <div class="wrap tbin">
+    <div class="tbmark"><i aria-hidden="true"></i>九寨沟旅行手册 <small>3 天 · 2 人</small></div>
+    <div class="tbact">
+      <button class="tbtn" id="themeBtn" type="button" aria-label="切换浅色与深色配色">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4"/></svg>
+        <span id="themeTxt">浅色</span>
+      </button>
     </div>
-  </header>
+  </div>
+</div>
 
-  <section id="focus">
-    <div class="sec-title"><h2>此刻关注</h2><span class="n">NEXT</span></div>
-    <div class="focus">
-      <div class="lab">下一个行程事件</div>
-      <div class="what" id="fWhat">正在载入…</div>
-      <div class="when" id="fWhen"></div>
-      <div class="count" id="fCount">
-        <div class="unit"><b id="uD">--</b><span>天</span></div>
-        <div class="unit"><b id="uH">--</b><span>时</span></div>
-        <div class="unit"><b id="uM">--</b><span>分</span></div>
-        <div class="unit"><b id="uS">--</b><span>秒</span></div>
-      </div>
-      <div class="done" id="fDone" hidden></div>
+<main class="wrap">
+
+  <!-- ========== 1. 插画头图 ========== -->
+  <section class="hero">
+    <svg viewBox="0 0 360 200" role="img" aria-label="旅行插画：左侧为九寨沟的雪山、钙化池瀑布与藏式村寨，中间为绵阳楼阁，右侧为宁波天一阁与帆船，天空中有飞机与云朵">
+      <defs>
+        <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" class="skyTop"/><stop offset="100%" class="skyBot"/>
+        </linearGradient>
+        <linearGradient id="lakeG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" class="lakeA"/><stop offset="100%" class="lakeB"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="200" fill="url(#skyG)"/>
+
+      <g class="onlyNight">
+        <circle cx="38" cy="28" r="1.3" class="h-star"/><circle cx="86" cy="17" r="1" class="h-star"/>
+        <circle cx="128" cy="36" r="1.2" class="h-star"/><circle cx="176" cy="15" r=".9" class="h-star"/>
+        <circle cx="238" cy="31" r="1.1" class="h-star"/><circle cx="322" cy="18" r="1.2" class="h-star"/>
+        <circle cx="60" cy="60" r=".9" class="h-star"/><circle cx="272" cy="70" r=".9" class="h-star"/>
+        <circle cx="12" cy="46" r=".9" class="h-star"/><circle cx="348" cy="44" r=".9" class="h-star"/>
+      </g>
+
+      <circle cx="298" cy="40" r="25" class="h-sunGlow onlyDay"/>
+      <circle cx="298" cy="40" r="15" class="h-sun onlyDay"/>
+      <path class="h-moon onlyNight" d="M303 25a15 15 0 1 0 9 26 12 12 0 1 1-9-26z"/>
+
+      <g class="h-cloud"><ellipse cx="62" cy="46" rx="20" ry="9"/><ellipse cx="79" cy="42" rx="13" ry="7.5"/></g>
+      <g class="h-cloud"><ellipse cx="150" cy="29" rx="16" ry="7"/><ellipse cx="163" cy="26" rx="10" ry="5.5"/></g>
+      <g class="h-cloud"><ellipse cx="230" cy="60" rx="15" ry="6.5"/><ellipse cx="243" cy="57" rx="9.5" ry="5"/></g>
+
+      <path class="h-trail" d="M96 52Q146 32 188 27"/>
+      <g class="h-plane" transform="translate(188 20) rotate(-9)">
+        <path d="M0 6l16-2.6-5.4 3.2 8.6 3.6-2.8 1.4-7.6-2.4-4.6 4.4-2.2-.6 2.8-4.6z"/>
+      </g>
+
+      <path class="h-rock" d="M-6 152 34 103 58 133 92 83 128 152Z"/>
+      <path class="h-snow" d="M92 83 104 100 92 111 80 100Z"/>
+      <path class="h-rock" d="M98 152 140 105 174 152Z"/>
+      <path class="h-snow" d="M140 105 149 118 140 127 131 118Z"/>
+      <path class="h-rock2" d="M176 152 214 115 254 152Z"/>
+      <path class="h-snow" d="M214 115 221 126 214 133 207 126Z"/>
+
+      <path class="h-hill" d="M-6 150c34-8 62 6 98 0 44-8 84 6 124-2 40-8 80 6 144-2v54H-6z"/>
+      <path class="h-hill2" d="M-6 180c44-9 96 5 156-3s120 6 214-3v26H-6z"/>
+
+      <ellipse class="h-lakeD" cx="66" cy="168" rx="44" ry="11"/>
+      <ellipse class="h-lakeM" cx="62" cy="160" rx="30" ry="8" fill="url(#lakeG)"/>
+      <ellipse class="h-lakeL" cx="58" cy="152" rx="17" ry="5.5"/>
+      <rect class="h-fall" x="46" y="147" width="4" height="14" rx="2"/>
+      <rect class="h-fall" x="54" y="149" width="3.5" height="12" rx="1.7"/>
+      <rect class="h-fall" x="61" y="148" width="3" height="13" rx="1.5"/>
+      <ellipse class="h-foam" cx="66" cy="165" rx="15" ry="3"/>
+
+      <rect class="h-house" x="120" y="146" width="16" height="16" rx="1.6"/>
+      <path class="h-roof" d="M117 146 128 138 139 146Z"/>
+      <rect class="h-win" x="125" y="152" width="4" height="5" rx="1"/>
+      <rect class="h-house" x="141" y="150" width="13" height="12" rx="1.6"/>
+      <path class="h-roof" d="M138 150 147.5 143 157 150Z"/>
+      <rect class="h-win" x="145" y="155" width="3.4" height="4" rx="1"/>
+      <path class="h-flag" opacity=".7" d="M128 138 126 133 131 135 133 130 137 133 140 129 143 134 146 132 147 143Z"/>
+
+      <rect class="h-tower" x="200" y="138" width="12" height="18" rx="1.6"/>
+      <path class="h-roof2" d="M194.5 138 206 131 217.5 138Z"/>
+      <path class="h-roof2" d="M196 128 206 121.5 216 128Z"/>
+      <path class="h-roof2" d="M198.5 118.5 206 113.5 213.5 118.5Z"/>
+      <rect class="h-roof2" x="205" y="107" width="2" height="7" rx="1"/>
+      <rect class="h-win" x="203" y="144" width="3" height="4" rx="1"/>
+      <rect class="h-win" x="207.5" y="144" width="3" height="4" rx="1"/>
+      <rect class="h-win" x="203" y="133" width="3" height="3.4" rx="1"/>
+
+      <rect class="h-tower" x="291" y="141" width="15" height="17" rx="2"/>
+      <path class="h-roof2" d="M286 141 298.5 134 311 141Z"/>
+      <path class="h-roof2" d="M288 130 298.5 124 309 130Z"/>
+      <rect class="h-roof2" x="297.5" y="118" width="2" height="6.5" rx="1"/>
+      <rect class="h-win" x="294.5" y="146" width="3.2" height="4.4" rx="1"/>
+      <rect class="h-win" x="299.8" y="146" width="3.2" height="4.4" rx="1"/>
+      <rect class="h-win" x="294.5" y="136" width="3.2" height="3.6" rx="1"/>
+
+      <ellipse class="mwater" cx="332" cy="170" rx="28" ry="9"/>
+      <path class="h-boat" d="M316 166q16 8 32 0-16 5-32 0z"/>
+      <path class="h-sail" d="M331 149 331 164 342 164Z"/>
+      <path class="h-wave" d="M310 175q6-3.5 12 0t12 0 12 0"/>
+
+      <path class="h-path" d="M0 192c60-7 120 6 180-2s120 6 180-2"/>
+
+      <g class="h-tree">
+        <path d="M18 176 25 152 32 176Z"/><path d="M18 166 25 146 32 166Z"/><rect class="h-trunk" x="24" y="176" width="2.4" height="7" rx="1"/>
+        <path d="M44 180 50 162 56 180Z"/><rect class="h-trunk" x="49" y="180" width="2" height="6" rx="1"/>
+        <path d="M104 176 111 154 118 176Z"/><path d="M104 167 111 149 118 167Z"/><rect class="h-trunk" x="110" y="176" width="2.4" height="7" rx="1"/>
+        <path d="M162 178 168 160 174 178Z"/><rect class="h-trunk" x="167" y="178" width="2" height="6" rx="1"/>
+        <path d="M232 176 239 155 246 176Z"/><path d="M232 168 239 150 246 168Z"/><rect class="h-trunk" x="238" y="176" width="2.4" height="7" rx="1"/>
+        <path d="M262 179 267 164 272 179Z"/><rect class="h-trunk" x="266" y="179" width="2" height="5" rx="1"/>
+        <path d="M344 176 351 153 358 176Z"/><rect class="h-trunk" x="350" y="176" width="2.4" height="7" rx="1"/>
+      </g>
+      <g class="h-tree2">
+        <circle cx="76" cy="181" r="7"/><rect class="h-trunk" x="75" y="181" width="2" height="6" rx="1"/>
+        <circle cx="192" cy="184" r="6"/><rect class="h-trunk" x="191" y="184" width="2" height="5" rx="1"/>
+        <circle cx="296" cy="183" r="6.5"/><rect class="h-trunk" x="295" y="183" width="2" height="6" rx="1"/>
+      </g>
+      <g class="h-tree3">
+        <path d="M136 183 141 170 146 183Z"/>
+        <path d="M212 185 217 172 222 185Z"/>
+      </g>
+    </svg>
+    <div class="herocap">
+      <h1>宁波 → 绵阳 → 九寨沟</h1>
+      <p>2026 年 10 月 16 – 18 日 · 3 天 2 夜 · 2 人</p>
+      <div class="chips"><span>10/16 周五 出发</span><span>10/17 周六 全天九寨沟</span><span>10/18 周日 返程</span></div>
     </div>
   </section>
 
-  <section id="overview">
-    <div class="sec-title"><h2>行程总览</h2><span class="n">ROUTE</span></div>
-    <div class="mapbox">
-      <div class="mapscroll">
-      <svg viewBox="0 0 680 400" role="img" aria-label="行程总览路线示意图">
-        <defs>
-          <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="9" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-        </defs>
+  <!-- ========== 2. 倒计时 + 时钟 ========== -->
+  <section class="sec">
+    <h2 class="stitle">此刻关注 <em>每秒刷新</em></h2>
+    <div class="cd">
+      <div class="cdhead"><b>距离</b><span class="ev" id="cdEvent">行程尚未开始</span></div>
+      <div class="cdg">
+        <div class="cdbox"><div class="cdnum" id="cdD">--</div><div class="cdlab">天</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdH">--</div><div class="cdlab">时</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdM">--</div><div class="cdlab">分</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdS">--</div><div class="cdlab">秒</div></div>
+      </div>
+      <div class="clocks">
+        <div class="clock">
+          <div class="cn">行程时区 <u>UTC+8</u></div>
+          <div class="ct" id="tTrip">--:--:--</div>
+          <div class="cd2">宁波 · 绵阳 · 九寨沟同属东八区</div>
+        </div>
+        <div class="clock">
+          <div class="cn">你的本地时间 <u id="tzLocalOff">UTC±?</u></div>
+          <div class="ct" id="tLocal">--:--:--</div>
+          <div class="cd2" id="dLocal">按打开设备自动识别</div>
+        </div>
+      </div>
+      <div class="sametz" id="tzNote"></div>
+    </div>
+  </section>
 
-        <g class="s-line" stroke-width="1" opacity=".5">
-          <path d="M0 60 H680 M0 130 H680 M0 200 H680 M0 270 H680 M0 340 H680"/>
-          <path d="M90 0 V400 M180 0 V400 M270 0 V400 M360 0 V400 M450 0 V400 M540 0 V400"/>
-        </g>
-        <g fill="none" class="s-line" stroke-width="1.6" opacity=".75">
-          <path d="M40 180 L86 122 L120 156 L160 100 L206 158 L246 124 L282 170"/>
-          <path d="M320 120 L356 80 L392 114 L432 72 L470 110 L508 86 L548 126"/>
+  <!-- ========== 3. 行程总览地图 ========== -->
+  <section class="sec">
+    <h2 class="stitle">行程总览 <em>示意图 · 非实际比例</em></h2>
+    <div class="mapbtns" role="group" aria-label="切换地图视图">
+      <button class="mbtn" type="button" data-view="all" aria-pressed="true">全图</button>
+      <button class="mbtn" type="button" data-view="d1" aria-pressed="false">D1 10/16</button>
+      <button class="mbtn" type="button" data-view="d2" aria-pressed="false">D2 10/17</button>
+      <button class="mbtn" type="button" data-view="d3" aria-pressed="false">D3 10/18</button>
+      <button class="mbtn ghost" type="button" id="showAllPoi" aria-pressed="false">显示全部地点</button>
+    </div>
+    <div class="mstage" id="mapStage">
+      <svg class="mview on" id="v-all" viewBox="0 0 360 300" role="img" aria-label="行程总览地图：宁波、绵阳、九寨沟三点与三段路线">
+        <rect class="mland" x="0" y="0" width="360" height="300" rx="12"/>
+        <g class="mgrid"><path d="M0 60h360M0 120h360M0 180h360M0 240h360M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300"/></g>
+        <path class="mwater" d="M0 236c42-16 78 10 120-4s70 12 112-2 76 10 128-6v76H0z"/>
+        <path class="mwater" d="M46 78c26-9 46 7 72-2s44 9 70-1v14c-26 9-44-6-70 2s-46-6-72 2z"/>
+        <text class="mvtitle" x="200" y="22">行程总览</text>
+        <text class="mvsub" x="200" y="36">三段路线 · 两晚住宿</text>
+
+        <path class="mline mr1 mplane" d="M300 250C268 232 232 210 200 192"/>
+        <path class="mline mr1 mbus" d="M160 176C132 152 104 108 76 82"/>
+        <path class="mline mr2 mbus" d="M62 82C90 106 122 152 150 174"/>
+        <path class="mline mr3 mplane" d="M186 196C222 212 256 230 288 246"/>
+
+        <g class="mnode" data-poi="nb-airport"><circle class="hit" cx="300" cy="250" r="17"/><circle class="dot" cx="300" cy="250" r="6.5" fill="#2f6fd0"/></g>
+        <text class="mvlabel" x="300" y="270" text-anchor="middle">宁波 · 栎社 T2</text>
+        <text class="mvsub" x="300" y="283" text-anchor="middle">10/16 出发 · 10/18 抵达</text>
+
+        <g class="mnode" data-poi="my-airport"><circle class="hit" cx="170" cy="184" r="17"/><circle class="dot" cx="170" cy="184" r="6.5" fill="#cf7415"/></g>
+        <text class="mvlabel" x="170" y="204" text-anchor="middle">绵阳 · 南郊 T1</text>
+        <text class="mvsub" x="170" y="217" text-anchor="middle">10/16 落地 · 10/18 起飞</text>
+
+        <g class="mnode" data-poi="siyun"><circle class="hit" cx="58" cy="74" r="17"/><circle class="dot" cx="58" cy="74" r="6.5" fill="#2b9159"/></g>
+        <text class="mvlabel" x="58" y="58" text-anchor="middle">九寨沟 · 漳扎镇</text>
+        <text class="mvsub" x="58" y="45" text-anchor="middle">10/16 住 · 10/17 全天游览</text>
+
+        <g id="allMinor" style="display:none">
+          <g class="mnode" data-poi="jzg-center"><circle class="hit" cx="98" cy="60" r="11"/><circle class="dot" cx="98" cy="60" r="3.6" fill="#2b9159"/></g>
+          <g class="mnode" data-poi="atuo"><circle class="hit" cx="206" cy="196" r="11"/><circle class="dot" cx="206" cy="196" r="3.6" fill="#cf7415"/></g>
+          <g class="mnode" data-poi="changhai"><circle class="hit" cx="36" cy="122" r="11"/><circle class="dot" cx="36" cy="122" r="3.6" fill="#2b9159"/></g>
+          <g class="mnode" data-poi="nuorilang"><circle class="hit" cx="66" cy="104" r="11"/><circle class="dot" cx="66" cy="104" r="3.6" fill="#2b9159"/></g>
+          <g class="mnode" data-poi="zhenzhutan"><circle class="hit" cx="106" cy="118" r="11"/><circle class="dot" cx="106" cy="118" r="3.6" fill="#2b9159"/></g>
+          <g class="mnode" data-poi="wuhuahai"><circle class="hit" cx="86" cy="140" r="11"/><circle class="dot" cx="86" cy="140" r="3.6" fill="#2b9159"/></g>
+          <text class="mvsub" x="58" y="94" text-anchor="middle">沟内主要景点已展开</text>
         </g>
 
-        <g filter="url(#rough)" fill="none" stroke-linecap="round">
-          <path class="s-d1" stroke-width="4.6" d="M584 302 C520 214 452 176 372 208 C348 218 322 232 300 246"/>
-          <path class="s-d1" stroke-width="4.6" d="M300 246 C244 240 196 214 158 178 C144 164 136 152 132 142"/>
-          <path class="s-d2" stroke-width="4.6" stroke-dasharray="13 9" d="M140 158 C196 250 236 282 296 262"/>
-          <path class="s-d3" stroke-width="4.6" stroke-dasharray="4 8" d="M300 258 C378 300 500 340 584 312"/>
+        <g class="mvchip">
+          <text x="242" y="220" fill="#2f6fd0">航班 2h55m</text>
+          <text x="118" y="122" fill="#2f6fd0" transform="rotate(-58 118 122)">包车 4.5–5h</text>
+          <text x="94" y="142" fill="#cf7415" transform="rotate(56 94 142)">夜车 4.5–5h</text>
+          <text x="230" y="238" fill="#2b9159">航班 3h10m</text>
         </g>
-
-        <g>
-          <circle class="paper-fill s-d1" cx="588" cy="304" r="9" stroke-width="3.4"/>
-          <circle class="t-d1" cx="588" cy="304" r="3"/>
-          <text class="t-ink" x="588" y="332" text-anchor="middle" font-size="24" font-weight="700">宁波</text>
-          <text class="t-ink3" x="588" y="350" text-anchor="middle" font-size="18">栎社机场 T2 · 起终点</text>
-        </g>
-        <g>
-          <circle class="paper-fill s-d1" cx="300" cy="252" r="9" stroke-width="3.4"/>
-          <circle class="t-d1" cx="300" cy="252" r="3"/>
-          <text class="t-ink" x="300" y="228" text-anchor="middle" font-size="24" font-weight="700">绵阳</text>
-          <text class="t-ink3" x="300" y="284" text-anchor="middle" font-size="18">南郊机场 T1</text>
-          <g fill="none" class="s-d2" stroke-width="2" stroke-linecap="round" transform="translate(330,236)">
-            <path d="M0 12 V3 h14 v9 M0 8 h14"/>
-            <circle class="t-d2" cx="4.5" cy="4.5" r="1.8" stroke="none"/>
-          </g>
-          <text class="t-ink2" x="352" y="244" font-size="17">10/17 宿</text>
-        </g>
-        <g>
-          <circle class="paper-fill s-d1" cx="132" cy="136" r="9" stroke-width="3.4"/>
-          <circle class="t-d1" cx="132" cy="136" r="3"/>
-          <text class="t-ink" x="132" y="112" text-anchor="middle" font-size="24" font-weight="700">九寨沟</text>
-          <text class="t-ink3" x="132" y="164" text-anchor="middle" font-size="18">漳扎镇 · 沟口</text>
-          <g fill="none" class="s-d2" stroke-width="2" stroke-linecap="round" transform="translate(96,176)">
-            <path d="M0 12 V3 h14 v9 M0 8 h14"/>
-            <circle class="t-d2" cx="4.5" cy="4.5" r="1.8" stroke="none"/>
-          </g>
-          <text class="t-ink2" x="118" y="184" font-size="17">10/16 宿</text>
-        </g>
-
-        <text class="t-d1" x="452" y="176" text-anchor="middle" font-size="18">10/16 飞机</text>
-        <text class="t-d1" x="206" y="196" text-anchor="middle" font-size="18">10/16 包车 · 4.5–5h</text>
-        <text class="t-d2" x="168" y="304" text-anchor="middle" font-size="18">10/17 夜车 · 4.5–5h</text>
-        <text class="t-d3" x="438" y="338" text-anchor="middle" font-size="18">10/18 飞机</text>
       </svg>
-      </div>
-      <div class="legend">
-        <span><i style="background:var(--d1)"></i>D1 10/16 进沟</span>
-        <span><i style="background:var(--d2)"></i>D2 10/17 夜返</span>
-        <span><i style="background:var(--d3)"></i>D3 10/18 回程</span>
-        <span>床形标记 = 当晚住宿</span>
-      </div>
-      <div class="mapnote">示意图，非实际比例。手机可左右滑动查看完整路线，点击各地点的导航按钮直接唤起地图 App。</div>
+
+      <svg class="mview" id="v-d1" viewBox="0 0 360 240" role="img" aria-label="第一天路线：宁波栎社机场飞绵阳，再包车上九寨沟漳扎镇">
+        <rect class="mland" x="0" y="0" width="360" height="240" rx="12"/>
+        <g class="mgrid"><path d="M0 60h360M0 120h360M0 180h360M90 0v240M180 0v240M270 0v240"/></g>
+        <path class="mwater" d="M0 186c44-14 82 10 126-3s74 12 116-2 76 10 118-5v64H0z"/>
+        <text class="mvtitle" x="192" y="22">D1 · 10/16 周五</text>
+        <text class="mvsub" x="192" y="36">宁波 → 绵阳 → 九寨沟漳扎镇</text>
+
+        <path class="mline mr1 mplane" d="M76 62C118 76 168 96 218 116"/>
+        <path class="mline mr1 mbus" d="M226 124C206 158 176 190 146 206"/>
+
+        <g class="mnode" data-poi="nb-airport"><circle class="hit" cx="70" cy="58" r="18"/><circle class="dot" cx="70" cy="58" r="7" fill="#2f6fd0"/></g>
+        <text class="mvlabel" x="70" y="44" text-anchor="middle">宁波栎社 T2</text>
+        <text class="mvsub" x="70" y="82" text-anchor="middle">08:05 起飞</text>
+
+        <g class="mnode" data-poi="my-airport"><circle class="hit" cx="224" cy="122" r="18"/><circle class="dot" cx="224" cy="122" r="7" fill="#2f6fd0"/></g>
+        <text class="mvlabel" x="224" y="108" text-anchor="middle">绵阳南郊 T1</text>
+        <text class="mvsub" x="224" y="146" text-anchor="middle">11:05 落地</text>
+
+        <g class="mnode" data-poi="siyun"><circle class="hit" cx="140" cy="208" r="18"/><circle class="dot" cx="140" cy="208" r="7" fill="#2b9159"/></g>
+        <text class="mvlabel" x="140" y="194" text-anchor="middle">漳扎镇 · 民宿</text>
+        <text class="mvsub" x="140" y="228" text-anchor="middle">约 17:30 抵达</text>
+
+        <g class="mvchip">
+          <text x="150" y="80" fill="#2f6fd0">9C6415 · 2h55m</text>
+          <text x="196" y="180" fill="#cf7415">九绵高速 4.5–5h</text>
+        </g>
+      </svg>
+
+      <svg class="mview" id="v-d2" viewBox="0 0 360 350" role="img" aria-label="第二天路线：九寨沟景区呈 Y 字形，自沟口乘车至原始森林，沿日则沟下行，再游则查洼沟与树正沟，出园后夜车返回绵阳">
+        <rect class="mland" x="0" y="0" width="360" height="350" rx="12"/>
+        <g class="mgrid"><path d="M0 70h360M0 140h360M0 210h360M0 280h360M90 0v350M180 0v350M270 0v350"/></g>
+        <text class="mvtitle" x="14" y="22">D2 · 10/17 周六</text>
+        <text class="mvsub" x="14" y="36">全天九寨沟 · 沟内 Y 字形路线</text>
+
+        <path class="mline mr1 mbus" d="M180 250 180 110 302 44"/>
+        <path class="mline mr1 mwalk" d="M302 44 284 53 267 62 249 72 229 83 207 96 180 110"/>
+        <path class="mline mr1 mwalk" d="M180 110 98 58 124 77 148 96 180 110"/>
+        <path class="mline mr1 mwalk" d="M180 110 180 130 180 143 180 156 180 170 180 185 180 200 180 216 180 232 180 250"/>
+        <path class="mline mr2 mbus" d="M186 256C220 276 256 300 292 322"/>
+        <g id="d2dots"></g>
+        <text class="mvsub" x="12" y="342">虚线＝乘车 · 实线＝栈道徒步 · 数字为游览顺序</text>
+        <g class="mvchip">
+          <text x="196" y="88" fill="#2f6fd0">乘车进沟</text>
+          <text x="26" y="82" fill="#2b9159">则查洼沟</text>
+          <text x="252" y="96" fill="#2b9159">日则沟</text>
+          <text x="186" y="290" fill="#cf7415">夜车 4.5–5h</text>
+        </g>
+      </svg>
+
+      <svg class="mview" id="v-d3" viewBox="0 0 360 200" role="img" aria-label="第三天路线：酒店班车送绵阳南郊机场，飞回宁波">
+        <rect class="mland" x="0" y="0" width="360" height="200" rx="12"/>
+        <g class="mgrid"><path d="M0 60h360M0 120h360M90 0v200M180 0v200M270 0v200"/></g>
+        <path class="mwater" d="M0 150c46-13 84 10 128-2s74 11 116-2 74 9 116-4v58H0z"/>
+        <text class="mvtitle" x="14" y="22">D3 · 10/18 周日</text>
+        <text class="mvsub" x="14" y="36">绵阳 → 宁波</text>
+
+        <path class="mline mr3 mbus" d="M86 146C112 140 138 132 162 126"/>
+        <path class="mline mr3 mplane" d="M176 118C210 104 250 84 292 62"/>
+
+        <g class="mnode" data-poi="atuo"><circle class="hit" cx="80" cy="148" r="18"/><circle class="dot" cx="80" cy="148" r="7" fill="#2b9159"/></g>
+        <text class="mvlabel" x="80" y="172" text-anchor="middle">绵阳亚朵酒店</text>
+        <text class="mvsub" x="80" y="186" text-anchor="middle">10:00 退房送机</text>
+
+        <g class="mnode" data-poi="my-airport"><circle class="hit" cx="172" cy="124" r="18"/><circle class="dot" cx="172" cy="124" r="7" fill="#2f6fd0"/></g>
+        <text class="mvlabel" x="172" y="108" text-anchor="middle">绵阳南郊 T1</text>
+        <text class="mvsub" x="172" y="146" text-anchor="middle">11:50 起飞</text>
+
+        <g class="mnode" data-poi="nb-airport"><circle class="hit" cx="296" cy="60" r="18"/><circle class="dot" cx="296" cy="60" r="7" fill="#2f6fd0"/></g>
+        <text class="mvlabel" x="296" y="44" text-anchor="middle">宁波栎社 T2</text>
+        <text class="mvsub" x="296" y="82" text-anchor="middle">15:00 抵达</text>
+
+        <g class="mvchip">
+          <text x="92" y="166" fill="#2b9159">班车 15 分钟</text>
+          <text x="206" y="106" fill="#2b9159">9C6416 · 3h10m</text>
+        </g>
+      </svg>
+    </div>
+    <div class="maplegend">
+      <span><i style="background:#2f6fd0"></i>D1 进沟</span>
+      <span><i style="background:#cf7415"></i>D2 夜返</span>
+      <span><i style="background:#2b9159"></i>D3 回程</span>
+      <span>虚线＝乘车/航班 · 实线＝栈道徒步</span>
+    </div>
+    <div class="maplist" id="mapList"></div>
+  </section>
+
+  <!-- ========== 4. 逐日行程 ========== -->
+  <section class="sec">
+    <h2 class="stitle">逐日行程 <em id="progAll">0 / 0</em></h2>
+    <div id="timeline"></div>
+    <p class="note">打卡结果只保存在这台设备的浏览器里，换设备或清缓存会重置；页面内容本身对所有人一致。</p>
+  </section>
+
+  <!-- ========== 5. 交通票据 ========== -->
+  <section class="sec">
+    <h2 class="stitle">交通票据 <em>2 张机票 · 包车 2 段</em></h2>
+    <div class="rows">
+      <article class="row">
+        <div class="rt">
+          <span class="k f">去程</span>
+          <div class="h"><b>春秋航空 9C6415 · 宁波 → 绵阳</b><span>2026-10-16 周五 · 空客 A320</span></div>
+          <span class="p">¥841 起</span>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>起飞</dt><dd>08:05 宁波栎社国际机场 <b>T2</b>（UTC+8）</dd></div>
+          <div><dt>降落</dt><dd>11:05 绵阳南郊机场 <b>T1</b>（UTC+8）· 飞行 2 小时 55 分</dd></div>
+          <div><dt>状态</dt><dd><b>尚未出票</b>　票量偏少，建议尽早下单</dd></div>
+          <div><dt>提醒</dt><dd>06:10 前抵达 T2 值机；春秋为差异化服务，托运额度需另购</dd></div>
+        </dl></div>
+        <div class="acts">
+          <a class="btn pri" href="https://uri.amap.com/marker?position=121.4619,29.8267&amp;name=%E5%AE%81%E6%B3%A2%E6%A0%8E%E7%A4%BE%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA%20T2&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">宁波机场导航</a>
+          <a class="btn" href="https://uri.amap.com/marker?position=104.7444,31.4281&amp;name=%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA%20T1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">绵阳机场导航</a>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rt">
+          <span class="k f">返程</span>
+          <div class="h"><b>春秋航空 9C6416 · 绵阳 → 宁波</b><span>2026-10-18 周日 · 空客 A320</span></div>
+          <span class="p">已减 ¥37</span>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>起飞</dt><dd>11:50 绵阳南郊机场 <b>T1</b>（UTC+8）</dd></div>
+          <div><dt>降落</dt><dd>15:00 宁波栎社国际机场 <b>T2</b>（UTC+8）· 飞行 3 小时 10 分</dd></div>
+          <div><dt>状态</dt><dd><b>尚未出票</b></dd></div>
+          <div><dt>提醒</dt><dd>10:50 前抵达 T1；酒店免费班车约 15 分钟到航站楼</dd></div>
+        </dl></div>
+        <div class="acts">
+          <a class="btn pri" href="https://uri.amap.com/marker?position=104.7444,31.4281&amp;name=%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA%20T1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">绵阳机场导航</a>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rt">
+          <span class="k c">包车</span>
+          <div class="h"><b>绵阳机场 ⇄ 九寨沟 · 两段</b><span>司机与报价待定</span></div>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>第 1 段</dt><dd>10-16 约 11:40 绵阳南郊机场 T1 接机 → 九寨沟漳扎镇民宿（九绵高速，约 4.5–5 小时）</dd></div>
+          <div><dt>第 2 段</dt><dd>10-17 约 18:30 九寨沟沟口 → 绵阳凯德广场长虹大道亚朵酒店（夜车，约 4.5–5 小时，约 23:30 到店）</dd></div>
+          <div><dt>要写死</dt><dd>第 2 段为夜车，需师傅跑惯阿坝州山路；一口价含过路费与油费，问清司机食宿是否另计</dd></div>
+          <div><dt>行情</dt><dd>绵阳 ↔ 九寨沟两日包车大致 ¥1200–1800（仅供比价参考）</dd></div>
+        </dl></div>
+        <div class="acts">
+          <a class="btn" href="https://uri.amap.com/navigation?from=104.7444,31.4281,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA&amp;to=103.9186,33.2605,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">机场 → 九寨沟 全程导航</a>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rt">
+          <span class="k t">门票</span>
+          <div class="h"><b>九寨沟 10-17 场 · 2 张</b><span>全价套票 ×1 + 浙江省感恩赠票 ×1</span></div>
+          <span class="p">¥280 + ¥90</span>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>全价票</dt><dd>¥280 = 门票 ¥190 + 观光车 ¥90，含手绘电子票</dd></div>
+          <div><dt>赠票</dt><dd>¥90 仅观光车费（浙江户籍免门票），<b>入园须凭身份证原件核验</b></dd></div>
+          <div><dt>开售</dt><dd><b>10-02 23:59 之后</b>方可预订 10-17 场次；当天限流、售罄即止</dd></div>
+          <div><dt>渠道</dt><dd>仅微信公众号「九寨沟」或小程序「九寨沟旅游官方平台」</dd></div>
+        </dl></div>
+        <div class="acts">
+          <span class="btn">建议 10-02 23:55 设闹钟，0 点后立即下单</span>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section id="orders">
-    <div class="sec-title"><h2>已确认</h2><span class="n">BOOKED</span></div>
+  <!-- ========== 6. 住宿 ========== -->
+  <section class="sec">
+    <h2 class="stitle">住宿 <em>2 晚 · 均已下单</em></h2>
+    <div class="rows">
+      <article class="row">
+        <div class="rt">
+          <span class="k">10/16</span>
+          <div class="h"><b>四季云隐 · 五恒供氧民宿（九寨沟风景区店）</b><span>九寨沟县漳扎镇彭丰村 48 号</span></div>
+          <span class="p">¥470</span>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>入退房</dt><dd>10-16 入住 · 10-17 退房，共 1 晚</dd></div>
+          <div><dt>房型</dt><dd>拾光双人房 · 2×1.2m 床 · 20㎡ · 高原供氧 + 五恒系统 + 全屋智能 · 无餐食</dd></div>
+          <div><dt>位置</dt><dd>距九寨沟游客中心步行 1.4km（约 20 分钟）；距九通客运服务站驾车 2.3km</dd></div>
+          <div><dt>备注</dt><dd>2025 年新开业，评分 4.8（1778 条）；10-14 12:00 前可免费取消；<b>到店前告知约 17:30 抵达</b></dd></div>
+        </dl></div>
+        <div class="acts">
+          <a class="btn pri" href="https://uri.amap.com/search?keyword=%E5%9B%9B%E5%AD%A3%E4%BA%91%E9%9A%90%C2%B7%E4%BA%94%E6%81%92%E4%BE%9B%E6%B0%A7%E6%B0%91%E5%AE%BF&amp;city=%E4%B9%9D%E5%AF%A8%E6%B2%9F&amp;view=map&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">民宿导航</a>
+        </div>
+      </article>
+
+      <article class="row">
+        <div class="rt">
+          <span class="k">10/17</span>
+          <div class="h"><b>绵阳凯德广场长虹大道亚朵酒店</b><span>涪城区临园路东段 76 号</span></div>
+          <span class="p">¥296</span>
+        </div>
+        <div class="meta"><dl>
+          <div><dt>入退房</dt><dd>10-17 深夜入住 · 10-18 退房，共 1 晚</dd></div>
+          <div><dt>房型</dt><dd>高级大床房 · 1.8m×1 · 27–29㎡ · 深睡床品 + 小冰箱 + 65 寸投屏 · 无餐食</dd></div>
+          <div><dt>位置</dt><dd>距绵阳南郊机场 T1 驾车 6.3km（约 15 分钟）；距绵阳火车站直线 390m</dd></div>
+          <div><dt>备注</dt><dd><b>免费接送机</b>（评分 4.9 / 286 条）；24 小时前台，<b>约 23:30 到店需提前电话告知</b>；10-16 23:00 前可免费取消</dd></div>
+        </dl></div>
+        <div class="acts">
+          <a class="btn pri" href="https://uri.amap.com/search?keyword=%E5%87%AF%E5%BE%B7%E5%B9%BF%E5%9C%BA%E9%95%BF%E8%99%B9%E5%A4%A7%E9%81%93%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97&amp;city=%E7%BB%B5%E9%98%B3&amp;view=map&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">酒店导航</a>
+          <span class="btn">前台电话见订单页</span>
+        </div>
+      </article>
+    </div>
+    <div class="pubnote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>本页是可公开访问的网址，按约定不写入订单号、证件号、房间号与联系电话。所有票据与订单以官方 App / 短信为准，出行前请自行在订单页核对。</span>
+    </div>
+  </section>
+
+  <!-- ========== 7. 待办清单 ========== -->
+  <section class="sec">
+    <h2 class="stitle">待办清单 <em>共 10 项 · 办完告诉我，我改页面</em></h2>
     <div class="card">
-
-      <div class="order">
-        <div class="top">
-          <div>
-            <div class="cat">机票 · 去程</div>
-            <div class="name">春秋航空 9C6415</div>
-          </div>
-          <div class="price"><small>参考</small> ¥841 起</div>
-        </div>
-        <div class="when">10 月 16 日（五）08:05 → 11:05
-宁波栎社机场 T2 → 绵阳南郊机场 T1
-空客 320 · 飞行约 3 小时<span class="tag">尚未出票</span></div>
-        <div class="place">绵阳南郊机场：绵阳市涪城区石塘街道南郊机场东路 6 号 · T1 问询 0816-8888899</div>
-        <div class="navrow">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=104.750067,31.425362,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1%E8%88%AA%E7%AB%99%E6%A5%BC&mode=car&policy=1&src=jiuzhai-handbook&coordinate=gaode&callnative=1">高德导航 · 绵阳机场 T1</a>
-          <a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Mianyang%20Nanjiao%20Airport%20T1" rel="noopener">Google</a>
-        </div>
-      </div>
-
-      <div class="order">
-        <div class="top">
-          <div>
-            <div class="cat">机票 · 返程</div>
-            <div class="name">春秋航空 9C6416</div>
-          </div>
-          <div class="price"><small>参考</small> 已减 ¥37</div>
-        </div>
-        <div class="when">10 月 18 日（日）11:50 → 15:00
-绵阳南郊机场 T1 → 宁波栎社机场 T2
-空客 320 · 飞行约 3 小时<span class="tag">尚未出票</span></div>
-        <div class="navrow">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=121.461900,29.826900,%E5%AE%81%E6%B3%A2%E6%A0%8E%E7%A4%BE%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA2%E5%8F%B7%E8%88%AA%E7%AB%99%E6%A5%BC&mode=car&policy=1&src=jiuzhai-handbook&coordinate=gaode&callnative=1">高德导航 · 宁波栎社 T2</a>
-          <a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Ningbo%20Lishe%20International%20Airport%20T2" rel="noopener">Google</a>
-        </div>
-      </div>
-
-      <div class="order">
-        <div class="top">
-          <div>
-            <div class="cat">住宿 · 10/16 第 1 晚</div>
-            <div class="name">四季云隐 · 五恒供氧民宿（九寨沟风景区店）</div>
-          </div>
-          <div class="price">¥470<small>/晚</small></div>
-        </div>
-        <div class="when">入住 10/16（五） · 退房 10/17（六） · 1 晚 · 1 间
-房型：拾光双人房（高原供氧 · 五恒系统 · 全屋智能 · 云零压）</div>
-        <div class="place">阿坝州九寨沟县漳扎镇彭丰村 48 号
-距九寨沟游客中心步行约 1.4 km（20 分钟）</div>
-        <div class="navrow">
-          <a class="btn amap" href="https://uri.amap.com/search?keyword=%E5%9B%9B%E5%AD%A3%E4%BA%91%E9%9A%90%E4%BA%94%E6%81%92%E4%BE%9B%E6%B0%A7%E6%B0%91%E5%AE%BF%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA%E5%BA%97&amp;city=%E9%98%BF%E5%9D%9D%E8%97%8F%E6%97%8F%E7%BE%8C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">高德 · 民宿位置</a>
-          <a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%95%87%E5%BD%AD%E4%B8%B0%E6%9D%9148%E5%8F%B7" rel="noopener">Google</a>
-        </div>
-      </div>
-
-      <div class="order">
-        <div class="top">
-          <div>
-            <div class="cat">住宿 · 10/17 第 2 晚</div>
-            <div class="name">绵阳凯德广场长虹大道亚朵酒店</div>
-          </div>
-          <div class="price">¥296<small>/晚</small></div>
-        </div>
-        <div class="when">入住 10/17（六） · 退房 10/18（日） · 1 晚 · 1 间
-房型：高级大床房 1.8 m（深睡床品 · 小冰箱 · 65 寸投屏）</div>
-        <div class="place">绵阳市涪城区临园路东段 76 号
-距绵阳南郊机场 T1 驾车 6.3 km（约 15 分钟）· 提供免费接送机</div>
-        <div class="navrow">
-          <a class="btn amap" href="https://uri.amap.com/search?keyword=%E7%BB%B5%E9%98%B3%E5%87%AF%E5%BE%B7%E5%B9%BF%E5%9C%BA%E9%95%BF%E8%99%B9%E5%A4%A7%E9%81%93%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97&amp;city=%E7%BB%B5%E9%98%B3&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">高德 · 酒店位置</a>
-          <a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Atour%20Hotel%20Mianyang%20Changhong%20Avenue" rel="noopener">Google</a>
-        </div>
-      </div>
-
-      <div class="order">
-        <div class="top">
-          <div>
-            <div class="cat">门票 · 10/17 全天</div>
-            <div class="name">九寨沟景区门票套票 ×2</div>
-          </div>
-          <div class="price">¥370<small>合计</small></div>
-        </div>
-        <div class="when">使用日：10 月 17 日（六）
-全价套票 1 张 ¥280（门票 190 + 观光车 90）
-浙江省感恩赠票 1 张 ¥90（浙江户籍免门票，仅付观光车费）<span class="tag">10/02 23:59 开抢</span></div>
-        <div class="place">景区：阿坝州九寨沟县漳扎镇 301 省道 · 票务咨询 0837-7769999
-购票渠道：微信小程序「九寨沟旅游官方平台」（唯一官方）</div>
-        <div class="navrow">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=103.919341,33.266832,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">高德导航 · 景区游客中心</a>
-          <a class="btn g" href="https://www.google.com/maps/search/?api=1&amp;query=Jiuzhaigou%20Visitor%20Center" rel="noopener">Google</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="days">
-    <div class="sec-title"><h2>逐日行程</h2><span class="n">DAY BY DAY</span></div>
-
-    <div class="day d1">
-      <div class="dayhead">
-        <div class="daydot">D1</div>
-        <div>
-          <div class="t">10 月 16 日 周五 · 转场日</div>
-          <div class="s">宁波 → 绵阳 → 九寨沟漳扎镇</div>
-        </div>
-      </div>
-      <details>
-        <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
-        <div class="daymap">
-          <div class="mapscroll">
-          <svg viewBox="0 0 660 132" role="img" aria-label="第一天路线示意图">
-            <g fill="none" class="s-d1" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
-              <path d="M62 84 C140 24 300 24 392 84"/>
-            </g>
-            <circle class="paper-fill s-d1" cx="62" cy="84" r="7" stroke-width="3"/>
-            <circle class="paper-fill s-d1" cx="392" cy="84" r="7" stroke-width="3"/>
-            <text class="t-ink" x="62" y="112" text-anchor="middle" font-size="22" font-weight="700">宁波栎社 T2</text>
-            <text class="t-ink3" x="62" y="128" text-anchor="middle" font-size="17">08:05 起飞</text>
-            <text class="t-ink" x="392" y="112" text-anchor="middle" font-size="22" font-weight="700">绵阳南郊 T1</text>
-            <text class="t-ink3" x="392" y="128" text-anchor="middle" font-size="17">11:05 落地</text>
-            <g fill="none" class="s-d1" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
-              <path d="M420 84 C480 84 530 78 596 62"/>
-            </g>
-            <circle class="paper-fill s-d1" cx="606" cy="60" r="7" stroke-width="3"/>
-            <text class="t-ink" x="590" y="36" text-anchor="middle" font-size="22" font-weight="700">九寨沟漳扎镇</text>
-            <text class="t-ink3" x="590" y="52" text-anchor="middle" font-size="17">约 17:30 抵达</text>
-            <text class="t-d1" x="510" y="106" text-anchor="middle" font-size="17">包车 4.5–5h</text>
-          </svg>
-          </div>
-        </div>
-        <div class="stops">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=104.750067,31.425362,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1%E8%88%AA%E7%AB%99%E6%A5%BC&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 绵阳机场 T1</a>
-          <span class="arw">→</span>
-          <a class="btn amap" href="https://uri.amap.com/search?keyword=%E5%9B%9B%E5%AD%A3%E4%BA%91%E9%9A%90%E4%BA%94%E6%81%92%E4%BE%9B%E6%B0%A7%E6%B0%91%E5%AE%BF%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA%E5%BA%97&amp;city=%E9%98%BF%E5%9D%9D%E8%97%8F%E6%97%8F%E7%BE%8C%E6%97%8F%E8%87%AA%E6%B2%BB%E5%B7%9E&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">2 漳扎镇民宿</a>
-        </div>
-        <div class="stops last">
-          <a class="btn" href="amapuri://route/plan/?sourceApplication=jiuzhai-handbook&amp;slat=31.425362&amp;slon=104.750067&amp;sname=%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1&amp;dlat=33.266832&amp;dlon=103.919341&amp;dname=%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA&amp;dev=0&amp;t=0">全程驾车导航（机场 → 景区）</a>
-        </div>
-      </details>
-      <div class="timeline">
-        <div class="row"><div class="time">05:30</div><div class="body"><div class="txt">出发前往宁波栎社机场 T2</div><div class="sub">国内航班建议提前 2 小时到达</div></div></div>
-        <div class="row"><div class="time">06:00</div><div class="body"><div class="txt">抵达 T2，值机与安检</div><div class="sub">春秋为廉价航空，托运行李额需另购，手提限重查得严</div></div></div>
-        <div class="row"><div class="time">08:05</div><div class="body"><div class="txt">9C6415 起飞 · 宁波 → 绵阳</div><div class="sub">空客 320，飞行约 3 小时</div></div></div>
-        <div class="row"><div class="time">11:05</div><div class="body"><div class="txt">抵达绵阳南郊机场 T1</div></div></div>
-        <div class="row"><div class="time">11:30</div><div class="body"><div class="txt">取行李，与包车师傅会合</div><div class="sub">包车两段方案待最终确认</div></div></div>
-        <div class="row"><div class="time">12:00</div><div class="body"><div class="txt">午餐 · 绵阳</div><div class="sub">赶时间可在机场内或高速服务区解决</div></div></div>
-        <div class="row"><div class="time">13:00</div><div class="body"><div class="txt">出发上山 · 九绵高速（G8513）</div><div class="sub">约 330 km / 4.5–5 小时，山区高速多隧道，限速严</div></div></div>
-        <div class="row"><div class="time">17:30</div><div class="body"><div class="txt">抵达漳扎镇，入住民宿</div><div class="sub">距游客中心 1.4 km，次日可步行或打车</div></div></div>
-        <div class="row"><div class="time">18:30</div><div class="body"><div class="txt">晚餐 · 漳扎镇</div><div class="sub">海拔约 2500 m：不饮酒、多喝水、早休息</div></div></div>
-      </div>
-    </div>
-
-    <div class="day d2">
-      <div class="dayhead">
-        <div class="daydot">D2</div>
-        <div>
-          <div class="t">10 月 17 日 周六 · 九寨沟全天 + 夜返绵阳</div>
-          <div class="s">八点进沟，傍晚出沟，当晚赶回绵阳住宿</div>
-        </div>
-      </div>
-      <details>
-        <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
-        <div class="daymap">
-          <div class="mapscroll">
-          <svg viewBox="0 0 660 132" role="img" aria-label="第二天路线示意图">
-            <g fill="none" class="s-d2" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
-              <path d="M62 76 C130 30 190 30 244 76"/>
-              <path d="M268 76 C340 112 470 118 592 96"/>
-            </g>
-            <circle class="paper-fill s-d2" cx="62" cy="76" r="7" stroke-width="3"/>
-            <circle class="paper-fill s-d2" cx="256" cy="60" r="7" stroke-width="3"/>
-            <circle class="paper-fill s-d2" cx="600" cy="94" r="7" stroke-width="3"/>
-            <text class="t-ink" x="56" y="104" text-anchor="middle" font-size="22" font-weight="700">漳扎镇民宿</text>
-            <text class="t-ink3" x="56" y="120" text-anchor="middle" font-size="17">07:00 出发</text>
-            <text class="t-ink" x="256" y="36" text-anchor="middle" font-size="22" font-weight="700">九寨沟景区</text>
-            <text class="t-ink3" x="256" y="52" text-anchor="middle" font-size="17">08:00–18:00</text>
-            <text class="t-ink" x="580" y="72" text-anchor="middle" font-size="22" font-weight="700">绵阳亚朵酒店</text>
-            <text class="t-ink3" x="580" y="88" text-anchor="middle" font-size="17">约 23:30 抵达</text>
-            <text class="t-d2" x="180" y="98" text-anchor="middle" font-size="17">步行 20 分钟</text>
-            <text class="t-d2" x="440" y="126" text-anchor="middle" font-size="17">夜车 4.5–5h</text>
-          </svg>
-          </div>
-        </div>
-        <div class="stops">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=103.919341,33.266832,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E9%A3%8E%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 景区游客中心</a>
-          <span class="arw">→</span>
-          <a class="btn amap" href="https://uri.amap.com/search?keyword=%E7%BB%B5%E9%98%B3%E5%87%AF%E5%BE%B7%E5%B9%BF%E5%9C%BA%E9%95%BF%E8%99%B9%E5%A4%A7%E9%81%93%E4%BA%9A%E6%9C%B5%E9%85%92%E5%BA%97&amp;city=%E7%BB%B5%E9%98%B3&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">2 绵阳亚朵酒店</a>
-        </div>
-        <div class="stops last">
-          <a class="btn" href="amapuri://route/plan/?sourceApplication=jiuzhai-handbook&amp;waypoints=103.919341,33.266832&amp;dlat=31.425362&amp;dlon=104.750067&amp;dname=%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA&amp;dev=0&amp;t=0">多点导航（当前位置 → 景区 → 绵阳）</a>
-        </div>
-      </details>
-      <div class="timeline">
-        <div class="row"><div class="time">06:30</div><div class="body"><div class="txt">起床 · 早餐</div><div class="sub">民宿不含早餐，提前在漳扎镇备好或自带</div></div></div>
-        <div class="row"><div class="time">07:00</div><div class="body"><div class="txt">出发去沟口游客中心</div><div class="sub">步行 1.4 km 约 20 分钟，建议打车或请民宿送</div></div></div>
-        <div class="row"><div class="time">07:20</div><div class="body"><div class="txt">游客中心排队</div><div class="sub">周六红叶旺季，早到才能赶上首批观光车</div></div></div>
-        <div class="row"><div class="time">08:00</div><div class="body"><div class="txt">入园（08:00–18:00，14:00 停止入园）<span class="tag">需提前订票</span></div><div class="sub">实名制，两人身份证原件随身带；赠票需现场核验证件</div></div></div>
-        <div class="row"><div class="time">08:30</div><div class="body"><div class="txt">观光车 → 日则沟</div><div class="sub">镜海 · 五花海 · 珍珠滩瀑布 · 原始森林（按 Y 字形先走右支）</div></div></div>
-        <div class="row"><div class="time">12:30</div><div class="body"><div class="txt">午餐 · 诺日朗服务中心</div><div class="sub">景区内唯一集中餐饮点，旺季排队久，可自带干粮</div></div></div>
-        <div class="row"><div class="time">13:30</div><div class="body"><div class="txt">则查洼沟 → 树正沟</div><div class="sub">长海 · 五彩池 · 树正群海 · 犀牛海 · 芦苇海</div></div></div>
-        <div class="row"><div class="time">17:30</div><div class="body"><div class="txt">出园，与包车师傅会合</div></div></div>
-        <div class="row"><div class="time">18:00</div><div class="body"><div class="txt">出发返回绵阳 · 夜车</div><div class="sub">车程 4.5–5 小时；备晕车药、穿暖和，路上休息</div></div></div>
-        <div class="row"><div class="time">23:30</div><div class="body"><div class="txt">抵达绵阳亚朵酒店，办理入住</div><div class="sub">深夜到达，提前与酒店确认 24 小时前台</div></div></div>
-      </div>
-    </div>
-
-    <div class="day d3">
-      <div class="dayhead">
-        <div class="daydot">D3</div>
-        <div>
-          <div class="t">10 月 18 日 周日 · 返程日</div>
-          <div class="s">绵阳 → 宁波</div>
-        </div>
-      </div>
-      <details>
-        <summary><span class="arrow">▶</span> 展开当日路线 · 一键导航</summary>
-        <div class="daymap">
-          <div class="mapscroll">
-          <svg viewBox="0 0 660 132" role="img" aria-label="第三天路线示意图">
-            <g fill="none" class="s-d3" stroke-width="4" stroke-linecap="round" filter="url(#rough)">
-              <path d="M62 84 C124 40 176 40 236 76"/>
-              <path d="M286 78 C382 116 498 122 598 96"/>
-            </g>
-            <circle class="paper-fill s-d3" cx="62" cy="84" r="7" stroke-width="3"/>
-            <circle class="paper-fill s-d3" cx="248" cy="78" r="7" stroke-width="3"/>
-            <circle class="paper-fill s-d3" cx="606" cy="94" r="7" stroke-width="3"/>
-            <text class="t-ink" x="56" y="112" text-anchor="middle" font-size="22" font-weight="700">亚朵酒店</text>
-            <text class="t-ink3" x="56" y="128" text-anchor="middle" font-size="17">09:45 出发</text>
-            <text class="t-ink" x="248" y="54" text-anchor="middle" font-size="22" font-weight="700">绵阳南郊 T1</text>
-            <text class="t-ink3" x="248" y="70" text-anchor="middle" font-size="17">10:15 到达</text>
-            <text class="t-d3" x="152" y="104" text-anchor="middle" font-size="17">免费班车约 15 分钟</text>
-            <text class="t-ink" x="588" y="70" text-anchor="middle" font-size="22" font-weight="700">宁波栎社 T2</text>
-            <text class="t-ink3" x="588" y="86" text-anchor="middle" font-size="17">15:00 抵达</text>
-            <text class="t-d3" x="440" y="126" text-anchor="middle" font-size="17">9C6416 · 11:50 起飞</text>
-          </svg>
-          </div>
-        </div>
-        <div class="stops">
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=104.750067,31.425362,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1%E8%88%AA%E7%AB%99%E6%A5%BC&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">1 绵阳机场 T1</a>
-          <span class="arw">→</span>
-          <a class="btn amap" href="https://uri.amap.com/navigation?to=121.461900,29.826900,%E5%AE%81%E6%B3%A2%E6%A0%8E%E7%A4%BE%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA2%E5%8F%B7%E8%88%AA%E7%AB%99%E6%A5%BC&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1">2 宁波栎社 T2</a>
-        </div>
-        <div class="stops last">
-          <a class="btn" href="amapuri://route/plan/?sourceApplication=jiuzhai-handbook&amp;dlat=31.425362&amp;dlon=104.750067&amp;dname=%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BAT1&amp;dev=0&amp;t=0">导航到绵阳机场 T1（从当前位置出发）</a>
-        </div>
-      </details>
-      <div class="timeline">
-        <div class="row"><div class="time">08:30</div><div class="body"><div class="txt">起床 · 早餐</div><div class="sub">前一晚与前台确认退房时间，可申请延迟退房</div></div></div>
-        <div class="row"><div class="time">09:45</div><div class="body"><div class="txt">乘酒店免费班车前往 T1</div><div class="sub">6.3 km / 约 15 分钟，需提前预约班车时间</div></div></div>
-        <div class="row"><div class="time">10:15</div><div class="body"><div class="txt">值机、安检</div><div class="sub">注意春秋航空行李额，现场超重补费较贵</div></div></div>
-        <div class="row"><div class="time">11:50</div><div class="body"><div class="txt">9C6416 起飞 · 绵阳 → 宁波</div></div></div>
-        <div class="row"><div class="time">15:00</div><div class="body"><div class="txt">抵达宁波栎社机场 T2 · 行程结束</div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="todos">
-    <div class="sec-title"><h2>待办清单</h2><span class="n">TO DO</span></div>
-    <div class="todo">
-      <ul>
-        <li><span class="num">1</span><div><div>购买往返机票</div><div class="fix">10/16 春秋 9C6415（宁波 08:05 → 绵阳 11:05）；10/18 春秋 9C6416（绵阳 11:50 → 宁波 15:00）。出票后核对时刻与行李额</div></div></li>
-        <li><span class="num">2</span><div><div>10 月 2 日 23:59 准点抢 10/17 门票</div><div class="fix">微信小程序「九寨沟旅游官方平台」：全价套票 1 张 + 浙江省感恩赠票 1 张。红叶季周六，售罄即止</div></div></li>
-        <li><span class="num">3</span><div><div>落实包车两段</div><div class="fix">① 10/16 绵阳机场 T1 接机 → 漳扎镇；② 10/17 傍晚 沟口 → 绵阳亚朵酒店。确认报价、车牌与司机电话</div></div></li>
-        <li><span class="num">4</span><div><div>提前购买春秋航空托运行李额</div><div class="fix">官网或 App 提前买通常比机场现场便宜，回程还要带手信</div></div></li>
-        <li><span class="num">5</span><div><div>与民宿确认到达时间与次日早餐</div><div class="fix">10/16 预计 17:30 到店；次日 06:30 早餐如何解决</div></div></li>
-        <li><span class="num">6</span><div><div>与亚朵确认深夜入住与次日班车</div><div class="fix">10/17 约 23:30 到店；10/18 09:45 班车需提前预约</div></div></li>
-        <li><span class="num">7</span><div><div>整理随身证件与装备</div><div class="fix">两人身份证原件（实名制与赠票核验）、保暖外套、雨具、防晒、晕车药、常用药</div></div></li>
-        <li><span class="num">8</span><div><div>购买含航班延误的旅行保险</div><div class="fix">山区航线加长途包车，建议覆盖延误与意外</div></div></li>
-        <li><span class="num">9</span><div><div>出发前 48 小时内在线值机</div><div class="fix">春秋航空 App 尽早选座，行程留足余量</div></div></li>
+      <ul class="todo">
+        <li class="now"><span class="z">1</span><div class="x"><b>抢 10-17 场门票</b><span>10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span></div></li>
+        <li><span class="z">2</span><div class="x"><b>买去程 + 返程机票</b><span>票量偏少，越早越便宜；出票后把订单截图发我，复核时刻</span></div></li>
+        <li><span class="z">3</span><div class="x"><b>订包车两段</b><span>绵阳机场接机上山 + 10/17 夜车下山送亚朵，一口价含路油费</span></div></li>
+        <li><span class="z">4</span><div class="x"><b>要到包车师傅姓名与电话</b><span>拿到就发我，我写进页面（手机号不属于隐藏范围）</span></div></li>
+        <li><span class="z">5</span><div class="x"><b>给漳扎镇民宿报备到店时间</b><span>约 17:30 到店，避免无人接待</span></div></li>
+        <li><span class="z">6</span><div class="x"><b>给亚朵报备深夜到店</b><span>约 23:30，确认前台 24 小时值守与免费接送机</span></div></li>
+        <li><span class="z">7</span><div class="x"><b>准备证件</b><span>两人身份证原件（入园实名核验，赠票必查）、驾照（如需备选自驾）</span></div></li>
+        <li><span class="z">8</span><div class="x"><b>下载离线地图与离线页</b><span>川北山区与沟内信号弱，提前缓存高德离线地图</span></div></li>
+        <li><span class="z">9</span><div class="x"><b>查出发前天气</b><span>出发前 3 天看九寨沟与绵阳预报，按 5–15℃ 备衣</span></div></li>
+        <li><span class="z">10</span><div class="x"><b>整理随身物品</b><span>冲锋衣、抓绒、防滑鞋、墨镜、防晒、常用药、晕车药、充电宝</span></div></li>
       </ul>
-      <div class="todofoot">此清单用于对照进度，请在各自设备上手动记录完成情况。</div>
     </div>
   </section>
 
-  <section id="tips">
-    <div class="sec-title"><h2>实用贴士</h2><span class="n">TIPS</span></div>
+  <!-- ========== 8. 旅行贴士 ========== -->
+  <section class="sec">
+    <h2 class="stitle">旅行贴士 <em>共 10 条</em></h2>
     <div class="tips">
-      <div class="tip"><div class="k">入园时间</div><div class="v">旺季（4/1–11/15）<b>08:00–18:00，14:00 停止入园</b>。下午到达当天基本进不去，行程必须按上午进沟安排。</div></div>
-      <div class="tip"><div class="k">门票规则</div><div class="v">实名制分时预约，<b>每日限量 41000 人次，售罄即止</b>；官方渠道只有微信小程序 / 公众号「九寨沟旅游官方平台」。免费票种同样需要预约，没有免预约通道。</div></div>
-      <div class="tip"><div class="k">证件核验</div><div class="v">全价票与赠票均需<b>身份证原件</b>，浙江省感恩赠票还要现场核验户籍证件，不要只带手机截图。</div></div>
-      <div class="tip"><div class="k">换乘方式</div><div class="v">景区呈 Y 字形，沟内<b>必须坐观光车</b>（套票已含）。常见走法：先日则沟（右支）→ 诺日朗 → 则查洼沟（左支）→ 树正沟，一路下行。</div></div>
-      <div class="tip"><div class="k">天气穿着</div><div class="v">10 月白天约 10–18℃、早晚 2–8℃，<b>昼夜温差大</b>。冲锋衣或薄羽绒加抓绒、防滑鞋、雨具、防晒；沟内海拔 2000–3100 m，长海最冷。</div></div>
-      <div class="tip"><div class="k">高原反应</div><div class="v">漳扎镇约 2500 m，属轻中度海拔。前夜不饮酒、不剧烈运动、多喝水；民宿带供氧设施，有不适及时下撤到低海拔。</div></div>
-      <div class="tip"><div class="k">长途车程</div><div class="v">绵阳 ↔ 九寨沟走九绵高速（G8513）约 330 km / 4.5–5 小时，<b>多隧道、限速严</b>。10/17 是玩了一整天再接夜车，务必让师傅开、自己休息。</div></div>
-      <div class="tip"><div class="k">廉价航空</div><div class="v">春秋航空托运行李需另购，手提行李尺寸与重量查得严；值机选座、餐饮可能收费。改签退票限制多，行程若有变要尽早决定。</div></div>
-      <div class="tip"><div class="k">通信支付</div><div class="v">沟内部分路段信号弱，提前下载离线地图；餐饮与观光车均支持移动支付，仍建议带少量现金应急。</div></div>
-      <div class="tip"><div class="k">旺季人流</div><div class="v">10 月中下旬红叶最旺、人也最多，观光车排队可能超过 30 分钟。<b>08:00 首批进沟</b>能省下最多时间。</div></div>
+      <article class="tip"><span class="e">⏰</span><div class="x"><b>14:00 停止入园</b><p>九寨沟入园 08:00–14:00，18:00 闭园。务必 07:30 前到沟口排队，赶第一批观光车，人最少。</p></div></article>
+      <article class="tip"><span class="e">🎫</span><div class="x"><b>旺季限流 41000 人</b><p>实名制分时预约、售罄即止。10-17 是周六正旺季，越早订越稳，别拖到出行前一周。</p></div></article>
+      <article class="tip"><span class="e">📱</span><div class="x"><b>只认官方两个渠道</b><p>微信公众号「九寨沟」与小程序「九寨沟旅游官方平台」。其它平台多为代购，退改与核验都容易出问题。</p></div></article>
+      <article class="tip"><span class="e">🚶</span><div class="x"><b>Y 字形景区，先坐到底再往下玩</b><p>乘观光车直达最深处（原始森林 / 长海），再沿栈道往下走，一路都是顺路，全天步行约 8–12km。</p></div></article>
+      <article class="tip"><span class="e">🫁</span><div class="x"><b>海拔 2000–3100m</b><p>长海、原始森林一带最高。慢走、多喝水、别跑跳；当晚住绵阳（500m）已是最合理的安排。</p></div></article>
+      <article class="tip"><span class="e">🧥</span><div class="x"><b>10 月沟内 5–15℃</b><p>早晚接近 0℃，需抓绒 + 冲锋衣 + 防滑鞋；栈道多水汽，鞋底抓地力比保暖更重要。</p></div></article>
+      <article class="tip"><span class="e">🍜</span><div class="x"><b>沟内餐饮集中在诺日朗</b><p>中心站有自助餐与简餐，价格偏高。可自带干粮与水（禁止明火与自热食品），排队高峰在 12:00–13:00。</p></div></article>
+      <article class="tip"><span class="e">🚐</span><div class="x"><b>10/17 夜车是全线最累的一段</b><p>约 4.5–5 小时山路，务必包车让师傅开。车上备靠枕、薄外套与晕车药，中途可要求停车休息一次。</p></div></article>
+      <article class="tip"><span class="e">📶</span><div class="x"><b>提前离线</b><p>九绵高速沿线与沟内部分区域信号弱。出发前把本页、高德离线地图和酒店地址一并缓存好。</p></div></article>
+      <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
     </div>
   </section>
 
-  <footer>
-    <div class="bar"></div>
-    页面内所有时间均为北京时间（UTC+8，无夏令时），跨时区打开不影响倒计时。<br>
-    航班、门票等信息以官方渠道当前显示为准。
-  </footer>
+</main>
 
+<footer class="wrap">
+  <p>本页为个人行程参考，机票、门票、包车等时刻与价格以官方渠道最终确认信息为准。</p>
+  <p>页面不包含任何订单号、证件号与房间号；全部时间以北京时间（UTC+8）为准。</p>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true">
+    <button class="mplace" id="mPlace" type="button">
+      <span id="mName">地点</span>
+      <span class="go">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <span id="mGoTxt">高德导航</span>
+      </span>
+    </button>
+    <div class="sheetin">
+      <h4>推荐理由</h4>
+      <p id="mWhy">—</p>
+      <h4>必看点</h4>
+      <ul id="mMust"></ul>
+      <h4 id="mAdvLabel">游览建议</h4>
+      <div class="adv" id="mAdv">—</div>
+      <button class="mclose" id="mClose" type="button">关闭</button>
+    </div>
+  </div>
 </div>
 
 <script>
 (function(){
-  "use strict";
+'use strict';
+var TZ = 'Asia/Shanghai';
 
-  var EVENTS = [
-    ["2026-10-16T05:30:00+08:00", "出发前往宁波栎社机场 T2"],
-    ["2026-10-16T08:05:00+08:00", "9C6415 起飞 · 宁波 → 绵阳"],
-    ["2026-10-16T11:05:00+08:00", "抵达绵阳南郊机场 T1"],
-    ["2026-10-16T13:00:00+08:00", "包车出发上山 · 九绵高速"],
-    ["2026-10-16T17:30:00+08:00", "抵达漳扎镇 · 入住民宿"],
-    ["2026-10-17T07:00:00+08:00", "出发去沟口游客中心"],
-    ["2026-10-17T08:00:00+08:00", "九寨沟入园"],
-    ["2026-10-17T14:00:00+08:00", "14:00 停止入园"],
-    ["2026-10-17T18:00:00+08:00", "出园出发 · 夜车返绵阳"],
-    ["2026-10-17T23:30:00+08:00", "抵达绵阳亚朵酒店"],
-    ["2026-10-18T09:45:00+08:00", "乘酒店班车前往 T1"],
-    ["2026-10-18T11:50:00+08:00", "9C6416 起飞 · 绵阳 → 宁波"],
-    ["2026-10-18T15:00:00+08:00", "抵达宁波栎社 T2 · 行程结束"]
-  ];
-  var times = EVENTS.map(function(e){ return Date.parse(e[0]); });
+/* ============ 地点资料 ============ */
+var POI = {
+  'nb-airport': {n:'宁波栎社国际机场 T2', nav:'coord', lng:121.4619, lat:29.8267,
+    why:'行程的起点与终点，两天后回到同一座航站楼收尾。',
+    must:['T2 出发层 06:10 前到达，值机 + 安检留足 90 分钟','春秋航空为差异化服务：手提 1 件 5kg，托运行李需另购','返程 15:00 落地 T2，地铁 2 号线或网约车回市区'],
+    adv:'清晨走机场高架一般顺畅，10 月周末仍建议留 40 分钟冗余。'},
+  'my-airport': {n:'绵阳南郊机场 T1', nav:'coord', lng:104.7444, lat:31.4281,
+    why:'川北进山的中转点，落地到上车约 30–40 分钟。',
+    must:['机场不大，出站即到达层，包车师傅一般在出口附近等候','提取行李后先与师傅通电话确认会合点','返程日提前在 App 上值机并关注航班动态'],
+    adv:'机场海拔约 500m，落地体感正常，正好用来适应；第二天再上 2500m 的漳扎镇。'},
+  'siyun': {n:'九寨沟漳扎镇（沟口片区）', nav:'kw', kw:'九寨沟漳扎镇', city:'九寨沟',
+    why:'离沟口最近的住宿片区，步行就能到检票口。',
+    must:['早餐铺、超市、药店齐全，进沟的干粮与水在这里补','夜间比白天低 8–10℃，出门要加外套','漳扎镇海拔约 2500m，第一晚别洗热水澡后立刻睡'],
+    adv:'镇上餐饮偏贵且打烊早，建议 20:30 前吃完。次日 6:30 起，尽量早睡。'},
+  'jzg-center': {n:'九寨沟景区游客中心（沟口）', nav:'coord', lng:103.9186, lat:33.2605,
+    why:'全景区唯一入口，实名核验与观光车都在这里。',
+    must:['刷身份证入园，两人都要带证件原件','观光车票已含在套票内，进门后按指引进站','14:00 停止入园，18:00 闭园'],
+    adv:'7:30 前到沟口排队，第一批观光车人最少、光线也最好。进门直接坐车到最深处，再一路往下玩。'},
+  'senlin': {n:'原始森林',
+    why:'沟内最深处，海拔约 3100m，是九寨沟的高处起点。',
+    must:['冷杉与云杉原始林，栈道穿林而过','可俯瞰日则沟，天气好时视野极远','全沟海拔最高处，慢走别急'],
+    adv:'坐观光车直达这里再一路向下玩，全程顺路，省掉逆行人流和爬升。'},
+  'jianzhu': {n:'箭竹海',
+    why:'《英雄》的取景水岸，水色由浅绿渐深蓝。',
+    must:['箭竹环湖，栈道几乎贴着水面','清晨常有薄雾与完整倒影','下一站熊猫海沿栈道步行即到'],
+    adv:'沿栈道下行约 15 分钟到熊猫海，不必折返坐车。'},
+  'xiongmao': {n:'熊猫海',
+    why:'水下的钙化枯木清晰如标本，通透明澈。',
+    must:['水下枯木与钙化沉积清晰可见','落水口有小瀑布群','水色随光线由绿转蓝'],
+    adv:'这一段旅行团扎堆，往栈道内侧多走两步，视角更干净。'},
+  'wuhuahai': {n:'五花海',
+    why:'九寨沟的招牌，一块水域同时呈现多种颜色。',
+    must:['湖底钙化、水藻与倒影叠加成斑斓色块','老虎嘴观景台可俯看全景','水边栈道能近看水色分层'],
+    adv:'全沟人最多的景点，建议 10:30 前后到达避开旅行团；想俯拍就多走一段上观景台。'},
+  'zhenzhutan': {n:'珍珠滩瀑布',
+    why:'《西游记》片尾曲取景地，水从钙化滩上碎成珍珠。',
+    must:['宽约 200m 的钙化滩瀑布','水汽大，阳光好时常有彩虹','栈道从瀑布下方穿过'],
+    adv:'水雾会打湿栈道，防滑鞋很关键；拍照注意护住镜头。'},
+  'jinghai': {n:'镜海',
+    why:'无风时真的像一面镜子，倒影完整得不像实景。',
+    must:['清晨无风时倒影最完整','公路旁栈道是最佳机位','湖长 1km 余，纵深透视感极强'],
+    adv:'镜海要早看，过了 11:00 起风就碎了。时间紧可在观光车左侧座位远观。'},
+  'nuorilang': {n:'诺日朗瀑布 · 中心站',
+    why:'九寨沟最大瀑布，也是三条沟的交汇换乘点。',
+    must:['宽 320m、高 25m，中国最宽的钙化瀑布之一','中心站有自助餐与简餐，午餐在这里解决','去长海方向的车在此换乘'],
+    adv:'12:00–13:00 是用餐高峰，建议 12:20 前到或 13:00 后再吃。这里是全天唯一能正经吃口热食的地方。'},
+  'changhai': {n:'长海',
+    why:'沟内最大最深的海子，藏语意为装不满的湖。',
+    must:['长约 5km，最深处逾 80m','水面深蓝，四周雪峰倒映','湖畔有独臂老人柏的传说'],
+    adv:'海拔约 3060m，是全沟最高的主要景点，慢走、少跑跳，注意别受凉。'},
+  'wucaichi': {n:'五彩池',
+    why:'面积最小，却是九寨沟颜色最艳丽的一池。',
+    must:['钙化池底加矿物沉积形成多层色带','水极清，池底纹理肉眼可辨','距长海步行下坡约 15 分钟'],
+    adv:'从长海步行下行到五彩池，再坐车返回诺日朗，比原路折返省时。'},
+  'jijiehai': {n:'季节海（上 / 下）',
+    why:'水位随季节涨落，深秋常只剩浅浅一汪。',
+    must:['随季节在浅水与旱地之间变化','车窗视角即可看全'],
+    adv:'在观光车上左右窗看即可，不建议专门下车，把时间留给长海与五彩池。'},
+  'xiniuhai': {n:'犀牛海',
+    why:'树正沟里最深的海子，倒影极静。',
+    must:['深蓝透明的湖水','晨间常有薄雾与完整倒影','栈道平缓，适合慢慢走'],
+    adv:'从诺日朗下行的第一站，与老虎海相连，可以一路栈道走到树正瀑布。'},
+  'laohuhai': {n:'老虎海',
+    why:'深秋彩林倒映水面，纹路像虎皮而得名。',
+    must:['彩林与倒影叠色，10 月最出片','与犀牛海之间有栈道相连'],
+    adv:'这一带下午是顺光位，光线比上午柔和，适合拍人像与倒影。'},
+  'shuzhengpubu': {n:'树正瀑布',
+    why:'不宽但落差长，水声在寨子之间回响。',
+    must:['落差约 11m 的阶梯状瀑布','旁边就是树正寨与转经筒','栈道近到能感受到水雾'],
+    adv:'拍完可以顺路进树正寨走走，藏式民居和经幡是这一段独有的景。'},
+  'shuzhengqunhai': {n:'树正群海',
+    why:'数十个海子层叠相连，像一串大小不一的翡翠。',
+    must:['海子呈阶梯状层叠','藏寨就建在海子之间','水色由浅到深分出层次'],
+    adv:'从高处栈道俯看比贴着水面看更完整，别只在近处拍。'},
+  'wolonghai': {n:'卧龙海',
+    why:'湖底钙化堤埂像一条卧龙，水色层次分明。',
+    must:['水下钙化形成龙脊状堤埂','与火花海相邻，可以连着走'],
+    adv:'这一段人流开始变少，是回程路上最舒服的漫步段。'},
+  'huohuahai': {n:'火花海',
+    why:'阳光照在细碎波浪上，像水面溅起火花。',
+    must:['午后斜射光线下最明显','水面碎光闪烁是命名由来'],
+    adv:'临近闭园的顺光时段，出片率高，不用急着赶车。'},
+  'luweihai': {n:'芦苇海',
+    why:'一沟浅水中长满芦苇，中间一条碧蓝水带穿过。',
+    must:['长约 2km 的半沼泽海子','中间那条蓝带是标志画面'],
+    adv:'最佳视角在公路上方，栈道不全程可达，建议在车上观赏。'},
+  'penjingtan': {n:'盆景滩',
+    why:'浅滩上长着一丛丛树，像天然的水中盆景。',
+    must:['浅水中生长的灌木丛','离沟口最近，适合收尾'],
+    adv:'这是最后一个景点，看完直接出园，不要再往回走。'},
+  'atuo': {n:'绵阳凯德广场长虹大道亚朵酒店', nav:'kw', kw:'凯德广场长虹大道亚朵酒店', city:'绵阳',
+    why:'距机场 6.3km 且有免费接送机，D3 早上不用再找车。',
+    must:['24 小时前台，深夜到店可办入住','高级大床房 1.8m，27–29㎡，房内有投屏','酒店紧邻凯德广场，夜里能买到东西'],
+    adv:'到店前给前台打电话报一声约 23:30 抵达。次日 10:00 退房，班车约 15 分钟到 T1。'}
+};
 
-  var elClock = document.getElementById("clock");
-  var elWhat  = document.getElementById("fWhat");
-  var elWhen  = document.getElementById("fWhen");
-  var elD     = document.getElementById("uD");
-  var elH     = document.getElementById("uH");
-  var elM     = document.getElementById("uM");
-  var elS     = document.getElementById("uS");
-  var elCount = document.getElementById("fCount");
-  var elDone  = document.getElementById("fDone");
-
-  var fmtClock = new Intl.DateTimeFormat("zh-CN", {
-    timeZone: "Asia/Shanghai", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
-  });
-  var fmtFull = new Intl.DateTimeFormat("zh-CN", {
-    timeZone: "Asia/Shanghai", month: "long", day: "numeric", weekday: "short",
-    hour: "2-digit", minute: "2-digit", hour12: false
-  });
-  var fmtHour = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Asia/Shanghai", hour: "2-digit", hour12: false
-  });
-
-  function pad(n){ return (n < 10 ? "0" : "") + n; }
-
-  function refreshTheme(){
-    var h = parseInt(fmtHour.format(new Date()), 10);
-    var isDay = (h >= 7 && h < 19);
-    document.documentElement.setAttribute("data-theme", isDay ? "day" : "night");
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta){ meta.setAttribute("content", isDay ? "#f7f5f0" : "#111719"); }
+function navUrl(k){
+  var p = POI[k]; if(!p) return '';
+  if(p.nav === 'coord'){
+    return 'https://uri.amap.com/marker?position=' + p.lng + ',' + p.lat +
+      '&name=' + encodeURIComponent(p.n) +
+      '&src=jiuzhai-handbook&coordinate=gaode&callnative=1';
   }
+  return 'https://uri.amap.com/search?keyword=' + encodeURIComponent(p.kw) +
+    '&city=' + encodeURIComponent(p.city || '') +
+    '&view=map&src=jiuzhai-handbook&coordinate=gaode&callnative=1';
+}
+function navLabel(k){ return POI[k] && POI[k].nav === 'coord' ? '高德导航' : '高德搜索'; }
 
-  function tick(){
-    var now = Date.now();
-    elClock.textContent = fmtClock.format(new Date(now));
+/* ============ D2 沟内游览顺序（地图与时间轴共用一份） ============ */
+var D2 = [
+  {poi:'jzg-center', t:'07:30', m:'', x:180, y:250, tag:['pre'], note:'实名核验排队，08:00 开园（14:00 后停止入园）', gap:'候车 约 30 分钟'},
+  {poi:'senlin',     t:'08:50', m:'bus', x:302, y:44,  note:'乘观光车直达沟内最深处，之后一路向下走，全程顺路', gap:'乘车 约 40 分钟'},
+  {poi:'jianzhu',    t:'09:40', m:'walk', x:284, y:53,  note:'《英雄》取景水岸，栈道几乎贴着水面', gap:'步行 约 15 分钟'},
+  {poi:'xiongmao',   t:'10:10', m:'walk', x:267, y:62,  note:'水下钙化枯木清晰可见，通透度全沟前列', gap:'步行 约 20 分钟'},
+  {poi:'wuhuahai',   t:'10:40', m:'walk', x:249, y:72,  note:'全天最精华一站，务必上老虎嘴观景台俯看', gap:'步行 约 25 分钟'},
+  {poi:'zhenzhutan', t:'11:20', m:'walk', x:229, y:83,  note:'《西游记》片尾取景地，栈道从瀑布下方穿过', gap:'步行 约 20 分钟'},
+  {poi:'jinghai',    t:'11:50', m:'walk', x:207, y:96,  note:'无风时倒影如镜，过了 11 点起风就碎', gap:'步行 约 20 分钟'},
+  {poi:'nuorilang',  t:'12:20', m:'walk', x:180, y:110, tag:['warn'], note:'全沟最大瀑布；中心站午餐，12:00–13:00 是排队高峰', gap:'午餐 约 60 分钟'},
+  {poi:'changhai',   t:'13:20', m:'bus', x:98,  y:58,  tag:['warn'], note:'海拔约 3060m，全沟最高点，动作放慢', gap:'步行 约 15 分钟'},
+  {poi:'wucaichi',   t:'13:50', m:'walk', x:124, y:77,  note:'面积最小、颜色最艳，从长海步行下行即到', gap:'乘车 约 30 分钟'},
+  {poi:'jijiehai',   t:'14:20', m:'walk', x:148, y:96,  note:'水位随季节变化，在车上左右窗观看即可', gap:'乘车 约 20 分钟'},
+  {poi:'xiniuhai',   t:'14:50', m:'walk', x:180, y:130, note:'树正沟第一站，倒影安静得像镜面', gap:'步行 约 12 分钟'},
+  {poi:'laohuhai',   t:'15:05', m:'walk', x:180, y:143, note:'深秋彩林倒映，下午顺光最出片', gap:'步行 约 10 分钟'},
+  {poi:'shuzhengpubu', t:'15:20', m:'walk', x:180, y:156, note:'落差约 11m，旁边就是树正寨与转经筒', gap:'步行 约 10 分钟'},
+  {poi:'shuzhengqunhai', t:'15:35', m:'walk', x:180, y:170, note:'数十个海子层叠相连，从高处俯看最完整', gap:'步行 约 12 分钟'},
+  {poi:'wolonghai',  t:'15:50', m:'walk', x:180, y:185, note:'水下钙化如卧龙，回程最舒服的一段', gap:'步行 约 12 分钟'},
+  {poi:'huohuahai',  t:'16:05', m:'walk', x:180, y:200, note:'午后斜光打在碎波上，像水面溅起火花', gap:'车览 约 15 分钟'},
+  {poi:'luweihai',   t:'16:20', m:'walk', x:180, y:216, note:'长约 2km 的半沼泽海子，中间一条碧蓝水带', gap:'车览 约 10 分钟'},
+  {poi:'penjingtan', t:'16:35', m:'walk', x:180, y:232, note:'浅滩上丛生的树木，像天然的水中盆景', gap:'观光车 约 20 分钟'},
+  {poi:null,         t:'17:00', tag:['warn'], title:'出园 · 回到沟口游客中心', note:'18:00 闭园，务必在 17:30 前下车出园', gap:'步行 约 20 分钟'},
+  {poi:'siyun',      t:'17:30', m:'walk', x:222, y:272, tag:['pre'], note:'回民宿取行李 · 镇上晚餐（点单后催师傅早点到）'},
+  {poi:null,         t:'18:30', m:'bus', title:'出发夜车 · 返回绵阳', note:'约 330km 山路，4.5–5 小时；中途可要求停车休息一次', tag:['warn'], gap:'夜车 约 4.5–5 小时'},
+  {poi:'atuo',       t:'23:30', m:'bus', x:292, y:322, tag:['pre'], note:'深夜到店，提前给前台报一声', stay:'atuo'}
+];
 
-    var idx = -1;
-    for (var i = 0; i < times.length; i++){
-      if (times[i] > now){ idx = i; break; }
+/* ============ 逐日行程 ============ */
+var STAY = {
+  siyun:{name:'四季云隐 · 五恒供氧民宿（九寨沟风景区店）', tag:'10/16 一晚', rows:[
+    ['房型','拾光双人房 · 2×1.2m 床 · 高原供氧 + 五恒系统'],
+    ['价格','¥470 / 晚（原价 ¥718）'],
+    ['位置','九寨沟县漳扎镇彭丰村 48 号，距游客中心步行 1.4km'],
+    ['备注','10-14 12:00 前可免费取消；到店前告知约 17:30 抵达']
+  ]},
+  atuo:{name:'绵阳凯德广场长虹大道亚朵酒店', tag:'10/17 一晚', rows:[
+    ['房型','高级大床房 · 1.8m 床 · 27–29㎡'],
+    ['价格','¥296 / 晚（原价 ¥303）'],
+    ['位置','涪城区临园路东段 76 号，距机场 6.3km / 约 15 分钟'],
+    ['备注','免费接送机 · 24 小时前台；约 23:30 到店，提前电话告知']
+  ]}
+};
+
+var DAYS = [
+  {id:'d1', cls:'', dl:'10/16', dw:'周五', city:'宁波 → 绵阳 → 九寨沟', sub:'包车进沟 · 全天在路上',
+   mapKey:'d1',
+   items:[
+    {t:'06:00', title:'出发前往宁波栎社机场 T2', note:'市区到机场约 40 分钟，清晨高架顺畅', poi:'nb-airport', gap:'车程 约 40 分钟'},
+    {t:'06:40', title:'T2 值机 · 托运 · 安检', note:'春秋航空在 T2 值机岛办理，早班人多，留足 90 分钟', poi:'nb-airport', tag:['pre']},
+    {t:'08:05', title:'起飞 · 春秋航空 9C6415', note:'宁波栎社 T2 → 绵阳南郊 T1，空客 A320', poi:'nb-airport', tag:['flight','pre'], gap:'飞行 约 2 小时 55 分'},
+    {t:'11:05', title:'落地绵阳南郊机场 T1', note:'机场海拔约 500m，出站即到达层', poi:'my-airport', tag:['flight']},
+    {t:'11:30', title:'提取行李 · 与包车师傅会合', note:'上车前确认上车点与接下来 5 小时的行车安排', poi:'my-airport', gap:'上车 约 30 分钟'},
+    {t:'12:00', title:'绵阳午餐 · 采购补给', note:'进山前把水、水果、干粮买齐，山上选择少且贵', gap:'午餐 约 1 小时'},
+    {t:'13:00', title:'出发上山 · 九绵高速', note:'绵阳 → 九寨沟漳扎镇约 330km，隧道群多，途中可停服务区', tag:['warn'], gap:'车程 约 4.5–5 小时'},
+    {t:'17:30', title:'抵达漳扎镇 · 入住民宿', note:'海拔约 2500m；到店前给民宿报一声到店时间', poi:'siyun', tag:['pre'], stay:'siyun'},
+    {t:'18:30', title:'镇上晚餐 · 采购次日干粮', note:'沟内餐饮只在诺日朗中心站，自带更省时间', gap:'步行 约 20 分钟'},
+    {t:'20:30', title:'回民宿休息 · 早睡', note:'次日 6:30 起；第一晚别洗热水澡后立刻躺下'}
+   ]},
+  {id:'d2', cls:'d2', dl:'10/17', dw:'周六', city:'九寨沟全天', sub:'沟内 Y 字形 · 步行约 8–12km',
+   mapKey:'d2',
+   lead:{t:'06:30', title:'起床 · 民宿早餐', note:'收拾背包：身份证、水、干粮、抓绒、雨具', gap:'步行 1.4km 约 20 分钟'},
+   items:D2.map(function(it){
+     return {t:it.t, title: it.title || POI[it.poi].n, note:it.note, poi:it.poi,
+             tag:it.tag, gap:it.gap, stay:it.stay};
+   })},
+  {id:'d3', cls:'d3', dl:'10/18', dw:'周日', city:'绵阳 → 宁波', sub:'睡到自然醒 · 酒店班车送机',
+   mapKey:'d3',
+   items:[
+    {t:'07:00', title:'自然醒 · 酒店早餐', note:'酒店紧邻凯德广场，周边也有早餐店可选'},
+    {t:'10:00', title:'退房 · 酒店免费班车送机', note:'绵阳南郊机场 T1，驾车 6.3km 约 15 分钟', poi:'atuo', tag:['pre'], gap:'班车 约 15 分钟'},
+    {t:'10:15', title:'T1 值机 · 安检', note:'11:50 起飞，建议提前 90 分钟到；返程票未出票，出票后我会复核', poi:'my-airport', tag:['pre','flight']},
+    {t:'11:50', title:'起飞 · 春秋航空 9C6416', note:'绵阳南郊 T1 → 宁波栎社 T2，飞行 3 小时 10 分', poi:'my-airport', tag:['flight','pre'], gap:'飞行 约 3 小时 10 分'},
+    {t:'15:00', title:'落地宁波栎社 T2 · 行程结束', note:'地铁 2 号线或网约车回市区', poi:'nb-airport', tag:['flight']}
+   ]}
+];
+
+/* ============ 地图视图清单 ============ */
+var MAPVIEWS = {
+  all:{ cls:'', title:'全图 · 大地点', note:'默认只显示机场、住宿与主要片区。想看某一天的完整路线，点上面的 D1 / D2 / D3。',
+    items:[
+      {poi:'nb-airport', t:'10/16 · 10/18', d:'去程与返程的起降点，行程首尾都在 T2'},
+      {poi:'my-airport', t:'10/16 · 10/18', d:'进山与返程的中转机场，包车在这里接'},
+      {poi:'siyun',      t:'10/16 – 10/17', d:'漳扎镇沟口片区，两天的落脚点'},
+      {poi:'jzg-center', t:'10/17 全天',      d:'景区唯一入口，步行 1.4km 即到'},
+      {poi:'atuo',       t:'10/17 深夜',      d:'夜车抵达绵阳后的落脚点，次日班车送机'}
+    ]},
+  d1:{ cls:'d1', title:'D1 · 完整路线', note:'宁波飞绵阳，落地上车走九绵高速进沟。',
+    items:[
+      {poi:'nb-airport', t:'06:00 – 08:05', d:'市区到 T2 值机 · 安检，08:05 起飞', x:70, y:58, m:'plane'},
+      {poi:'my-airport', t:'11:05 – 12:00', d:'落地取行李、与师傅会合、午餐补给', x:224, y:122, m:'plane'},
+      {poi:'siyun',      t:'13:00 – 17:30', d:'九绵高速约 4.5–5 小时，17:30 入住', x:140, y:208, m:'bus'}
+    ]},
+  d2:{ cls:'d2', title:'D2 · 完整路线（含全部景点）', note:'先坐车到最深处再一路向下，顺序即游览顺序。点赞标可看介绍。',
+    items: D2.filter(function(it){ return it.poi; }).map(function(it){
+      return {poi:it.poi, t:it.t, d:it.note, x:it.x, y:it.y, m:it.m};
+    })},
+  d3:{ cls:'d3', title:'D3 · 完整路线', note:'睡到自然醒，酒店班车送机后飞回宁波。',
+    items:[
+      {poi:'atuo',       t:'07:00 – 10:00', d:'酒店早餐、退房，班车 15 分钟到 T1', x:80, y:148, m:'bus'},
+      {poi:'my-airport', t:'10:15 – 11:50', d:'值机 · 安检，11:50 起飞', x:172, y:124, m:'bus'},
+      {poi:'nb-airport', t:'15:00', d:'落地 T2，行程结束', x:296, y:60, m:'plane'}
+    ]}
+};
+
+/* ============ 行程事件（倒计时锚点） ============ */
+var MILESTONES = [
+  {at:'2026-10-16T06:00:00+08:00', l:'出发前往宁波栎社机场 T2'},
+  {at:'2026-10-16T08:05:00+08:00', l:'9C6415 起飞 · 宁波 → 绵阳'},
+  {at:'2026-10-16T11:05:00+08:00', l:'落地绵阳南郊机场 T1'},
+  {at:'2026-10-16T13:00:00+08:00', l:'包车出发上山 · 九绵高速'},
+  {at:'2026-10-16T17:30:00+08:00', l:'抵达漳扎镇 · 入住民宿'},
+  {at:'2026-10-17T07:30:00+08:00', l:'九寨沟沟口排队 · 准备入园'},
+  {at:'2026-10-17T17:00:00+08:00', l:'出园 · 回到沟口游客中心'},
+  {at:'2026-10-17T18:30:00+08:00', l:'出发夜车 · 返回绵阳'},
+  {at:'2026-10-17T23:30:00+08:00', l:'抵达绵阳亚朵酒店'},
+  {at:'2026-10-18T10:00:00+08:00', l:'退房 · 酒店班车送机'},
+  {at:'2026-10-18T11:50:00+08:00', l:'9C6416 起飞 · 绵阳 → 宁波'},
+  {at:'2026-10-18T15:00:00+08:00', l:'落地宁波栎社 T2 · 行程结束'}
+];
+
+/* ============ 生成 D2 沟内路线标点 ============ */
+(function buildD2Dots(){
+  var g = document.getElementById('d2dots'); if(!g) return;
+  var s = '', n = 0;
+  D2.forEach(function(it){
+    if(!it.poi || it.x == null) return;
+    n++;
+    var x = it.x, y = it.y, r = (x === 180) ? 9 : 11;
+    s += '<g class="mnode" data-poi="' + it.poi + '" tabindex="0" role="button">' +
+         '<circle class="hit" cx="' + x + '" cy="' + y + '" r="' + r + '"/>' +
+         '<circle class="dot" cx="' + x + '" cy="' + y + '" r="5.4" fill="#4fc4ab"/></g>';
+    if(x === 180){
+      var left = (n % 2 === 0);
+      s += '<text class="mvsub" x="' + (left ? x - 9 : x + 9) + '" y="' + (y + 3.4) + '" text-anchor="' + (left ? 'end' : 'start') + '" style="font-size:9.5px;font-weight:700">' + n + '</text>';
+    }else{
+      s += '<text class="mvsub" x="' + x + '" y="' + (y - 8) + '" text-anchor="middle" style="font-size:9.5px;font-weight:700">' + n + '</text>';
     }
+  });
+  g.innerHTML = s;
+})();
 
-    if (idx === -1){
-      elWhat.textContent = "行程已完成";
-      elWhen.textContent = "2026 年 10 月 16 日 — 10 月 18 日 · 九寨沟";
-      elCount.hidden = true;
-      elDone.hidden = false;
-      elDone.textContent = "欢迎回家。照片记得挑几张洗出来。";
-      return;
-    }
+/* ============ 工具 ============ */
+function $(s, r){ return (r || document).querySelector(s); }
+function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function clockIn(tz){
+  return new Intl.DateTimeFormat('zh-CN',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(new Date());
+}
+function dateIn(tz){
+  var a = new Intl.DateTimeFormat('zh-CN',{timeZone:tz,month:'2-digit',day:'2-digit'}).format(new Date());
+  var b = new Intl.DateTimeFormat('zh-CN',{timeZone:tz,weekday:'short'}).format(new Date());
+  return a + ' ' + b;
+}
 
-    elWhat.textContent = EVENTS[idx][1];
-    elWhen.textContent = fmtFull.format(new Date(times[idx])) + "（北京时间）";
+/* ============ 主题 ============ */
+var themeBtn = $('#themeBtn'), themeTxt = $('#themeTxt');
+function syncTheme(){
+  var t = document.documentElement.getAttribute('data-theme');
+  themeTxt.textContent = (t === 'dark') ? '深色' : '浅色';
+  var m = document.querySelector('meta[name="theme-color"]');
+  if(m) m.setAttribute('content', t === 'dark' ? '#0d1614' : '#eaf6fb');
+  var l = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+  if(l) l.setAttribute('content', t === 'dark' ? 'black-translucent' : 'default');
+}
+themeBtn.addEventListener('click', function(){
+  var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem('jzg.theme', next); }catch(e){}
+  syncTheme();
+});
+syncTheme();
 
-    var sec = Math.floor((times[idx] - now) / 1000);
-    elD.textContent = pad(Math.floor(sec / 86400));
-    elH.textContent = pad(Math.floor((sec % 86400) / 3600));
-    elM.textContent = pad(Math.floor((sec % 3600) / 60));
-    elS.textContent = pad(sec % 60);
-    elCount.hidden = false;
-    elDone.hidden = true;
+/* ============ 倒计时 + 时钟 ============ */
+var nowMs = Date.now();
+var cdD = $('#cdD'), cdH = $('#cdH'), cdM = $('#cdM'), cdS = $('#cdS'), cdEvent = $('#cdEvent');
+var tTrip = $('#tTrip'), tLocal = $('#tLocal'), dLocal = $('#dLocal'), tzLocalOff = $('#tzLocalOff'), tzNote = $('#tzNote');
+var localTz = 'UTC';
+try{ localTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; }catch(e){}
+var offH = -new Date().getTimezoneOffset() / 60;
+var offAbs = Math.abs(offH);
+var offTxt = 'UTC' + (offH >= 0 ? '+' : '−') + (offAbs % 1 ? offAbs.toFixed(1) : offAbs);
+tzLocalOff.textContent = offTxt;
+dLocal.textContent = localTz;
+if(offH === 8){
+  tzNote.innerHTML = '<b>你的设备与行程在同一时区</b>（' + offTxt + '），页面显示的北京时间与你的本地时间完全一致，不会出现时差导致的误判。';
+}else{
+  tzNote.innerHTML = '<b>注意时差</b>：你的设备在 ' + offTxt + '（' + esc(localTz) + '），比行程时区 Beijing Time（UTC+8）' +
+    (offH < 8 ? '慢 ' + (8 - offH) + ' 小时' : '快 ' + (offH - 8) + ' 小时') +
+    '。页面上所有时刻与倒计时都按北京时间计算，请以行程时区那一栏为准。';
+}
+function tick(){
+  var now = Date.now();
+  var nx = null;
+  for(var i = 0; i < MILESTONES.length; i++){
+    if(Date.parse(MILESTONES[i].at) > now){ nx = MILESTONES[i]; break; }
   }
+  if(!nx){
+    cdEvent.textContent = '行程已结束';
+    cdD.textContent = cdH.textContent = cdM.textContent = cdS.textContent = '0';
+  }else{
+    cdEvent.textContent = nx.l;
+    var d = Date.parse(nx.at) - now;
+    if(d < 0) d = 0;
+    cdD.textContent = Math.floor(d / 86400000);
+    cdH.textContent = pad(Math.floor(d / 3600000) % 24);
+    cdM.textContent = pad(Math.floor(d / 60000) % 60);
+    cdS.textContent = pad(Math.floor(d / 1000) % 60);
+  }
+  tTrip.textContent = clockIn('Asia/Shanghai');
+  tLocal.textContent = clockIn(localTz);
+  dLocal.textContent = dateIn(localTz) + ' · ' + localTz;
+}
+tick();
+setInterval(tick, 1000);
 
-  refreshTheme();
-  tick();
-  setInterval(tick, 1000);
-  setInterval(refreshTheme, 60000);
+/* ============ 地图切换 ============ */
+var stage = $('#mapStage');
+var showAllPoi = $('#showAllPoi');
+var allMinor = $('#allMinor');
+var curView = 'all';
+
+function renderMapList(){
+  var v = MAPVIEWS[curView], box = $('#mapList');
+  var html = '<div class="mlh">' + esc(v.title) + ' · 共 ' + v.items.length + ' 个点</div>';
+  if(v.note) html += '<div class="mlnote">' + esc(v.note) + '</div>';
+  v.items.forEach(function(it, i){
+    html += '<div class="mli ' + v.cls + (i === 0 ? ' first' : '') + '">' +
+      '<span class="n">' + (i + 1) + '</span>' +
+      '<div class="b"><button class="nm" type="button" data-poi="' + it.poi + '">' + esc(POI[it.poi].n) + '</button>' +
+      '<div class="ds">' + esc(it.d) + '</div></div>' +
+      '<span class="tv">' + esc(it.t) + '</span></div>';
+  });
+  box.innerHTML = html;
+}
+function setView(key){
+  curView = key;
+  $$('.mview', stage).forEach(function(s){ s.classList.toggle('on', s.id === 'v-' + key); });
+  $$('.mbtn[data-view]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === key)); });
+  if(key === 'all'){ showAllPoi.style.display = ''; }else{ showAllPoi.style.display = 'none'; }
+  renderMapList();
+}
+$$('.mbtn[data-view]').forEach(function(b){
+  b.addEventListener('click', function(){ setView(b.getAttribute('data-view')); });
+});
+showAllPoi.addEventListener('click', function(){
+  var on = showAllPoi.getAttribute('aria-pressed') === 'true';
+  var next = !on;
+  showAllPoi.setAttribute('aria-pressed', String(next));
+  showAllPoi.textContent = next ? '收起景点' : '显示全部地点';
+  allMinor.style.display = next ? '' : 'none';
+  if(next && curView !== 'all') setView('all');
+});
+
+/* ============ 时间轴 ============ */
+var CK_KEY = 'jzg.checkins';
+var ck = {};
+try{ ck = JSON.parse(localStorage.getItem(CK_KEY) || '{}') || {}; }catch(e){ ck = {}; }
+function saveCk(){ try{ localStorage.setItem(CK_KEY, JSON.stringify(ck)); }catch(e){} }
+
+function stayHtml(key){
+  var s = STAY[key], h = '<div class="stay"><div class="sh">住宿 · ' + esc(s.name) + '<em>' + esc(s.tag) + '</em></div><dl>';
+  s.rows.forEach(function(r){ h += '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd></div>'; });
+  return h + '</dl></div>';
+}
+function tagsHtml(it, dayId, idx){
+  var h = '';
+  (it.tag || []).forEach(function(t){
+    if(t === 'pre') h += '<span class="tag pre">需提前订</span>';
+    if(t === 'warn') h += '<span class="tag warn">注意</span>';
+    if(t === 'flight') h += '<span class="tag flight">航班</span>';
+  });
+  if(it.poi){
+    h += '<button class="tag intro" type="button" data-poi="' + it.poi + '">介绍</button>';
+    h += '<a class="tag nav" href="' + navUrl(it.poi) + '" target="_blank" rel="noopener">导航</a>';
+  }
+  return h;
+}
+function miniMap(key){
+  var v = MAPVIEWS[key];
+  var pts = v.items.filter(function(it){ return it.x != null; });
+  if(pts.length < 2) return '';
+  var xs = pts.map(function(p){ return p.x; }), ys = pts.map(function(p){ return p.y; });
+  var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs);
+  var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+  var padx = 34, pady = 26;
+  x0 -= padx; x1 += padx; y0 -= pady; y1 += pady;
+  var w = Math.max(x1 - x0, 120), h = Math.max(y1 - y0, 90);
+  var cls = v.cls === 'd2' ? 'mr2' : v.cls === 'd3' ? 'mr3' : 'mr1';
+  var col = v.cls === 'd2' ? 'var(--d2)' : v.cls === 'd3' ? 'var(--d3)' : 'var(--d1)';
+  var s = '<svg viewBox="' + x0.toFixed(0) + ' ' + y0.toFixed(0) + ' ' + w.toFixed(0) + ' ' + h.toFixed(0) + '" style="color:' + col + '" role="img" aria-label="' + esc(v.title) + '路线小地图">';
+  s += '<rect class="mland" x="' + x0.toFixed(0) + '" y="' + y0.toFixed(0) + '" width="' + w.toFixed(0) + '" height="' + h.toFixed(0) + '"/>';
+  for(var i = 1; i < pts.length; i++){
+    var m = pts[i].m === 'plane' ? ' mplane' : pts[i].m === 'bus' ? ' mbus' : ' mwalk';
+    s += '<path class="mline ' + cls + m + '" d="M' + pts[i-1].x + ' ' + pts[i-1].y + ' L' + pts[i].x + ' ' + pts[i].y + '"/>';
+  }
+  pts.forEach(function(p, i){
+    s += '<g class="mnode" data-poi="' + p.poi + '"><circle class="hit" cx="' + p.x + '" cy="' + p.y + '" r="12"/><circle class="dot" cx="' + p.x + '" cy="' + p.y + '" r="6" fill="currentColor"/></g>';
+    s += '<text class="mvsub" x="' + p.x + '" y="' + (p.y - 9) + '" text-anchor="middle">' + (i + 1) + '</text>';
+  });
+  return s + '</svg>';
+}
+function dayNavBtn(key){
+  if(key === 'd1'){
+    return '<a class="btn pri" href="https://uri.amap.com/navigation?from=104.7444,31.4281,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA&amp;to=103.9186,33.2605,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">全天路线导航（机场 → 九寨沟）</a>';
+  }
+  if(key === 'd2'){
+    return '<a class="btn pri" href="https://uri.amap.com/navigation?from=103.9186,33.2605,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;to=104.7444,31.4281,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">夜车路段导航（九寨沟 → 绵阳机场）</a>';
+  }
+  return '<a class="btn" href="https://uri.amap.com/search?keyword=' + encodeURIComponent('凯德广场长虹大道亚朵酒店') + '&amp;city=' + encodeURIComponent('绵阳') + '&amp;view=map&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">搜索酒店位置</a>';
+}
+
+var totalItems = 0;
+function renderTimeline(){
+  var box = $('#timeline'), html = '';
+  DAYS.forEach(function(day){
+    var items = day.items, all = items.slice();
+    if(day.lead) all = [day.lead].concat(items);
+    totalItems += all.length;
+    var head = day.lead ? all.slice(1) : items;
+    var cnt = 0;
+    all.forEach(function(it, i){ if(ck[day.id + '-' + i]) cnt++; });
+    html += '<section class="day ' + day.cls + '" data-day="' + day.id + '">' +
+      '<button class="dsum" type="button" aria-expanded="' + (day.id === 'd1' ? 'true' : 'false') + '">' +
+        '<span class="dl"><b>' + day.dl + '</b><span>' + day.dw + '</span></span>' +
+        '<span class="dt"><span class="t1">' + esc(day.city) + '</span><span class="t2">' + esc(day.sub) + ' · ' + all.length + ' 项</span></span>' +
+        '<span class="prog" data-prog="' + day.id + '">' + cnt + '/' + all.length + '</span>' +
+        '<span class="cv">▶</span>' +
+      '</button>' +
+      '<div class="dprog"><i data-bar="' + day.id + '" style="width:' + (all.length ? cnt / all.length * 100 : 0) + '%"></i></div>' +
+      '<div class="dbody' + (day.id === 'd1' ? ' on' : '') + '" data-body="' + day.id + '">';
+    var ti = 0;
+    all.forEach(function(it, i){
+      var id = day.id + '-' + i;
+      var tzTxt = it.t === '—' ? '' : 'UTC+8';
+      html += '<div class="item' + (ck[id] ? ' done' : '') + '" data-ck="' + id + '">' +
+        '<div class="tl"><b>' + esc(it.t) + '</b><span>' + tzTxt + '</span></div>' +
+        '<div class="ix"></div>' +
+        '<div class="ic">' +
+          (it.poi
+            ? '<button class="it" type="button" data-poi="' + it.poi + '" style="background:none;border:0;padding:0;text-align:left;font:inherit;font-weight:650">' + esc(it.title) + '</button>'
+            : '<div class="it">' + esc(it.title) + '</div>') +
+          (it.note ? '<div class="im">' + esc(it.note) + '</div>' : '') +
+          '<div class="tags">' + tagsHtml(it, day.id, i) + '</div>' +
+        '</div>' +
+        '<button class="ck" type="button" aria-pressed="' + (ck[id] ? 'true' : 'false') + '" data-ckbtn="' + id + '"><i></i>' + (ck[id] ? '已去过' : '打卡') + '</button>' +
+      '</div>';
+      if(it.stay) html += stayHtml(it.stay);
+      if(it.gap) html += '<div class="gap"><i>' + esc(it.gap) + '</i><s></s></div>';
+      ti++;
+    });
+    html += '<div class="daymap">' + miniMap(day.mapKey) + '</div>' +
+      '<div class="acts" style="margin-top:8px">' + dayNavBtn(day.mapKey) + '</div>' +
+      '</div></section>';
+  });
+  box.innerHTML = html;
+  updateOverall();
+}
+function updateOverall(){
+  var n = 0;
+  Object.keys(ck).forEach(function(k){ if(ck[k]) n++; });
+  $('#progAll').textContent = n + ' / ' + totalItems;
+}
+renderTimeline();
+renderMapList();
+setView('all');
+
+/* 折叠 / 打卡 */
+document.addEventListener('click', function(e){
+  var sum = e.target.closest ? e.target.closest('.dsum') : null;
+  if(sum){
+    var day = sum.closest('.day');
+    var body = $('.dbody', day);
+    var open = !body.classList.contains('on');
+    body.classList.toggle('on', open);
+    sum.setAttribute('aria-expanded', String(open));
+    return;
+  }
+  var ckb = e.target.closest ? e.target.closest('[data-ckbtn]') : null;
+  if(ckb){
+    e.preventDefault();
+    var id = ckb.getAttribute('data-ckbtn');
+    var item = ckb.closest('.item');
+    var dayEl = ckb.closest('.day');
+    var did = dayEl.getAttribute('data-day');
+    var val = !ck[id];
+    if(val){ ck[id] = 1; }else{ delete ck[id]; }
+    saveCk();
+    item.classList.toggle('done', val);
+    ckb.setAttribute('aria-pressed', String(val));
+    ckb.lastChild.nodeValue = val ? '已去过' : '打卡';
+    var items = $$('.item', dayEl);
+    var done = items.filter(function(x){ return x.classList.contains('done'); }).length;
+    var $p = $('[data-prog="' + did + '"]', dayEl);
+    $p.textContent = done + '/' + items.length;
+    $p.classList.toggle('full', done === items.length && items.length > 0);
+    var bar = $('[data-bar="' + did + '"]', $('.day[data-day="' + did + '"]')) || $('[data-bar="' + did + '"]');
+    if(bar) bar.style.width = (done / items.length * 100) + '%';
+    updateOverall();
+    return;
+  }
+  var poiBtn = e.target.closest ? e.target.closest('[data-poi]') : null;
+  if(poiBtn && !poiBtn.classList.contains('mnode')){
+    e.preventDefault();
+    openPoi(poiBtn.getAttribute('data-poi'));
+    return;
+  }
+  var node = e.target.closest ? e.target.closest('.mnode') : null;
+  if(node){
+    e.preventDefault();
+    openPoi(node.getAttribute('data-poi'));
+  }
+});
+
+/* ============ 弹层 ============ */
+var modal = $('#modal'), mName = $('#mName'), mWhy = $('#mWhy'), mMust = $('#mMust'), mAdv = $('#mAdv'), mGoTxt = $('#mGoTxt'), mPlace = $('#mPlace');
+var curPoi = null;
+function openPoi(k){
+  var p = POI[k]; if(!p) return;
+  curPoi = k;
+  mName.textContent = p.n;
+  mWhy.textContent = p.why;
+  mMust.innerHTML = p.must.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join('');
+  mAdv.textContent = p.adv;
+  mGoTxt.textContent = navLabel(k);
+  modal.classList.add('on');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closePoi(){
+  modal.classList.remove('on');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+mPlace.addEventListener('click', function(){
+  if(curPoi) window.open(navUrl(curPoi), '_blank', 'noopener');
+});
+$('#mClose').addEventListener('click', closePoi);
+modal.addEventListener('click', function(e){ if(e.target === modal) closePoi(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('on')) closePoi(); });
+
+/* 键盘可达性：让地图节点可聚焦 */
+$$('.mnode').forEach(function(n){
+  n.setAttribute('tabindex', '0');
+  n.setAttribute('role', 'button');
+  n.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openPoi(n.getAttribute('data-poi')); }
+  });
+});
 })();
 </script>
 </body>
