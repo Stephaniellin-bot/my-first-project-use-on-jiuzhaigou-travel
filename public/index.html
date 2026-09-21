@@ -203,14 +203,6 @@ html[data-theme="dark"] .cd.now .cdbox{background:rgba(255,255,255,.05)}
 .cdbox{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:9px 4px;text-align:center}
 .cdnum{font-size:26px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .cdlab{font-size:11.5px;color:var(--ink3);margin-top:2px}
-.clocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.clock{background:var(--card2);border:1px solid var(--line2);border-radius:12px;padding:10px 11px}
-.clock .cn{font-size:11.5px;font-weight:700;color:var(--ink3);display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.clock .cn u{text-decoration:none;font-size:10.5px;padding:0 5px;border-radius:5px;background:var(--accsoft);color:var(--acc)}
-.clock .ct{font-size:21px;font-weight:750;font-variant-numeric:tabular-nums;margin-top:3px}
-.clock .cd2{font-size:11.5px;color:var(--ink3);margin-top:1px}
-.sametz{font-size:12px;color:var(--ink3);margin-top:9px;line-height:1.65}
-.sametz b{color:var(--ink2)}
 
 /* ---------- 地图 ---------- */
 .mapbtns{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
@@ -422,7 +414,25 @@ footer p{margin:0 0 4px}
     </div>
   </header>
 
-  <!-- ========== 1. 插画头图 ========== -->
+  <!-- ========== 1. NOW 卡：倒计时 ========== -->
+  <section class="sec" id="now">
+    <div class="cd now">
+      <div class="nowlab">此刻关注 · NOW<em>每秒刷新</em></div>
+      <div class="nowev"><span id="cdEvent">行程尚未开始</span></div>
+      <div class="cdg">
+        <div class="cdbox"><div class="cdnum" id="cdD">--</div><div class="cdlab">天</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdH">--</div><div class="cdlab">时</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdM">--</div><div class="cdlab">分</div></div>
+        <div class="cdbox"><div class="cdnum" id="cdS">--</div><div class="cdlab">秒</div></div>
+      </div>
+    </div>
+    <div class="nownext">
+      <span class="nwbadge">当前待办</span>
+      <span class="nwtxt"><b>抢 10-17 场门票</b> · 10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span>
+      <a class="nwgo" href="#todos">去清单 →</a>
+    </div>
+  </section>
+  <!-- ========== 2. 插画头图 ========== -->
   <section class="hero">
     <svg viewBox="0 0 400 600" role="img" aria-label="手绘九寨沟景区游览图：Y 字形路线，中线树正沟从景区入口上行至诺日朗中心站，左线则查洼沟至长海，右线日则沟至原始森林，标注各海子、观光车站、上下车点与路段距离">
       <!-- 背景与等高线 -->
@@ -592,38 +602,6 @@ footer p{margin:0 0 4px}
     </svg>
     <div class="herocap">
       <div class="chips"><span>10/16 周五 出发</span><span>10/17 周六 全天九寨沟</span><span>10/18 周日 返程</span></div>
-    </div>
-  </section>
-
-  <!-- ========== 2. NOW 卡：倒计时 + 时钟 ========== -->
-  <section class="sec" id="now">
-    <div class="cd now">
-      <div class="nowlab">此刻关注 · NOW<em>每秒刷新</em></div>
-      <div class="nowev"><span id="cdEvent">行程尚未开始</span></div>
-      <div class="cdg">
-        <div class="cdbox"><div class="cdnum" id="cdD">--</div><div class="cdlab">天</div></div>
-        <div class="cdbox"><div class="cdnum" id="cdH">--</div><div class="cdlab">时</div></div>
-        <div class="cdbox"><div class="cdnum" id="cdM">--</div><div class="cdlab">分</div></div>
-        <div class="cdbox"><div class="cdnum" id="cdS">--</div><div class="cdlab">秒</div></div>
-      </div>
-      <div class="clocks">
-        <div class="clock">
-          <div class="cn">行程时区 <u>UTC+8</u></div>
-          <div class="ct" id="tTrip">--:--:--</div>
-          <div class="cd2">宁波 · 绵阳 · 九寨沟同属东八区</div>
-        </div>
-        <div class="clock">
-          <div class="cn">你的本地时间 <u id="tzLocalOff">UTC±?</u></div>
-          <div class="ct" id="tLocal">--:--:--</div>
-          <div class="cd2" id="dLocal">按打开设备自动识别</div>
-        </div>
-      </div>
-      <div class="sametz" id="tzNote"></div>
-    </div>
-    <div class="nownext">
-      <span class="nwbadge">当前待办</span>
-      <span class="nwtxt"><b>抢 10-17 场门票</b> · 10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span>
-      <a class="nwgo" href="#todos">去清单 →</a>
     </div>
   </section>
 
@@ -1227,14 +1205,6 @@ function $(s, r){ return (r || document).querySelector(s); }
 function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 function pad(n){ return (n < 10 ? '0' : '') + n; }
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function clockIn(tz){
-  return new Intl.DateTimeFormat('zh-CN',{timeZone:tz,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(new Date());
-}
-function dateIn(tz){
-  var a = new Intl.DateTimeFormat('zh-CN',{timeZone:tz,month:'2-digit',day:'2-digit'}).format(new Date());
-  var b = new Intl.DateTimeFormat('zh-CN',{timeZone:tz,weekday:'short'}).format(new Date());
-  return a + ' ' + b;
-}
 
 /* ============ 主题 ============ */
 var themeBtn = $('#themeBtn'), themeTxt = $('#themeTxt');
@@ -1254,24 +1224,9 @@ themeBtn.addEventListener('click', function(){
 });
 syncTheme();
 
-/* ============ 倒计时 + 时钟 ============ */
+/* ============ 倒计时 ============ */
 var nowMs = Date.now();
 var cdD = $('#cdD'), cdH = $('#cdH'), cdM = $('#cdM'), cdS = $('#cdS'), cdEvent = $('#cdEvent');
-var tTrip = $('#tTrip'), tLocal = $('#tLocal'), dLocal = $('#dLocal'), tzLocalOff = $('#tzLocalOff'), tzNote = $('#tzNote');
-var localTz = 'UTC';
-try{ localTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; }catch(e){}
-var offH = -new Date().getTimezoneOffset() / 60;
-var offAbs = Math.abs(offH);
-var offTxt = 'UTC' + (offH >= 0 ? '+' : '−') + (offAbs % 1 ? offAbs.toFixed(1) : offAbs);
-tzLocalOff.textContent = offTxt;
-dLocal.textContent = localTz;
-if(offH === 8){
-  tzNote.innerHTML = '<b>你的设备与行程在同一时区</b>（' + offTxt + '），页面显示的北京时间与你的本地时间完全一致，不会出现时差导致的误判。';
-}else{
-  tzNote.innerHTML = '<b>注意时差</b>：你的设备在 ' + offTxt + '（' + esc(localTz) + '），比行程时区 Beijing Time（UTC+8）' +
-    (offH < 8 ? '慢 ' + (8 - offH) + ' 小时' : '快 ' + (offH - 8) + ' 小时') +
-    '。页面上所有时刻与倒计时都按北京时间计算，请以行程时区那一栏为准。';
-}
 function tick(){
   var now = Date.now();
   var nx = null;
@@ -1290,9 +1245,6 @@ function tick(){
     cdM.textContent = pad(Math.floor(d / 60000) % 60);
     cdS.textContent = pad(Math.floor(d / 1000) % 60);
   }
-  tTrip.textContent = clockIn('Asia/Shanghai');
-  tLocal.textContent = clockIn(localTz);
-  dLocal.textContent = dateIn(localTz) + ' · ' + localTz;
 }
 tick();
 setInterval(tick, 1000);
