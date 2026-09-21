@@ -173,6 +173,8 @@ html[data-theme="dark"] .cd.now .cdbox{background:rgba(255,255,255,.05)}
 /* ---------- 当前待办 ---------- */
 .nownext{display:flex;align-items:center;gap:9px;margin-top:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:10px 12px}
 .nwbadge{flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.05em;color:#fff;background:var(--acc);border-radius:7px;padding:3px 8px}
+.nwbadge.wxb{background:var(--d1)}
+a.nownext{text-decoration:none;color:inherit}
 .nwtxt{flex:1;min-width:0;font-size:12.5px;color:var(--ink2);line-height:1.6}
 .nwtxt b{color:var(--ink)}
 .nwgo{flex:0 0 auto;font-size:12px;font-weight:800;color:var(--acc)}
@@ -333,6 +335,7 @@ html[data-theme="dark"] .mnode circle.dot{stroke:#0d1614}
 .btn{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 11px;border-radius:9px;border:1px solid var(--line);background:var(--card2);font-size:12.5px;font-weight:650;color:var(--ink2)}
 .btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
 .btn:active{transform:scale(.97)}
+button.btn{font-family:inherit;cursor:pointer}
 .pubnote{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--ink3);line-height:1.7;background:var(--card2);border:1px dashed var(--line);border-radius:13px;padding:11px 12px;margin-top:10px}
 .pubnote svg{flex:0 0 auto;width:15px;height:15px;margin-top:3px}
 
@@ -431,6 +434,11 @@ footer p{margin:0 0 4px}
       <span class="nwtxt"><b>抢 10-17 场门票</b> · 10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span>
       <a class="nwgo" href="#todos">去清单 →</a>
     </div>
+    <a class="nownext" href="https://www.windy.com/?33.267,103.919,9" target="_blank" rel="noopener">
+      <span class="nwbadge wxb">看天气</span>
+      <span class="nwtxt"><b>九寨沟实时天气 · Windy</b> · 风 / 云 / 降水逐时预报，已定位到景区；出发前 3 天看最准</span>
+      <span class="nwgo">打开 →</span>
+    </a>
   </section>
   <!-- ========== 2. 插画头图 ========== -->
   <section class="hero">
@@ -827,9 +835,10 @@ footer p{margin:0 0 4px}
           <div><dt>全价票</dt><dd>¥280 = 门票 ¥190 + 观光车 ¥90，含手绘电子票</dd></div>
           <div><dt>赠票</dt><dd>¥90 仅观光车费（浙江户籍免门票），<b>入园须凭身份证原件核验</b></dd></div>
           <div><dt>开售</dt><dd><b>10-02 23:59 之后</b>方可预订 10-17 场次；当天限流、售罄即止</dd></div>
-          <div><dt>渠道</dt><dd>仅微信公众号「九寨沟」或小程序「九寨沟旅游官方平台」</dd></div>
+          <div><dt>渠道</dt><dd>微信小程序<b>「九寨沟旅游官方平台」</b>（推荐，直达购票页）或公众号「九寨沟」。小程序链接无法从网页直接跳转：复制后在微信任意聊天粘贴，点开即达</dd></div>
         </dl></div>
         <div class="acts">
+          <button class="btn pri" type="button" id="mpCopy">复制购票小程序链接</button>
           <span class="btn">建议 10-02 23:55 设闹钟，0 点后立即下单</span>
         </div>
       </article>
@@ -886,7 +895,7 @@ footer p{margin:0 0 4px}
     <h2 class="stitle"><span class="se">✅</span>待办清单 <em>共 10 项 · 办完告诉我，我改页面</em></h2>
     <div class="card">
       <ul class="todo">
-        <li class="now"><span class="z">1</span><div class="x"><b>抢 10-17 场门票</b><span>10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单</span></div></li>
+        <li class="now"><span class="z">1</span><div class="x"><b>抢 10-17 场门票</b><span>10-02 23:59 开售，23:55 设闹钟；全价套票 + 浙江感恩赠票一起下单；入口：微信小程序「九寨沟旅游官方平台」（购票链接可在「交通票据」卡片一键复制）</span></div></li>
         <li><span class="z">2</span><div class="x"><b>买去程 + 返程机票</b><span>票量偏少，越早越便宜；出票后把订单截图发我，复核时刻</span></div></li>
         <li><span class="z">3</span><div class="x"><b>订包车两段</b><span>绵阳机场接机上山 + 10/17 夜车下山送亚朵，一口价含路油费</span></div></li>
         <li><span class="z">4</span><div class="x"><b>要到包车师傅姓名与电话</b><span>拿到就发我，我写进页面（手机号不属于隐藏范围）</span></div></li>
@@ -894,7 +903,7 @@ footer p{margin:0 0 4px}
         <li><span class="z">6</span><div class="x"><b>给亚朵报备深夜到店</b><span>约 23:30，确认前台 24 小时值守与免费接送机</span></div></li>
         <li><span class="z">7</span><div class="x"><b>准备证件</b><span>两人身份证原件（入园实名核验，赠票必查）、驾照（如需备选自驾）</span></div></li>
         <li><span class="z">8</span><div class="x"><b>下载离线地图与离线页</b><span>川北山区与沟内信号弱，提前缓存高德离线地图</span></div></li>
-        <li><span class="z">9</span><div class="x"><b>查出发前天气</b><span>出发前 3 天看九寨沟与绵阳预报，按 5–15℃ 备衣</span></div></li>
+        <li><span class="z">9</span><div class="x"><b>查出发前天气</b><span>出发前 3 天看九寨沟与绵阳预报，按 5–15℃ 备衣；Windy 实况链接在页顶「此刻关注」下方</span></div></li>
         <li><span class="z">10</span><div class="x"><b>整理随身物品</b><span>冲锋衣、抓绒、防滑鞋、墨镜、防晒、常用药、晕车药、充电宝</span></div></li>
       </ul>
     </div>
@@ -902,7 +911,7 @@ footer p{margin:0 0 4px}
 
   <!-- ========== 8. 旅行贴士 ========== -->
   <section class="sec" id="tips">
-    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 10 条</em></h2>
+    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 12 条</em></h2>
     <div class="tips">
       <article class="tip"><span class="e">⏰</span><div class="x"><b>14:00 停止入园</b><p>九寨沟入园 08:00–14:00，18:00 闭园。务必 07:30 前到沟口排队，赶第一批观光车，人最少。</p></div></article>
       <article class="tip"><span class="e">🎫</span><div class="x"><b>旺季限流 41000 人</b><p>实名制分时预约、售罄即止。10-17 是周六正旺季，越早订越稳，别拖到出行前一周。</p></div></article>
@@ -914,6 +923,8 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">🚐</span><div class="x"><b>10/17 夜车是全线最累的一段</b><p>约 4.5–5 小时山路，务必包车让师傅开。车上备靠枕、薄外套与晕车药，中途可要求停车休息一次。</p></div></article>
       <article class="tip"><span class="e">📶</span><div class="x"><b>提前离线</b><p>九绵高速沿线与沟内部分区域信号弱。出发前把本页、高德离线地图和酒店地址一并缓存好。</p></div></article>
       <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
+      <article class="tip"><span class="e">🍁</span><div class="x"><b>彩林季是 10.25–11.7</b><p>最佳红叶期在 10 月底到 11 月初。你们 10-17 到，比彩林季早一周：河谷低海拔（树正沟一带）已开始变色，高海拔长海一带可能还偏绿。另外 12 月–3 月是淡季，部分景点不开放。</p></div></article>
+      <article class="tip"><span class="e">🚌</span><div class="x"><b>进沟的观光车坐左边</b><p>当地攻略原话：进沟的观光车可以坐左边，窗外能看到更多风景。上车早才有得挑，这也是 7:30 前到沟口的另一个理由。</p></div></article>
     </div>
   </section>
 
@@ -1473,6 +1484,31 @@ mPlace.addEventListener('click', function(){
 $('#mClose').addEventListener('click', closePoi);
 modal.addEventListener('click', function(e){ if(e.target === modal) closePoi(); });
 document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('on')) closePoi(); });
+
+/* ============ 复制购票小程序链接 ============ */
+(function(){
+  var btn = $('#mpCopy');
+  if(!btn) return;
+  var TXT = '#小程序://九寨沟旅游官方平台/13HZvyJV4lUnOnp';
+  function ok(){
+    btn.textContent = '已复制 ✓ 去微信粘贴';
+    setTimeout(function(){ btn.textContent = '复制购票小程序链接'; }, 2500);
+  }
+  function fallback(){
+    var ta = document.createElement('textarea');
+    ta.value = TXT;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); ok(); }catch(e){ btn.textContent = '复制失败，请手动复制'; }
+    document.body.removeChild(ta);
+  }
+  btn.addEventListener('click', function(){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(TXT).then(ok, fallback);
+    }else{ fallback(); }
+  });
+})();
 
 /* ============ 分段导航高亮 ============ */
 (function(){
