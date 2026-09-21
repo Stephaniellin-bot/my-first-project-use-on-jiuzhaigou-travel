@@ -1,0 +1,6 @@
+{
+  "name": "jiuzhaigou-handbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jiuzhaigou 3-day travel handbook - single-file static site on Cloudflare Workers"
+}
