@@ -1483,7 +1483,7 @@ function closePoi(){
   document.body.style.overflow = '';
 }
 mPlace.addEventListener('click', function(){
-  if(curPoi) window.open(navUrl(curPoi), '_blank', 'noopener');
+  if(curPoi) openAmap(navUrl(curPoi));
 });
 $('#mClose').addEventListener('click', closePoi);
 modal.addEventListener('click', function(e){ if(e.target === modal) closePoi(); });
@@ -1513,6 +1513,65 @@ document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal
     }else{ fallback(); }
   });
 })();
+
+/* ============ 手机端直跳高德 App ============ */
+/* 手机上点击导航/搜索按钮时，优先唤起高德地图 App（iosamap:// / androidamap:// / amapuri://），
+   约 2.2 秒内没跳走（App 未装或被拦截）则回退到 uri.amap.com 网页版。桌面端仍开网页版。 */
+function amapScheme(url){
+  try{
+    var u = new URL(url), q = u.searchParams;
+    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    var src = 'jiuzhai-handbook';
+    if(u.pathname.indexOf('/marker') === 0){
+      var pos = (q.get('position') || '').split(','), nm = q.get('name') || '';
+      if(pos.length >= 2 && pos[0] && pos[1]){
+        return (ios ? 'iosamap://view?' : 'androidamap://view?') +
+          'sourceApplication=' + src + '&poiname=' + encodeURIComponent(nm) +
+          '&lon=' + pos[0] + '&lat=' + pos[1] + '&dev=0';
+      }
+    }else if(u.pathname.indexOf('/navigation') === 0){
+      var f = (q.get('from') || '').split(','), t = (q.get('to') || '').split(',');
+      if(f.length >= 2 && t.length >= 2){
+        var pre = ios ? 'iosamap://path?' : 'amapuri://route/plan/?';
+        return pre + 'sourceApplication=' + src +
+          '&slat=' + f[1] + '&slon=' + f[0] + '&sname=' + encodeURIComponent(f[2] || '') +
+          '&dlat=' + t[1] + '&dlon=' + t[0] + '&dname=' + encodeURIComponent(t[2] || '') +
+          '&dev=0&t=0';
+      }
+    }else if(u.pathname.indexOf('/search') === 0){
+      var kw = q.get('keyword') || '';
+      if(kw){
+        return (ios ? 'iosamap://poi?sourceApplication=' + src + '&name='
+                    : 'androidamap://poi?sourceApplication=' + src + '&keywords=') +
+          encodeURIComponent(kw) + '&dev=0';
+      }
+    }
+  }catch(e){}
+  return '';
+}
+function openAmap(webUrl){
+  if(!webUrl) return;
+  var scheme = amapScheme(webUrl);
+  if(!scheme || !/android|iphone|ipad|ipod/i.test(navigator.userAgent)){
+    window.open(webUrl, '_blank', 'noopener');
+    return;
+  }
+  var t = setTimeout(function(){
+    if(!document.hidden) window.location.href = webUrl;
+  }, 2200);
+  function cancel(){ clearTimeout(t); }
+  window.addEventListener('pagehide', cancel, {once:true});
+  document.addEventListener('visibilitychange', function onVis(){
+    if(document.hidden){ document.removeEventListener('visibilitychange', onVis); cancel(); }
+  });
+  window.location.href = scheme;
+}
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a[href^="https://uri.amap.com"]') : null;
+  if(!a) return;
+  e.preventDefault();
+  openAmap(a.getAttribute('href'));
+}, false);
 
 /* ============ 分段导航高亮 ============ */
 (function(){
