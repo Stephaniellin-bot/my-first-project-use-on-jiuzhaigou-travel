@@ -1525,15 +1525,16 @@ function amapScheme(url){
     if(u.pathname.indexOf('/marker') === 0){
       var pos = (q.get('position') || '').split(','), nm = q.get('name') || '';
       if(pos.length >= 2 && pos[0] && pos[1]){
-        return (ios ? 'iosamap://view?' : 'androidamap://view?') +
+        return (ios ? 'iosamap://viewMap?' : 'androidamap://viewMap?') +
           'sourceApplication=' + src + '&poiname=' + encodeURIComponent(nm) +
-          '&lon=' + pos[0] + '&lat=' + pos[1] + '&dev=0';
+          '&lat=' + pos[1] + '&lon=' + pos[0] + '&dev=0';
       }
     }else if(u.pathname.indexOf('/navigation') === 0){
       var f = (q.get('from') || '').split(','), t = (q.get('to') || '').split(',');
       if(f.length >= 2 && t.length >= 2){
         var pre = ios ? 'iosamap://path?' : 'amapuri://route/plan/?';
         return pre + 'sourceApplication=' + src +
+          (ios ? '&m=0' : '') +
           '&slat=' + f[1] + '&slon=' + f[0] + '&sname=' + encodeURIComponent(f[2] || '') +
           '&dlat=' + t[1] + '&dlon=' + t[0] + '&dname=' + encodeURIComponent(t[2] || '') +
           '&dev=0&t=0';
