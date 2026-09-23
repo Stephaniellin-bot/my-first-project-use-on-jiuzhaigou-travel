@@ -358,6 +358,32 @@ button.btn{font-family:inherit;cursor:pointer}
 .tip .x b{font-size:13.5px;font-weight:700;display:block}
 .tip .x p{margin:3px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
 
+/* ---------- 金额小结条 ---------- */
+.sumline{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--d1s);border:1px dashed var(--line)}
+.sumline .lbl{font-size:12px;font-weight:700;color:var(--ink2)}
+.sumline b{font-size:16px;font-weight:800;color:var(--d1);font-variant-numeric:tabular-nums}
+.sumline em{flex:1 0 100%;font-style:normal;font-size:12px;color:var(--ink3);line-height:1.6}
+
+/* ---------- 支出汇总 ---------- */
+.cost{display:flex;flex-direction:column;gap:10px}
+.cgrand{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:13px 14px;display:flex;flex-direction:column;gap:1px}
+.cgrand .t{font-size:12.5px;font-weight:700;color:var(--ink3)}
+.cgrand .m{font-size:25px;font-weight:800;color:var(--acc);font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.25}
+.cgrand .s{font-size:12.5px;color:var(--ink2);line-height:1.6}
+.cbox{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:11px 13px 4px}
+.cbox h3{margin:0 0 3px;font-size:12px;font-weight:800;letter-spacing:.04em;color:var(--ink3);display:flex;align-items:center;gap:7px}
+.cbox h3 .dot{flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.cbox h3 .dot.w{background:var(--warn)}
+.cbox h3 .r{margin-left:auto;font-size:12px;font-weight:750;color:var(--ink2);font-variant-numeric:tabular-nums;letter-spacing:0}
+.citem{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-top:1px solid var(--line2)}
+.citem .n{flex:1;min-width:0}
+.citem .n b{font-size:13.5px;font-weight:700;display:block}
+.citem .n span{display:block;font-size:12px;color:var(--ink3);line-height:1.6;margin-top:2px}
+.citem .v{flex:0 0 auto;text-align:right;font-size:14px;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
+.citem .v small{display:block;font-size:11px;font-weight:650;color:var(--ink3);margin-top:1px}
+.csum{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 8px;padding-top:9px;border-top:1px dashed var(--line);font-size:12.5px;font-weight:700;color:var(--ink2)}
+.csum b{font-size:15.5px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink)}
+
 /* ---------- 底栏 ---------- */
 footer{margin:26px 0 34px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.75}
 footer p{margin:0 0 4px}
@@ -621,6 +647,7 @@ footer p{margin:0 0 4px}
     <a href="#days" data-spy="days">📅 行程</a>
     <a href="#todos" data-spy="todos">✅ 待办</a>
     <a href="#tips" data-spy="tips">💡 贴士</a>
+    <a href="#cost" data-spy="cost">💰 花费</a>
   </nav>
 
   <!-- ========== 3. 行程总览地图 ========== -->
@@ -772,7 +799,7 @@ footer p{margin:0 0 4px}
 
   <!-- ========== 5. 交通票据 ========== -->
   <section class="sec" id="orders">
-    <h2 class="stitle"><span class="se">✈️</span>交通票据 <em>往返机票 2 张已出票 · 包车 2 段待定</em></h2>
+    <h2 class="stitle"><span class="se">✈️</span>交通票据 <em>机票 2 张已出票 · 合计 ¥2,251 ｜ 包车 2 段待定</em></h2>
     <div class="rows">
       <article class="row">
         <div class="rt">
@@ -809,6 +836,12 @@ footer p{margin:0 0 4px}
         </div>
       </article>
 
+      <div class="sumline">
+        <span class="lbl">机票合计</span>
+        <b>¥2,251</b>
+        <em>2 人往返（去哪儿）：含 20kg 托运那张 ¥1,243 · 无托运那张 ¥1,008</em>
+      </div>
+
       <article class="row">
         <div class="rt">
           <span class="k c">包车</span>
@@ -818,7 +851,7 @@ footer p{margin:0 0 4px}
           <div><dt>第 1 段</dt><dd>10-16 约 11:40 绵阳南郊机场 T1 接机 → 九寨沟漳扎镇民宿（九绵高速，约 4.5–5 小时）</dd></div>
           <div><dt>第 2 段</dt><dd>10-17 约 18:30 九寨沟沟口 → 绵阳凯德广场长虹大道亚朵酒店（夜车，约 4.5–5 小时，约 23:30 到店）</dd></div>
           <div><dt>要写死</dt><dd>第 2 段为夜车，需师傅跑惯阿坝州山路；一口价含过路费与油费，问清司机食宿是否另计</dd></div>
-          <div><dt>行情</dt><dd>绵阳 ↔ 九寨沟两日包车大致 ¥1200–1800（仅供比价参考）</dd></div>
+          <div><dt>行情</dt><dd>5 座车型单程约 ¥800–1,000（含油费过路费），两段合计约 ¥1,600–2,000；仅供比价，实际以师傅报价为准</dd></div>
         </dl></div>
         <div class="acts">
           <a class="btn" href="https://uri.amap.com/navigation?from=104.7444,31.4281,%E7%BB%B5%E9%98%B3%E5%8D%97%E9%83%8A%E6%9C%BA%E5%9C%BA&amp;to=103.9186,33.2605,%E4%B9%9D%E5%AF%A8%E6%B2%9F%E6%99%AF%E5%8C%BA%E6%B8%B8%E5%AE%A2%E4%B8%AD%E5%BF%83&amp;mode=car&amp;policy=1&amp;src=jiuzhai-handbook&amp;coordinate=gaode&amp;callnative=1" target="_blank" rel="noopener">机场 → 九寨沟 全程导航</a>
@@ -927,6 +960,54 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
       <article class="tip"><span class="e">🍁</span><div class="x"><b>彩林季是 10.25–11.7</b><p>最佳红叶期在 10 月底到 11 月初。你们 10-17 到，比彩林季早一周：河谷低海拔（树正沟一带）已开始变色，高海拔长海一带可能还偏绿。另外 12 月–3 月是淡季，部分景点不开放。</p></div></article>
       <article class="tip"><span class="e">🚌</span><div class="x"><b>进沟的观光车坐左边</b><p>当地攻略原话：进沟的观光车可以坐左边，窗外能看到更多风景。上车早才有得挑，这也是 7:30 前到沟口的另一个理由。</p></div></article>
+    </div>
+  </section>
+
+  <!-- ========== 9. 支出汇总 ========== -->
+  <section class="sec" id="cost">
+    <h2 class="stitle"><span class="se">💰</span>支出汇总 <em>2 人合计 · 未支付项为预估</em></h2>
+    <div class="cost">
+
+      <div class="cgrand">
+        <span class="t">全程预估合计（2 人）</span>
+        <span class="m">约 ¥5,290 – 5,890</span>
+        <span class="s">人均约 ¥2,645 – 2,945 ｜ 已实付 ¥3,019.97，待支付预估 ¥2,270 – 2,870</span>
+      </div>
+
+      <div class="cbox">
+        <h3><span class="dot"></span>已支付<span class="r">¥3,019.97</span></h3>
+        <div class="citem">
+          <div class="n"><b>机票 · 2 人往返</b><span>去哪儿 · 2 张均已出票；含 20kg 托运那张 ¥1,243，无托运那张 ¥1,008（手提 7kg）</span></div>
+          <div class="v">¥2,251</div>
+        </div>
+        <div class="citem">
+          <div class="n"><b>住宿 · 2 晚</b><span>10-16 四季云隐民宿 ¥496.32 · 10-17 绵阳亚朵 ¥272.65；两晚均无餐食、均离店扣款</span></div>
+          <div class="v">¥768.97</div>
+        </div>
+        <div class="csum"><span>已支付小计</span><b>¥3,019.97</b></div>
+      </div>
+
+      <div class="cbox">
+        <h3><span class="dot w"></span>待支付 · 预估<span class="r">约 ¥2,270–2,870</span></h3>
+        <div class="citem">
+          <div class="n"><b>门票 · 2 张</b><span>全价套票 ¥280（门票 ¥190 + 观光车 ¥90）×1，浙江感恩赠票 ¥90（免门票、仅付观光车）×1；10-02 23:59 开抢，以小程序实际票价为准</span></div>
+          <div class="v">约 ¥370</div>
+        </div>
+        <div class="citem">
+          <div class="n"><b>包车 · 2 段</b><span>绵阳机场 → 九寨沟、九寨沟 → 绵阳亚朵；5 座车型单程约 ¥800–1,000（含油费过路费）</span></div>
+          <div class="v">约 ¥1,600–2,000</div>
+        </div>
+        <div class="citem">
+          <div class="n"><b>餐食与杂费</b><span>沟内午餐、镇上晚餐、饮水零食、行李额加购等，按 2 人 3 天粗估</span></div>
+          <div class="v">约 ¥300–500</div>
+        </div>
+        <div class="csum"><span>待支付小计</span><b>约 ¥2,270–2,870</b></div>
+      </div>
+
+    </div>
+    <div class="pubnote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>金额均为两人合计：已支付项取订单实付金额，未下单项按市场行情预估，最终以实际订单为准。本页不写入订单号、证件号、房间号与银行卡信息。</span>
     </div>
   </section>
 
