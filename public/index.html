@@ -953,7 +953,7 @@ footer p{margin:0 0 4px}
 
   <!-- ========== 8. 旅行贴士 ========== -->
   <section class="sec" id="tips">
-    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 13 条</em></h2>
+    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 14 条</em></h2>
     <div class="tips">
       <article class="tip"><span class="e">🚏</span><div class="x"><b>沟口排队：站在哪，决定你上哪辆车</b>
         <p>入口处每次同时放 5 辆景交车、上满即走。队伍位置对应不同的门与座位，站错就白等：</p>
@@ -970,7 +970,7 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">⏰</span><div class="x"><b>14:00 停止入园</b><p>九寨沟入园 08:00–14:00，18:00 闭园。务必 07:30 前到沟口排队，赶第一批观光车，人最少。</p></div></article>
       <article class="tip"><span class="e">🎫</span><div class="x"><b>旺季限流 41000 人</b><p>实名制分时预约、售罄即止。10-17 是周六正旺季，越早订越稳，别拖到出行前一周。</p></div></article>
       <article class="tip"><span class="e">📱</span><div class="x"><b>只认官方两个渠道</b><p>微信公众号「九寨沟」与小程序「九寨沟旅游官方平台」。其它平台多为代购，退改与核验都容易出问题。</p></div></article>
-      <article class="tip"><span class="e">🚶</span><div class="x"><b>Y 字形景区，先坐到底再往下玩</b><p>乘观光车直达最深处（原始森林 / 长海），再沿栈道往下走，一路都是顺路，全天步行约 8–12km。</p></div></article>
+      <article class="tip"><span class="e">🚶</span><div class="x"><b>Y 字形景区，先坐到底再往下玩</b><p>乘观光车直达最深处（原始森林 / 长海），再沿栈道往下走，一路都是顺路，本次全天步行约 6–9km。</p></div></article>
       <article class="tip"><span class="e">🫁</span><div class="x"><b>海拔 2000–3100m</b><p>长海、原始森林一带最高。慢走、多喝水、别跑跳；当晚住绵阳（500m）已是最合理的安排。</p></div></article>
       <article class="tip"><span class="e">🧥</span><div class="x"><b>10 月沟内 5–15℃</b><p>早晚接近 0℃，需抓绒 + 冲锋衣 + 防滑鞋；栈道多水汽，鞋底抓地力比保暖更重要。</p></div></article>
       <article class="tip"><span class="e">🍜</span><div class="x"><b>沟内餐饮集中在诺日朗</b><p>中心站有自助餐与简餐，价格偏高。可自带干粮与水（禁止明火与自热食品），排队高峰在 12:00–13:00。</p></div></article>
@@ -979,6 +979,7 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">📶</span><div class="x"><b>提前离线</b><p>九绵高速沿线与沟内部分区域信号弱。出发前把本页、高德离线地图和酒店地址一并缓存好。</p></div></article>
       <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
       <article class="tip"><span class="e">🍁</span><div class="x"><b>彩林季是 10.25–11.7</b><p>最佳红叶期在 10 月底到 11 月初。你们 10-17 到，比彩林季早一周：河谷低海拔（树正沟一带）已开始变色，高海拔长海一带可能还偏绿。另外 12 月–3 月是淡季，部分景点不开放。</p></div></article>
+      <article class="tip"><span class="e">✂️</span><div class="x"><b>本次舍弃的 5 个站点（时间有限）</b><p><b>箭竹海、季节海、盆景滩、老虎海、卧龙海</b>不专门停留。其中两处要说明白：<b>箭竹海</b>在原始森林→熊猫海的栈道旁，<b>老虎海、卧龙海</b>也就在树正沟那条下行栈道边——走的时候会路过，只是不停留拍照，不是绕路省时间。真正省下的是排队等车与走动的时间，已把富余留给五花海、长海与五彩池。</p></div></article>
     </div>
   </section>
 
@@ -1180,25 +1181,21 @@ function navLabel(k){ return POI[k] && POI[k].nav === 'coord' ? '高德导航' :
 var D2 = [
   {poi:'jzg-center', t:'07:30', m:'', x:180, y:250, tag:['pre'], note:'实名核验排队，08:00 开园（14:00 后停止入园）；想快往左走，想坐左侧座位走后门', gap:'候车 约 30 分钟'},
   {poi:'senlin',     t:'08:50', m:'bus', x:302, y:44,  note:'乘观光车直达沟内最深处，之后一路向下走，全程顺路', gap:'乘车 约 40 分钟'},
-  {poi:'jianzhu',    t:'09:40', m:'walk', x:284, y:53,  note:'《英雄》取景水岸，栈道几乎贴着水面', gap:'步行 约 15 分钟'},
-  {poi:'xiongmao',   t:'10:10', m:'walk', x:267, y:62,  note:'水下钙化枯木清晰可见，通透度全沟前列', gap:'步行 约 20 分钟'},
-  {poi:'wuhuahai',   t:'10:40', m:'walk', x:249, y:72,  note:'全天最精华一站，务必上老虎嘴观景台俯看', gap:'步行 约 25 分钟'},
-  {poi:'zhenzhutan', t:'11:20', m:'walk', x:229, y:83,  note:'《西游记》片尾取景地，栈道从瀑布下方穿过', gap:'步行 约 20 分钟'},
-  {poi:'jinghai',    t:'11:50', m:'walk', x:207, y:96,  note:'无风时倒影如镜，过了 11 点起风就碎', gap:'步行 约 20 分钟'},
-  {poi:'nuorilang',  t:'12:20', m:'walk', x:180, y:110, tag:['warn'], note:'全沟最大瀑布；中心站午餐，12:00–13:00 是排队高峰', gap:'午餐 约 60 分钟'},
-  {poi:'changhai',   t:'13:20', m:'bus', x:98,  y:58,  tag:['warn'], note:'海拔约 3060m，全沟最高点，动作放慢', gap:'步行 约 15 分钟'},
-  {poi:'wucaichi',   t:'13:50', m:'walk', x:124, y:77,  note:'面积最小、颜色最艳，从长海步行下行即到', gap:'乘车 约 30 分钟'},
-  {poi:'jijiehai',   t:'14:20', m:'walk', x:148, y:96,  note:'水位随季节变化，在车上左右窗观看即可', gap:'乘车 约 20 分钟'},
-  {poi:'xiniuhai',   t:'14:50', m:'walk', x:180, y:130, note:'树正沟第一站，倒影安静得像镜面', gap:'步行 约 12 分钟'},
-  {poi:'laohuhai',   t:'15:05', m:'walk', x:180, y:143, note:'深秋彩林倒映，下午顺光最出片', gap:'步行 约 10 分钟'},
-  {poi:'shuzhengpubu', t:'15:20', m:'walk', x:180, y:156, note:'落差约 11m，旁边就是树正寨与转经筒', gap:'步行 约 10 分钟'},
-  {poi:'shuzhengqunhai', t:'15:35', m:'walk', x:180, y:170, note:'数十个海子层叠相连，从高处俯看最完整', gap:'步行 约 12 分钟'},
-  {poi:'wolonghai',  t:'15:50', m:'walk', x:180, y:185, note:'水下钙化如卧龙，回程最舒服的一段', gap:'步行 约 12 分钟'},
-  {poi:'huohuahai',  t:'16:05', m:'walk', x:180, y:200, note:'午后斜光打在碎波上，像水面溅起火花', gap:'车览 约 15 分钟'},
-  {poi:'luweihai',   t:'16:20', m:'walk', x:180, y:216, note:'长约 2km 的半沼泽海子，中间一条碧蓝水带', gap:'车览 约 10 分钟'},
-  {poi:'penjingtan', t:'16:35', m:'walk', x:180, y:232, note:'浅滩上丛生的树木，像天然的水中盆景', gap:'观光车 约 20 分钟'},
-  {poi:null,         t:'17:00', tag:['warn'], title:'出园 · 回到沟口游客中心', note:'18:00 闭园，务必在 17:30 前下车出园', gap:'步行 约 20 分钟'},
-  {poi:'siyun',      t:'17:30', m:'walk', x:222, y:272, tag:['pre'], note:'回民宿取行李 · 镇上晚餐（点单后催师傅早点到）'},
+  {poi:'xiongmao',   t:'09:50', m:'bus', x:267, y:62,  note:'自原始森林乘观光车下行一站约 10 分钟（也可沿栈道步行约 35 分钟，途中经过箭竹海不停留）', gap:'乘车 约 10 分钟'},
+  {poi:'wuhuahai',   t:'10:20', m:'walk', x:249, y:72,  note:'全天最精华：先上老虎嘴观景台俯瞰，再走贴水栈道，建议留足 60–70 分钟', gap:'步行 约 25 分钟'},
+  {poi:'zhenzhutan', t:'11:30', m:'walk', x:229, y:83,  note:'《西游记》片尾取景地，栈道从瀑布下方穿过', gap:'步行 约 20 分钟'},
+  {poi:'jinghai',    t:'12:10', m:'walk', x:207, y:96,  note:'无风时倒影如镜，务必赶在 12:30 前，午后起风就碎', gap:'步行 约 20 分钟'},
+  {poi:'nuorilang',  t:'12:40', m:'walk', x:180, y:110, tag:['warn'], note:'全沟最大瀑布；中心站午餐，避开 12:00–13:00 排队高峰', gap:'午餐 约 55 分钟'},
+  {poi:'changhai',   t:'13:45', m:'bus', x:98,  y:58,  tag:['warn'], note:'海拔约 3060m，全沟最高点，动作放慢', gap:'乘车 约 25 分钟'},
+  {poi:'wucaichi',   t:'14:15', m:'walk', x:124, y:77,  note:'面积最小、颜色最艳，从长海步行下行即到', gap:'步行 约 15 分钟'},
+  {poi:'xiniuhai',   t:'14:50', m:'bus', x:180, y:130, note:'树正沟第一站，倒影安静得像镜面；从这里开始沿栈道一路下行到沟口', gap:'乘车 约 25 分钟'},
+  {poi:'shuzhengpubu', t:'15:05', m:'walk', x:180, y:156, note:'落差约 11m，旁边就是树正寨与转经筒', gap:'步行 约 12 分钟'},
+  {poi:'shuzhengqunhai', t:'15:20', m:'walk', x:180, y:170, note:'数十个海子层叠相连，从高处俯看最完整', gap:'步行 约 12 分钟'},
+  {poi:'huohuahai',  t:'15:40', m:'walk', x:180, y:200, note:'午后斜光打在碎波上，像水面溅起火花', gap:'步行 约 15 分钟'},
+  {poi:'luweihai',   t:'15:55', m:'walk', x:180, y:216, note:'长约 2km 的半沼泽海子，中间一条碧蓝水带', gap:'步行 约 12 分钟'},
+  {poi:null,         t:'16:15', tag:['warn'], title:'出园 · 回到沟口游客中心', note:'比原计划早约 45 分钟出园；18:00 闭园，别在沟内拖到末班车', gap:'步行 约 20 分钟'},
+  {poi:'siyun',      t:'16:35', m:'walk', x:222, y:272, tag:['pre'], note:'回民宿取行李、稍作休整；行李可先寄存前台再去吃饭'},
+  {poi:null,         t:'17:10', title:'镇上晚餐 · 采购次日干粮', note:'时间比原计划从容；若下山车能提前，可改到 18:00 前出发，早点到绵阳', gap:'晚餐 约 1 小时'},
   {poi:null,         t:'18:30', m:'bus', title:'出发夜车 · 返回绵阳', note:'约 330km 山路，4.5–5 小时；中途可要求停车休息一次', tag:['warn'], gap:'夜车 约 4.5–5 小时'},
   {poi:'atuo',       t:'23:30', m:'bus', x:292, y:322, tag:['pre'], note:'深夜到店，提前给前台报一声', stay:'atuo'}
 ];
@@ -1233,7 +1230,7 @@ var DAYS = [
     {t:'18:30', title:'镇上晚餐 · 采购次日干粮', note:'推荐沟口「川姐牦牛肉粉」；沟内餐饮只在诺日朗中心站，自带更省时间', gap:'步行 约 20 分钟'},
     {t:'20:30', title:'回民宿休息 · 早睡', note:'次日 6:30 起；第一晚别洗热水澡后立刻躺下'}
    ]},
-  {id:'d2', cls:'d2', dl:'10/17', dw:'周六', city:'九寨沟全天', sub:'沟内 Y 字形 · 步行约 8–12km',
+  {id:'d2', cls:'d2', dl:'10/17', dw:'周六', city:'九寨沟全天', sub:'沟内 Y 字形 · 已按时间取舍 · 步行约 6–9km',
    mapKey:'d2',
    lead:{t:'06:30', title:'起床 · 早餐自理', note:'民宿无餐食：镇上吃或自备干粮；收拾背包：身份证、水、抓绒、雨具', gap:'步行 1.4km 约 20 分钟'},
    items:D2.map(function(it){
@@ -1267,7 +1264,7 @@ var MAPVIEWS = {
       {poi:'my-airport', t:'11:05 – 12:00', d:'落地取行李、与师傅会合、午餐补给', x:224, y:122, m:'plane'},
       {poi:'siyun',      t:'13:00 – 17:30', d:'九绵高速约 4.5–5 小时，17:30 入住', x:140, y:208, m:'bus'}
     ]},
-  d2:{ cls:'d2', title:'D2 · 完整路线（含全部景点）', note:'先坐车到最深处再一路向下，顺序即游览顺序。点赞标可看介绍。',
+  d2:{ cls:'d2', title:'D2 · 完整路线（已按时间取舍）', note:'先坐车到最深处再一路向下，顺序即游览顺序。已舍弃 5 个次要站点，点赞标可看介绍。',
     items: D2.filter(function(it){ return it.poi; }).map(function(it){
       return {poi:it.poi, t:it.t, d:it.note, x:it.x, y:it.y, m:it.m};
     })},
@@ -1287,7 +1284,7 @@ var MILESTONES = [
   {at:'2026-10-16T11:25:00+08:00', l:'城际快车接乘 · 绵阳南郊机场'},
   {at:'2026-10-16T17:30:00+08:00', l:'抵达漳扎镇 · 入住民宿'},
   {at:'2026-10-17T07:30:00+08:00', l:'九寨沟沟口排队 · 准备入园'},
-  {at:'2026-10-17T17:00:00+08:00', l:'出园 · 回到沟口游客中心'},
+  {at:'2026-10-17T16:15:00+08:00', l:'出园 · 回到沟口游客中心'},
   {at:'2026-10-17T18:30:00+08:00', l:'出发夜车 · 返回绵阳'},
   {at:'2026-10-17T23:30:00+08:00', l:'抵达绵阳亚朵酒店'},
   {at:'2026-10-18T10:00:00+08:00', l:'退房 · 酒店班车送机'},
