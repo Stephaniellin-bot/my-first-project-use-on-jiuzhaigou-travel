@@ -357,6 +357,12 @@ button.btn{font-family:inherit;cursor:pointer}
 .tip .x{min-width:0}
 .tip .x b{font-size:13.5px;font-weight:700;display:block}
 .tip .x p{margin:3px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
+.tip .x .bstep{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.tip .x .bstep li{display:flex;gap:8px;font-size:12.5px;line-height:1.6;color:var(--ink2)}
+.tip .x .bstep li .n{flex:0 0 auto;width:18px;height:18px;border-radius:6px;background:var(--card2);border:1px solid var(--line);font-size:11px;font-weight:800;color:var(--ink3);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tip .x .bstep li b{display:inline;font-weight:700;color:var(--ink)}
+.tip .x .bnote{margin:8px 0 0;padding-top:7px;border-top:1px dashed var(--line)}
+.tip .x .bnote b{display:inline;font-weight:700;color:var(--ink)}
 
 /* ---------- 金额小结条 ---------- */
 .sumline{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--d1s);border:1px dashed var(--line)}
@@ -949,6 +955,18 @@ footer p{margin:0 0 4px}
   <section class="sec" id="tips">
     <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 13 条</em></h2>
     <div class="tips">
+      <article class="tip"><span class="e">🚏</span><div class="x"><b>沟口排队：站在哪，决定你上哪辆车</b>
+        <p>入口处每次同时放 5 辆景交车、上满即走。队伍位置对应不同的门与座位，站错就白等：</p>
+        <ol class="bstep">
+          <li><span class="n">1</span><span><b>想更快上车</b>：刷身份证后往<b>左</b>走，左边人少，对应 1–4 号队伍</span></li>
+          <li><span class="n">2</span><span><b>想坐左侧座位</b>（树正沟、则查洼沟的海子都在左手边）：走<b>后门</b>，对应 1、3、5、7、9 号队伍</span></li>
+          <li><span class="n">3</span><span><b>想现场补 VIP 票</b>：刷身份证<b>之前</b>就靠右排队</span></li>
+          <li><span class="n">4</span><span><b>沟内各站点换乘</b>：同样走<b>后门</b>——从右往左数第 2、第 4 列队伍对应后门</span></li>
+        </ol>
+        <p class="bnote"><b>为什么都挤后门</b>：后门可覆盖 28 个以上座位，前门最多只有 15 个；除入口外，后门队伍通常比看上去短，既快又更容易坐下。</p>
+        <p class="bnote"><b>右线是随机的</b>：去日则沟的车由现场即时调度，一般开到诺日朗中心站才知道去哪条线。想避开中线（树正沟）就在<b>诺日朗下车换乘</b>，别跟着坐回沟口。</p>
+        <p class="bnote"><b>座位方向记一句</b>：进沟坐左边、回程坐右边，窗外风景都在这一侧。</p>
+      </div></article>
       <article class="tip"><span class="e">⏰</span><div class="x"><b>14:00 停止入园</b><p>九寨沟入园 08:00–14:00，18:00 闭园。务必 07:30 前到沟口排队，赶第一批观光车，人最少。</p></div></article>
       <article class="tip"><span class="e">🎫</span><div class="x"><b>旺季限流 41000 人</b><p>实名制分时预约、售罄即止。10-17 是周六正旺季，越早订越稳，别拖到出行前一周。</p></div></article>
       <article class="tip"><span class="e">📱</span><div class="x"><b>只认官方两个渠道</b><p>微信公众号「九寨沟」与小程序「九寨沟旅游官方平台」。其它平台多为代购，退改与核验都容易出问题。</p></div></article>
@@ -961,7 +979,6 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">📶</span><div class="x"><b>提前离线</b><p>九绵高速沿线与沟内部分区域信号弱。出发前把本页、高德离线地图和酒店地址一并缓存好。</p></div></article>
       <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
       <article class="tip"><span class="e">🍁</span><div class="x"><b>彩林季是 10.25–11.7</b><p>最佳红叶期在 10 月底到 11 月初。你们 10-17 到，比彩林季早一周：河谷低海拔（树正沟一带）已开始变色，高海拔长海一带可能还偏绿。另外 12 月–3 月是淡季，部分景点不开放。</p></div></article>
-      <article class="tip"><span class="e">🚌</span><div class="x"><b>进沟的观光车坐左边</b><p>当地攻略原话：进沟的观光车可以坐左边，窗外能看到更多风景。上车早才有得挑，这也是 7:30 前到沟口的另一个理由。</p></div></article>
     </div>
   </section>
 
@@ -1066,7 +1083,7 @@ var POI = {
     adv:'镇上餐饮偏贵且打烊早，建议 20:30 前吃完。次日 6:30 起，尽量早睡。'},
   'jzg-center': {n:'九寨沟景区游客中心（沟口）', nav:'coord', lng:103.9186, lat:33.2605,
     why:'全景区唯一入口，实名核验与观光车都在这里。',
-    must:['刷身份证入园，两人都要带证件原件','观光车票已含在套票内，进门后按指引进站','14:00 停止入园，18:00 闭园'],
+    must:['刷身份证入园，两人都要带证件原件','观光车票已含在套票内，进门后按指引进站','排队认队形：想快往左（1–4 队）、想坐左侧座位走后门（1/3/5/7/9 队）','14:00 停止入园，18:00 闭园'],
     adv:'7:30 前到沟口排队，第一批观光车人最少、光线也最好。进门直接坐车到最深处，再一路往下玩。'},
   'senlin': {n:'原始森林',
     why:'沟内最深处，海拔约 3100m，是九寨沟的高处起点。',
@@ -1161,7 +1178,7 @@ function navLabel(k){ return POI[k] && POI[k].nav === 'coord' ? '高德导航' :
 
 /* ============ D2 沟内游览顺序（地图与时间轴共用一份） ============ */
 var D2 = [
-  {poi:'jzg-center', t:'07:30', m:'', x:180, y:250, tag:['pre'], note:'实名核验排队，08:00 开园（14:00 后停止入园）', gap:'候车 约 30 分钟'},
+  {poi:'jzg-center', t:'07:30', m:'', x:180, y:250, tag:['pre'], note:'实名核验排队，08:00 开园（14:00 后停止入园）；想快往左走，想坐左侧座位走后门', gap:'候车 约 30 分钟'},
   {poi:'senlin',     t:'08:50', m:'bus', x:302, y:44,  note:'乘观光车直达沟内最深处，之后一路向下走，全程顺路', gap:'乘车 约 40 分钟'},
   {poi:'jianzhu',    t:'09:40', m:'walk', x:284, y:53,  note:'《英雄》取景水岸，栈道几乎贴着水面', gap:'步行 约 15 分钟'},
   {poi:'xiongmao',   t:'10:10', m:'walk', x:267, y:62,  note:'水下钙化枯木清晰可见，通透度全沟前列', gap:'步行 约 20 分钟'},
