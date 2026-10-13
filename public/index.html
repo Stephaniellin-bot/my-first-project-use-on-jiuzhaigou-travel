@@ -363,6 +363,7 @@ button.btn{font-family:inherit;cursor:pointer}
 .tip .x .bstep li b{display:inline;font-weight:700;color:var(--ink)}
 .tip .x .bnote{margin:8px 0 0;padding-top:7px;border-top:1px dashed var(--line)}
 .tip .x .bnote b{display:inline;font-weight:700;color:var(--ink)}
+.tip .x p b{display:inline;font-weight:700;color:var(--ink)}
 
 /* ---------- 金额小结条 ---------- */
 .sumline{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--d1s);border:1px dashed var(--line)}
@@ -651,9 +652,10 @@ footer p{margin:0 0 4px}
   <!-- ========== 分段导航 ========== -->
   <nav class="snav" aria-label="板块导航">
     <a href="#map" data-spy="map">🗺️ 总览</a>
+    <a href="#days" data-spy="days">📅 行程</a>
     <a href="#orders" data-spy="orders">✈️ 票据</a>
     <a href="#stay" data-spy="stay">🏨 住宿</a>
-    <a href="#days" data-spy="days">📅 行程</a>
+    <a href="#food" data-spy="food">🍜 美食</a>
     <a href="#todos" data-spy="todos">✅ 待办</a>
     <a href="#tips" data-spy="tips">💡 贴士</a>
     <a href="#cost" data-spy="cost">💰 花费</a>
@@ -937,7 +939,20 @@ footer p{margin:0 0 4px}
     </div>
   </section>
 
-  <!-- ========== 7. 待办清单 ========== -->
+  <!-- ========== 7. 美食 ========== -->
+  <section class="sec" id="food">
+    <h2 class="stitle"><span class="se">🍜</span>美食 <em>4 顿正餐 + 沟内补给 · 2 人餐食杂费约 ¥300–500</em></h2>
+    <div class="tips">
+      <article class="tip"><span class="e">🍲</span><div class="x"><b>10-16 晚餐 · 如意林卡餐吧</b><p>九寨沟旁的人气店，<b>饭点必排队，务必提前取号</b>：17:30 到漳扎镇先去店里拿号，再回民宿放行李、休整，18:30 凭号入座。等位常要 30–60 分钟，别等到饭点才去排。镇上打烊早，建议 20:30 前吃完回民宿早睡。</p></div></article>
+      <article class="tip"><span class="e">🍱</span><div class="x"><b>10-17 午餐 · 沟内诺日朗中心站</b><p>全沟唯一的热食点，有自助餐与简餐，价格偏高。排队高峰 12:00–13:00，建议 11:30 前或 13:30 后用餐；五花海与长海的烤肠摊是顺路的热乎补给。可自带干粮与水，但禁止明火与自热食品。</p></div></article>
+      <article class="tip"><span class="e">🥡</span><div class="x"><b>10-17 晚餐 · 镇上打包带上车</b><p>当天 16:40 回民宿、17:00 取寄存行李、17:20 门口上车，时间只够打包：提前电话点单或挑出餐快的店，装好拿的食物，上车再吃。夜间山路 4.5–5 小时，车上备靠枕、薄外套与晕车药。</p></div></article>
+      <article class="tip"><span class="e">☕</span><div class="x"><b>10-18 早餐 · 亚朵（酒店无餐食）</b><p>可前台加购早餐 ¥48/人（周末 07:00–11:00），或去凯德广场周边吃。当天 10:00 退房、班车送机，别把时间压在早餐上。</p></div></article>
+      <article class="tip"><span class="e">🛒</span><div class="x"><b>干粮与饮水 · 漳扎镇采购</b><p>镇上早餐铺、超市、药店齐全，进沟的干粮和水在这里补齐：面包、能量棒、坚果、巧克力，再装一保温杯热水；沟内饮水点有限，两人按每人 1.5L 备。</p></div></article>
+      <article class="tip"><span class="e">💰</span><div class="x"><b>餐饮预算口径</b><p>2 人 3 天餐食杂费预估 <b>¥300–500</b>（沟内午餐、镇上晚餐、饮水零食、行李额加购都计入），与页面「支出汇总」同一口径；这是唯一尚未支付的一项。</p></div></article>
+    </div>
+  </section>
+
+  <!-- ========== 8. 待办清单 ========== -->
   <section class="sec" id="todos">
     <h2 class="stitle"><span class="se">✅</span>待办清单 <em>共 8 项 · 办完告诉我，我改页面</em></h2>
     <div class="card">
@@ -954,9 +969,9 @@ footer p{margin:0 0 4px}
     </div>
   </section>
 
-  <!-- ========== 8. 旅行贴士 ========== -->
+  <!-- ========== 9. 旅行贴士 ========== -->
   <section class="sec" id="tips">
-    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 14 条</em></h2>
+    <h2 class="stitle"><span class="se">💡</span>旅行贴士 <em>共 12 条</em></h2>
     <div class="tips">
       <article class="tip"><span class="e">🚏</span><div class="x"><b>沟口排队：站在哪，决定你上哪辆车</b>
         <p>入口处每次同时放 5 辆景交车、上满即走。队伍位置对应不同的门与座位，站错就白等：</p>
@@ -976,8 +991,6 @@ footer p{margin:0 0 4px}
       <article class="tip"><span class="e">🚶</span><div class="x"><b>Y 字形景区，先坐到底再往下玩</b><p>乘观光车直达最深处（原始森林 / 长海），再沿栈道往下走，一路都是顺路，本次全天步行约 6–9km。</p></div></article>
       <article class="tip"><span class="e">🫁</span><div class="x"><b>海拔 2000–3100m</b><p>长海、原始森林一带最高。慢走、多喝水、别跑跳；当晚住绵阳（500m）已是最合理的安排。</p></div></article>
       <article class="tip"><span class="e">🧥</span><div class="x"><b>10 月沟内 5–15℃</b><p>早晚接近 0℃，需抓绒 + 冲锋衣 + 防滑鞋；栈道多水汽，鞋底抓地力比保暖更重要。</p></div></article>
-      <article class="tip"><span class="e">🍜</span><div class="x"><b>沟内餐饮集中在诺日朗</b><p>中心站有自助餐与简餐，价格偏高。可自带干粮与水（禁止明火与自热食品），排队高峰在 12:00–13:00。</p></div></article>
-      <article class="tip"><span class="e">🍢</span><div class="x"><b>16 号晚餐 · 如意林卡餐吧（要排队，先取号）</b><p>已定九寨沟旁的<b>如意林卡餐吧</b>。这是镇上人气店，<b>饭点必须排队，务必提前取号</b>：17:30 到镇上先到店拿号，再回民宿放行李、休整，凭号入座；等位时顺路把次日干粮买齐。饭点等位常要 30–60 分钟，别等到 18:30 才去排。沟内热食稀缺，五花海与长海的烤肠摊是顺路的热乎补给；镇上打烊早，建议 20:30 前吃完。</p></div></article>
       <article class="tip"><span class="e">🚐</span><div class="x"><b>10/17 夜车 · 班车已订（16:30–17:30 发车）</b><p>约 4.5–5 小时山路，坐正规班车或城际快车，别贪便宜搭黑车。车上备靠枕、薄外套与晕车药，中途可要求停车休息一次。</p><p class="bnote"><b>司机到民宿门口接</b>：不用走去游客中心。早上退房时把行李寄存在前台，17:00 取件后在门口等车即可；具体到达时间等司机来电，出门前再确认一次司机位置。</p></div></article>
       <article class="tip"><span class="e">📶</span><div class="x"><b>提前离线</b><p>九绵高速沿线与沟内部分区域信号弱。出发前把本页、高德离线地图和酒店地址一并缓存好。</p></div></article>
       <article class="tip"><span class="e">🪪</span><div class="x"><b>赠票必须带身份证原件</b><p>浙江户籍那位走感恩赠票通道，检票口会核验证件；截图、照片一律不认，两人同时带证件入园。</p></div></article>
@@ -986,7 +999,7 @@ footer p{margin:0 0 4px}
     </div>
   </section>
 
-  <!-- ========== 9. 支出汇总 ========== -->
+  <!-- ========== 10. 支出汇总 ========== -->
   <section class="sec" id="cost">
     <h2 class="stitle"><span class="se">💰</span>支出汇总 <em>2 人合计 · 未支付项为预估</em></h2>
     <div class="cost">
