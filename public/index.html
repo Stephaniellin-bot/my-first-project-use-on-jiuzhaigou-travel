@@ -226,6 +226,7 @@ html[data-theme="dark"] .mnode circle.dot{stroke:#0d1614}
 .mline{fill:none;stroke-linecap:round;stroke-linejoin:round}
 .mland{fill:var(--mapland)}
 .mgrid path{stroke:var(--mapgrid);stroke-width:.8;stroke-dasharray:2 4;fill:none}
+.mdist text{font-size:7.5px;font-weight:700;fill:var(--mapink);opacity:.82;paint-order:stroke;stroke:var(--mapland);stroke-width:2.4px;stroke-linejoin:round}
 .mwater{fill:var(--mapwater)}
 .mr1{stroke:var(--d1);stroke-width:2.6}
 .mr2{stroke:var(--d2);stroke-width:2.6}
@@ -755,11 +756,28 @@ footer p{margin:0 0 4px}
         <path class="mline mr1 mwalk" d="M180 110 180 130 180 143 180 156 180 170 180 185 180 200 180 216 180 232 180 250"/>
         <path class="mline mr2 mbus" d="M186 256C220 276 256 300 292 322"/>
         <g id="d2dots"></g>
-        <text class="mvsub" x="12" y="342">虚线＝乘车 · 实线＝栈道徒步 · 数字为游览顺序</text>
+        <g class="mdist">
+          <text x="296" y="36" text-anchor="end">3000m</text>
+          <text x="296" y="44" text-anchor="end">8300m 徒步谨慎</text>
+          <text x="263" y="73" text-anchor="start">1300m</text>
+          <text x="246" y="86" text-anchor="middle">2300m</text>
+          <text x="238" y="93" text-anchor="middle">400m</text>
+          <text x="212" y="84" text-anchor="middle">1782m</text>
+          <text x="104" y="60" text-anchor="middle">1050m</text>
+          <text x="152" y="90" text-anchor="middle">1.7km 不建议徒步</text>
+          <text x="188" y="122" text-anchor="start">825m + 3155m</text>
+          <text x="172" y="144" text-anchor="end">1150m</text>
+          <text x="188" y="164" text-anchor="start">1200m</text>
+          <text x="172" y="186" text-anchor="end">100m</text>
+          <text x="188" y="209" text-anchor="start">2500m</text>
+          <text x="172" y="234" text-anchor="end">5800m 车行</text>
+        </g>
+        <text class="mvsub" x="12" y="342">虚线＝乘车 · 实线＝栈道徒步 · 数字为游览顺序 · 小字＝站间距离</text>
         <g class="mvchip">
-          <text x="196" y="88" fill="#2f6fd0">乘车进沟</text>
-          <text x="26" y="82" fill="#2b9159">则查洼沟</text>
-          <text x="252" y="96" fill="#2b9159">日则沟</text>
+          <text x="98" y="140" fill="#2f6fd0">乘车进沟</text>
+          <text x="26" y="82" fill="#2b9159">则查洼沟 18km</text>
+          <text x="252" y="96" fill="#2b9159">日则沟 17km</text>
+          <text x="60" y="188" fill="#b0691f">树正沟 14km</text>
           <text x="186" y="290" fill="#cf7415">夜车 4.5–5h</text>
         </g>
       </svg>
@@ -1197,14 +1215,14 @@ function navLabel(k){ return POI[k] && POI[k].nav === 'coord' ? '高德导航' :
 var D2 = [
   {poi:'jzg-center', t:'07:30', m:'', x:180, y:250, tag:['pre'], note:'实名核验排队，08:00 开园（14:00 后停止入园）；想快往左走，想坐左侧座位走后门', gap:'候车 约 30 分钟'},
   {poi:'senlin',     t:'08:50', m:'bus', x:302, y:44,  note:'乘观光车直达沟内最深处，之后一路向下走，全程顺路', gap:'乘车 约 40 分钟'},
-  {poi:'xiongmao',   t:'09:50', m:'bus', x:267, y:62,  note:'自原始森林乘观光车下行一站约 10 分钟（也可沿栈道步行约 35 分钟，途中经过箭竹海不停留）', gap:'乘车 约 10 分钟'},
+  {poi:'xiongmao',   t:'09:50', m:'bus', x:267, y:62,  note:'自原始森林乘观光车下行一站约 10 分钟；沿途芳草海、天鹅海、箭竹海不停留（天鹅海—箭竹海栈道 8.3km，徒步谨慎）', gap:'乘车 约 10 分钟'},
   {poi:'wuhuahai',   t:'10:20', m:'walk', x:249, y:72,  note:'全天最精华：先上老虎嘴观景台俯瞰，再走贴水栈道，建议留足 60–70 分钟', gap:'步行 约 25 分钟'},
   {poi:'zhenzhutan', t:'11:30', m:'walk', x:229, y:83,  note:'《西游记》片尾取景地，栈道从瀑布下方穿过', gap:'步行 约 20 分钟'},
   {poi:'jinghai',    t:'12:10', m:'walk', x:207, y:96,  note:'无风时倒影如镜，务必赶在 12:30 前，午后起风就碎', gap:'步行 约 20 分钟'},
   {poi:'nuorilang',  t:'12:40', m:'walk', x:180, y:110, tag:['warn'], note:'全沟最大瀑布；中心站午餐，避开 12:00–13:00 排队高峰', gap:'午餐 约 55 分钟'},
   {poi:'changhai',   t:'13:45', m:'bus', x:98,  y:58,  tag:['warn'], note:'海拔约 3060m，全沟最高点，动作放慢', gap:'乘车 约 25 分钟'},
-  {poi:'wucaichi',   t:'14:15', m:'walk', x:124, y:77,  note:'面积最小、颜色最艳，从长海步行下行即到', gap:'步行 约 15 分钟'},
-  {poi:'xiniuhai',   t:'14:50', m:'bus', x:180, y:130, note:'树正沟第一站，倒影安静得像镜面；从这里开始沿栈道一路下行到沟口', gap:'乘车 约 25 分钟'},
+  {poi:'wucaichi',   t:'14:15', m:'walk', x:124, y:77,  note:'面积最小、颜色最艳，从长海步行下行即到（1.05km）；回程乘观光车经季节海段 1.7km，不建议徒步', gap:'步行 约 15 分钟'},
+  {poi:'xiniuhai',   t:'14:50', m:'bus', x:180, y:130, note:'树正沟第一站，倒影安静得像镜面；乘车段经诺日朗瀑布（825m）再下行 3.2km，此后沿栈道一路下行到沟口', gap:'乘车 约 25 分钟'},
   {poi:'shuzhengpubu', t:'15:05', m:'walk', x:180, y:156, note:'落差约 11m，旁边就是树正寨与转经筒', gap:'步行 约 12 分钟'},
   {poi:'shuzhengqunhai', t:'15:20', m:'walk', x:180, y:170, note:'数十个海子层叠相连，从高处俯看最完整', gap:'步行 约 12 分钟'},
   {poi:'huohuahai',  t:'15:40', m:'walk', x:180, y:200, note:'午后斜光打在碎波上，像水面溅起火花', gap:'步行 约 15 分钟'},
@@ -1279,7 +1297,7 @@ var MAPVIEWS = {
       {poi:'my-airport', t:'11:05 – 12:00', d:'落地取行李、与师傅会合、午餐补给', x:224, y:122, m:'plane'},
       {poi:'siyun',      t:'13:00 – 17:30', d:'九绵高速约 4.5–5 小时，17:30 入住', x:140, y:208, m:'bus'}
     ]},
-  d2:{ cls:'d2', title:'D2 · 完整路线（已按时间取舍）', note:'先坐车到最深处再一路向下，顺序即游览顺序。已舍弃 5 个次要站点，点赞标可看介绍。',
+  d2:{ cls:'d2', title:'D2 · 完整路线（已按时间取舍）', note:'先坐车到最深处再一路向下，顺序即游览顺序；线旁小字为站间距离。已舍弃 5 个次要站点，点赞标可看介绍。',
     items: D2.filter(function(it){ return it.poi; }).map(function(it){
       return {poi:it.poi, t:it.t, d:it.note, x:it.x, y:it.y, m:it.m};
     })},
